@@ -1,0 +1,7 @@
+Const: 1
+Energy: 6.0732440784299
+Acceptance: 0.9999983
+var: 6.3875161784998e-06
+Alpha: 3.4
+Beta: 1e+16
+
