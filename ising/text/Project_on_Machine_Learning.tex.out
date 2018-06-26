@@ -1,0 +1,12 @@
+\BOOKMARK [1][-]{section.1}{Project on Machine Learning}{}% 1
+\BOOKMARK [1][-]{section.2}{Linear Regression}{}% 2
+\BOOKMARK [2][-]{subsection.2.1}{Ridge Regression}{section.2}% 3
+\BOOKMARK [2][-]{subsection.2.2}{Lasso Regression}{section.2}% 4
+\BOOKMARK [1][-]{section.3}{Logistic Regression}{}% 5
+\BOOKMARK [2][-]{subsubsection.3.0.1}{Random Forest Algorithm}{section.3}% 6
+\BOOKMARK [3][-]{subsubsection.3.0.2}{Neural Networks}{subsubsection.3.0.1}% 7
+\BOOKMARK [2][-]{subsection.3.1}{Implementation and Results}{section.3}% 8
+\BOOKMARK [3][-]{subsubsection.3.1.1}{Estimating the Coupling Constant of the 1D Ising Model}{subsection.3.1}% 9
+\BOOKMARK [3][-]{subsubsection.3.1.2}{Determine the Phase of the Two-Dimensional Ising Model}{subsection.3.1}% 10
+\BOOKMARK [3][-]{subsubsection.3.1.3}{Using Random Forest to Classify Phases in the Ising Model}{subsection.3.1}% 11
+\BOOKMARK [3][-]{subsubsection.3.1.4}{Classifying the Ising Model Phase Using Neural Networks}{subsection.3.1}% 12
