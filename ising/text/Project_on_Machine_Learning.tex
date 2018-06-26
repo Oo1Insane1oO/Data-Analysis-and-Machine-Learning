@@ -255,20 +255,10 @@
     
     \geometry{verbose,tmargin=1in,bmargin=1in,lmargin=1in,rmargin=1in}
     
+\begin{document}
     
-
-    \begin{document}
+\maketitle
     
-    
-    \maketitle
-    
-    
-
-    
-    \hypertarget{project-on-machine-learning}{%
-\section{Project on Machine
-Learning}\label{project-on-machine-learning}}
-
 \begin{itemize}
     \item Ising Model
     \item \href{https://arxiv.org/pdf/1803.08823.pdf}{Metha et al, arXiv
@@ -285,7 +275,7 @@ Learning}\label{project-on-machine-learning}}
 
 \newpage
 \hypertarget{linear-regression}{%
-\section{Linear Regression}\label{linear-regression}}
+\section*{Linear Regression}\label{linear-regression}}
 
 \begin{itemize}
     \item $\{y_i, \boldsymbol{x}_i\}_{i=1}^n,\; i=1,\dots,n$
@@ -295,20 +285,48 @@ Learning}\label{project-on-machine-learning}}
 \end{itemize}
 
 \newpage
-\hypertarget{ridge-regression}{%
-\subsection{Ridge Regression}\label{ridge-regression}}
+\hypertarget{linear-regression}{%
+\section*{Linear Regression}\label{linear-regression}}
 
 \begin{itemize}
-    \item $L_2$-regularization: $\boldsymbol{y} = \boldsymbol{X}\boldsymbol{\beta} + \alpha\sum_{i=1}^m\beta^2_i$
+    \item $\{y_i, \boldsymbol{x}_i\}_{i=1}^n,\; i=1,\dots,n$
+    \item $\boldsymbol{y} = \boldsymbol{X}\boldsymbol{\beta} + \boldsymbol{\varepsilon}$
+    \item minimize the \(L_2\)-norm $\underset{\boldsymbol{\beta}}{\text{min}}{\big|}\boldsymbol{X}\boldsymbol{\beta} - \boldsymbol{y}{\big|}^2$
+    \item Solution: $\boldsymbol{\beta}_{\text{LS}} = \underset{\boldsymbol{\beta}}{\text{arg}\text{min}}{\big|}\boldsymbol{X}\boldsymbol{\beta} - \boldsymbol{y}{\big|}^2 \Rightarrow \boldsymbol{\beta}_{\text{LS}} = \left(\boldsymbol{X}^T\boldsymbol{X}\right)^{-1}\boldsymbol{X}^T\boldsymbol{y}$
+\end{itemize}
+
+\hypertarget{ridge-regression}{%
+\subsection*{Ridge Regression}\label{ridge-regression}}
+
+\begin{itemize}
+    \item $L_2$-regularization: $\boldsymbol{y} = \boldsymbol{X}\boldsymbol{\beta} + \alpha\sum\limits_{i=1}^m\beta^2_i$
     \item $\boldsymbol{\beta}_{\text{Ridge}} = \underset{\boldsymbol{\beta}}{\text{arg}\text{min}}\left({\big|}\boldsymbol{X}\boldsymbol{\beta} - \boldsymbol{y}{\big|}^2 + \alpha{\big|}\boldsymbol{\beta}{\big|}^2\right) \Rightarrow \boldsymbol{\beta}_{\text{Ridge}} = \left(\boldsymbol{X}^T\boldsymbol{X} + \alpha \boldsymbol{I}\right)^{-1}\boldsymbol{X}^T\boldsymbol{y}$
 \end{itemize}
 
 \newpage
-\hypertarget{lasso-regression}{%
-\subsection{Lasso Regression}\label{lasso-regression}}
+\hypertarget{linear-regression}{%
+\section*{Linear Regression}\label{linear-regression}}
 
 \begin{itemize}
-    \item $L_1$-regularization: $\boldsymbol{y} = \boldsymbol{X}\boldsymbol{\beta} + \alpha\sum_{i=1}^m{\big|}\beta_i{\big|}$
+    \item $\{y_i, \boldsymbol{x}_i\}_{i=1}^n,\; i=1,\dots,n$
+    \item $\boldsymbol{y} = \boldsymbol{X}\boldsymbol{\beta} + \boldsymbol{\varepsilon}$
+    \item minimize the \(L_2\)-norm $\underset{\boldsymbol{\beta}}{\text{min}}{\big|}\boldsymbol{X}\boldsymbol{\beta} - \boldsymbol{y}{\big|}^2$
+    \item Solution: $\boldsymbol{\beta}_{\text{LS}} = \underset{\boldsymbol{\beta}}{\text{arg}\text{min}}{\big|}\boldsymbol{X}\boldsymbol{\beta} - \boldsymbol{y}{\big|}^2 \Rightarrow \boldsymbol{\beta}_{\text{LS}} = \left(\boldsymbol{X}^T\boldsymbol{X}\right)^{-1}\boldsymbol{X}^T\boldsymbol{y}$
+\end{itemize}
+
+\hypertarget{ridge-regression}{%
+\subsection*{Ridge Regression}\label{ridge-regression}}
+
+\begin{itemize}
+    \item $L_2$-regularization: $\boldsymbol{y} = \boldsymbol{X}\boldsymbol{\beta} + \alpha\sum\limits_{i=1}^m\beta^2_i$
+    \item $\boldsymbol{\beta}_{\text{Ridge}} = \underset{\boldsymbol{\beta}}{\text{arg}\text{min}}\left({\big|}\boldsymbol{X}\boldsymbol{\beta} - \boldsymbol{y}{\big|}^2 + \alpha{\big|}\boldsymbol{\beta}{\big|}^2\right) \Rightarrow \boldsymbol{\beta}_{\text{Ridge}} = \left(\boldsymbol{X}^T\boldsymbol{X} + \alpha \boldsymbol{I}\right)^{-1}\boldsymbol{X}^T\boldsymbol{y}$
+\end{itemize}
+
+\hypertarget{lasso-regression}{%
+\subsection*{Lasso Regression}\label{lasso-regression}}
+
+\begin{itemize}
+    \item $L_1$-regularization: $\boldsymbol{y} = \boldsymbol{X}\boldsymbol{\beta} + \alpha\sum\limits_{i=1}^m{\big|}\beta_i{\big|}$
     \item Constrained ($|\boldsymbol{\beta}|\leq t$): $\boldsymbol{\beta}_{\text{Lasso}} = \underset{\boldsymbol{\beta}}{\text{arg}\text{min}}\left({\big|}\boldsymbol{X}\boldsymbol{\beta} - \boldsymbol{y}{\big|}^2 + \alpha{\big|}\boldsymbol{\beta}{\big|}\right)$
     \item Solution: $\beta^{\text{Lasso}}_j = \text{sign}\left(\beta^{\text{LS}}_j\right)\left({\big|}\beta^{\text{LS}}_j{\big|} - \alpha\right)_+$
 \end{itemize}
@@ -316,7 +334,7 @@ Learning}\label{project-on-machine-learning}}
 
 \newpage
 \hypertarget{logistic-regression}{%
-\section{Logistic Regression}\label{logistic-regression}}
+\section*{Logistic Regression}\label{logistic-regression2}}
 
 \begin{itemize}
     \item Fit to sigmoid $f(x) = \frac{1}{1 + \exp(-\boldsymbol{x}^T\boldsymbol{w})}$
@@ -327,309 +345,227 @@ Learning}\label{project-on-machine-learning}}
 { \hspace*{\fill} \\}
 
 \newpage
+\hypertarget{logistic-regression}{%
+\section*{Logistic Regression}\label{logistic-regression2}}
+
 \begin{itemize}
-    \item 
+    \item Fit to sigmoid $f(x) = \frac{1}{1 + \exp(-\boldsymbol{x}^T\boldsymbol{w})}$
 \end{itemize}
-    
-    The idea with the binary logistic regression is to find the probability
-for a stochastic variable \(X\) to be part of some category \(Y\), this
-is just a joint probability \(P(Y|X)\). In terms of regression
-terminology \(Y\) would be the response and \(X\) the explanatory
-variable. \(X\) can be a data-point and the categories can be expressed
-as \(Y=\{0,1\}\). Since we work with data-points it is convenient to
-index them as \[X\rightarrow X_i\] \[Y\rightarrow Y_i=\{0,1\}\] The
-probabilites can then be expressed as
-\[f(Y_i=1|\boldsymbol{X}_i,\boldsymbol{w}) = \frac{1}{1 + \exp(-\boldsymbol{X}_i^T\boldsymbol{w})}\]
-\[f(Y_i=0|\boldsymbol{X}_i,\boldsymbol{w}) = 1 - f(Y_i=1|\boldsymbol{X}_i)\]
-The problem addressed is simply a dataset with points
-\(\boldsymbol{X}_i\) and binary labels \(Y_i\in\{0,1\}\). Considering
-drawing datapoints independently the likelihood of seing some data
-\(D_i=\{(Y_i,\boldsymbol{X}_i)\}\) is
-\[P(D_i|\boldsymbol{w}) = \prod_{i=1}^n\left[f\left(\boldsymbol{X}_i^T\boldsymbol{w}\right)\right]^{Y_i} \left[1 - f\left(\boldsymbol{X}_i^T\boldsymbol{w}\right)\right]^{1-Y_i},\]
-and the maximum likelihood estimator(MLE) is defined as the set of
-parameters which maximizes the log-likelihood(log of above function).
-The expression for \(\boldsymbol{w}\) is
-\[\boldsymbol{w}_{\text{MLE}}= \underset{\boldsymbol{w}}{\text{arg}\text{max}} \sum\limits_{i=1}^n \left[y_i\log\left(f\left(\boldsymbol{X}_i^T\boldsymbol{w}\right)\right) + (1 - Y_i)\log\left(1 - f\left(\boldsymbol{X}_i^T\boldsymbol{w}\right)\right)\right].\]
-The cost is just the negative log-likelihood and is known as the
-cross-entropy in statistics. The expression is
-\[C(\boldsymbol{w}) = -\sum\limits_{i=1}^n \left[Y_i\log\left(f\left(\boldsymbol{X}_i^T\boldsymbol{w}\right)\right) + (1 - Y_i)\log\left(1 - f\left(\boldsymbol{X}_i^T\boldsymbol{w}\right)\right)\right].\]
-The cross-entropy is convex by the second-derivative test(with respect
-to parameters \(\boldsymbol{w}\)) meaning a simple minimization gives
-the global minimum. The equation is
-\[\boldsymbol{0} = \nabla C(\boldsymbol{w}) = \sum_{i=1}^n\left[f\left(\boldsymbol{X}_i^T\boldsymbol{w}\right) - Y_i\right]\boldsymbol{X}_i.\]
-This is a transcendental equation for \(\boldsymbol{w}\) which has to be
-solved numerically by some numerical optimization scheme such as
-gradient descent or some Quasi-Newton method.
+\begin{center}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{output_1_0.png}
+\end{center}
+\begin{itemize}
+    \item Categorisation
+\end{itemize}
+{ \hspace*{\fill} \\}
 
+\newpage
+\hypertarget{logistic-regression}{%
+\section*{Logistic Regression}\label{logistic-regression3}}
+
+\begin{itemize}
+    \item Fit to sigmoid $f(x) = \frac{1}{1 + \exp(-\boldsymbol{x}^T\boldsymbol{w})}$
+\end{itemize}
+\begin{center}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{output_1_0.png}
+\end{center}
+\begin{itemize}
+    \item Categorisation
+        \begin{itemize}
+            \item Binary: $P(Y|X)$
+        \end{itemize}
+\end{itemize}
+{ \hspace*{\fill} \\}
+
+\newpage
+\hypertarget{logistic-regression}{%
+\section*{Logistic Regression}\label{logistic-regression4}}
+
+\begin{itemize}
+    \item Fit to sigmoid $f(x) = \frac{1}{1 + \exp(-\boldsymbol{x}^T\boldsymbol{w})}$
+\end{itemize}
+\begin{center}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{output_1_0.png}
+\end{center}
+\begin{itemize}
+    \item Categorisation
+        \begin{itemize}
+            \item Binary: $P(Y|X)$
+        \end{itemize}
+    \item Cost: $C(\boldsymbol{w}) = -\sum\limits_{i=1}^n \left[Y_i\log\left(f\left(\boldsymbol{X}_i^T\boldsymbol{w}\right)\right) + (1 - Y_i)\log\left(1 - f\left(\boldsymbol{X}_i^T\boldsymbol{w}\right)\right)\right]$
+\end{itemize}
+{ \hspace*{\fill} \\}
+
+\newpage
+\hypertarget{logistic-regression}{%
+\section*{Logistic Regression}\label{logistic-regression5}}
+
+\begin{itemize}
+    \item Fit to sigmoid $f(x) = \frac{1}{1 + \exp(-\boldsymbol{x}^T\boldsymbol{w})}$
+\end{itemize}
+\begin{center}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{output_1_0.png}
+\end{center}
+\begin{itemize}
+    \item Categorisation
+        \begin{itemize}
+            \item Binary: $P(Y|X)$
+        \end{itemize}
+    \item Cost: $C(\boldsymbol{w}) = -\sum\limits_{i=1}^n \left[Y_i\log\left(f\left(\boldsymbol{X}_i^T\boldsymbol{w}\right)\right) + (1 - Y_i)\log\left(1 - f\left(\boldsymbol{X}_i^T\boldsymbol{w}\right)\right)\right]$
+    \item Numerical minimization: $\boldsymbol{0} = \nabla C(\boldsymbol{w}) = \sum\limits_{i=1}^n\left[f\left(\boldsymbol{X}_i^T\boldsymbol{w}\right) - Y_i\right]\boldsymbol{X}_i$
+\end{itemize}
+{ \hspace*{\fill} \\}
+
+\newpage
 \hypertarget{random-forest-algorithm}{%
-\subsubsection{Random Forest Algorithm}\label{random-forest-algorithm}}
+\section*{Random Forest Algorithm}\label{random-forest-algorithm}}
 
-A random forest is, in the context of data science, a family of
-randomized tree-based classifier decision trees. The basic structure of
-the decision tree is formed as a series of questions which partition the
-data. The random forest is then made by creating an ensemble of such
-trees with a randomization procedure, some of these are -
-\(\textbf{Bagging}\): Reduce variance by creating several subset of data
-from sample choosen in random with replacement. Each subset is then
-trained giving in total an ensemble of different models. -
-\(\textbf{Feature Bagging}\): Reduces correlations between decision
-trees by creating several subset of the features at each split of the
-tree. - \(\textbf{Extremized Random Forest}\): Prevent overfitting and
-reduce correllations, but reduce predictive power by combining ordinary
-and feature bagging with an extreme randomization procedure where the
-splitting is done at random instead of optimal criteria.
+\begin{itemize}
+    \item Consists of Decision Trees
+\end{itemize}
 
+\newpage
+\hypertarget{random-forest-algorithm}{%
+\section*{Random Forest Algorithm}\label{random-forest-algorithm2}}
+
+\begin{itemize}
+    \item Consists of Decision Trees
+    \item Bagging: Create bootstrap ensemble from data
+\end{itemize}
+
+\newpage
+\hypertarget{random-forest-algorithm}{%
+\section*{Random Forest Algorithm}\label{random-forest-algorithm1}}
+
+\begin{itemize}
+    \item Consists of Decision Trees
+    \item Bagging: Create bootstrap ensemble from data
+    \item Feature Bagging: Bagging on data and labels
+\end{itemize}
+
+\newpage
+\hypertarget{random-forest-algorithm}{%
+\section*{Random Forest Algorithm}\label{random-forest-algorithm4}}
+
+\begin{itemize}
+    \item Consists of Decision Trees
+    \item Bagging: Create bootstrap ensemble from data
+    \item Feature Bagging: Bagging on data and labels
+    \item Extremized Random Forest: Split decision trees at random
+\end{itemize}
+
+\newpage
 \hypertarget{neural-networks}{%
-\subsubsection{Neural Networks}\label{neural-networks}}
+\section*{Neural Networks}\label{neural-networks1}}
 
-A neural network is essentially just a linear transformation that
-weights the values of different inputs by a non-linear activation
-function and is a supervised learning method. The basic idea is with the
-so-called neuron which just represents a node (or element) in the
-network. Then, stack a number of these in to form a layer. The first
-layer is called the input and is represented by an \(n\times d\) matrix
-\[\boldsymbol{x} = 
+\begin{itemize}
+    \item input: $\boldsymbol{x} = 
         \begin{pmatrix}
             x_{11} & \dots & x_{1d} \\
             \vdots & \ddots & \vdots \\
             x_{d1} & \dots & x_{nd}
-        \end{pmatrix},\] with the node being the elements in
-\(\boldsymbol{x}\). A number of layers with sizes \((n_2,\dots,n_m)\)
-(number of nodes) are then laid between the input and the output, these
-are known as hidden layers. The weighting is then represented as a set
-of neuron-specific matrices
-\[\{\boldsymbol{w}\}^m_{l=1} = \left(\boldsymbol{w}^{(1)},\dots,\boldsymbol{w}^{(m)}\right).\]
-The transformation in layer \(l\) is then specified by
-\(\boldsymbol{w}^{(l)}\) and the output serves as the input to the next
-layer. The last transformation gives the output. It is also common to
-introduce a bias \(b^{(l)}\) meaning the transformation \(z^{(l)}\) for
-layer \(l\) is actually
-\[z^{(l)} = \boldsymbol{w}^{(l)}\cdot \boldsymbol{x} + b^{(l)}\]
+        \end{pmatrix}$
+\end{itemize}
 
-The shape of \(\boldsymbol{w}^{(l)}\) is determined by the layer.
-\(\boldsymbol{w}^{(1)}\) is a \((d\times n_1)\) matrix where \(n_i\) is
-the number of nodes in the first hidden layer and
-\(\boldsymbol{w}^{(2)}\) has shape \(n_1\times n_2\) and so on. In
-general the shape of \(\boldsymbol{w}^{(i)}\) is \(n_i \times n_{i+1}\)
-where \(n_1=d\).
+\newpage
+\hypertarget{neural-networks}{%
+\section*{Neural Networks}\label{neural-networks2}}
 
-With the neural-network model at hand the weights and the biases have to
-be determined. The procedure is the same as previously, define the cost
-function and minimize. We may write that given the data-point
-\((\boldsymbol{x}_i, y_i)\) the neural network makes a prediction
-\(\hat{y}_i(\boldsymbol{w},\boldsymbol{b})\).
+\begin{itemize}
+    \item input: $\boldsymbol{x} = 
+        \begin{pmatrix}
+            x_{11} & \dots & x_{1d} \\
+            \vdots & \ddots & \vdots \\
+            x_{d1} & \dots & x_{nd}
+        \end{pmatrix}$
+    \item $\{\boldsymbol{w}\}^m_{l=1} = \left(\boldsymbol{w}^{(1)},\dots,\boldsymbol{w}^{(m)}\right)$
+\end{itemize}
 
-\hypertarget{backpropagation}{%
-\paragraph{Backpropagation}\label{backpropagation}}
+\newpage
+\hypertarget{neural-networks}{%
+\section*{Neural Networks}\label{neural-networks3}}
 
-In order to actually minimize the cost function a so-called
-backpropagation has to be made. Assuming our neural-network has - \(L\):
-Number of layers - \(w^l_{jk}\): Weight for \(k\)-th neuron in layer
-\(l-1\) to \(j\)-th neuron in layer \(l\) - \(b^l_j\): Bias of neuron
-\(j\) in layer \(l\) - \(a^l_j\): Activation of neuron \(j\) in layer
-\(l\)
+\begin{itemize}
+    \item input: $\boldsymbol{x} = 
+        \begin{pmatrix}
+            x_{11} & \dots & x_{1d} \\
+            \vdots & \ddots & \vdots \\
+            x_{d1} & \dots & x_{nd}
+        \end{pmatrix}$
+    \item $\{\boldsymbol{w}\}^m_{l=1} = \left(\boldsymbol{w}^{(1)},\dots,\boldsymbol{w}^{(m)}\right)$
+    \item Bias: $z^{(l)} = \boldsymbol{w}^{(l)}\cdot \boldsymbol{x} + b^{(l)}$
+\end{itemize}
 
-The activation is related by the non-linear transformation \(\sigma\)
-\[a^l_j = \sigma\left(\sum_k w^l_{kj}a^{l-1}_k\right).\] We define two
-new quantities, the linear weigthed sum
-\[z^l_j = \sum_kw^l_{jk}a^{l-1}_k + b^l_j\] and the error of neuron
-\(j\) \[\Delta^L_j = \frac{\partial E}{\partial z^L_j}.\] The error of
-neuron \(j\) in layer \(l\) is equivalently
-\[\Delta^l_j = \frac{\partial E}{\partial z^l_j} = \frac{\partial E}{\partial a^l_j}\frac{\partial \sigma}{\partial z^l_j},\]
-by the chain rule. The error terms can also be expressed as
-\[\Delta^l_j = \frac{\partial E}{\partial z^l_j} = \frac{\partial E}{\partial b^l_j}\frac{\partial b^l_j}{\partial z^l_j} = \frac{\partial E}{\partial b^l_j},\]
-since \[\frac{\partial b^l_j}{\partial z^l_j} = 1.\] The activation
-transformation can be expressed with \(z^l_j\) as
-\[a^l_j = \sigma\left(z^l_j\right).\] A third expression of the error is
-\[\Delta^L_j = \frac{\partial E}{\partial z^l_j} = \sum_k \frac{\partial E}{\partial z^{l+1}_k}\frac{\partial z^{l+1}_k}{\partial z^l_j} = \sum_k \Delta^{l+1}_k\frac{\partial z^{l+1}_k}{\partial z^l_j} = \left(\sum_k\Delta^{l+1}_kw^{l+1}_{kj}\right)\frac{\partial \sigma}{\partial z^l_j}.\]
-The final expression involved is the derivative with respect to
-\(w^l_{jk}\),
-\[\frac{\partial E}{\partial w^l_{jk}} = \frac{\partial E}{\partial z^l_j}\frac{\partial z^l_j}{\partial w^l_{jk}} = \Delta^l_ja^{l-1}_k.\]
+\newpage
+\hypertarget{neural-networks}{%
+\section*{Neural Networks}\label{neural-networks4}}
 
-Combining these algorithms the backpropagation algorithm is 1.
-\(\textbf{Activation at input layer}\): Calculate activations \(a^l_j\)
-of all neurons in the input layer. 2. \(\textbf{Feedforward}\): Compute
-\(z^l\) and \(a^l\) for all subsequent layers. 3.
-\(\textbf{Error at output}\): Calculate error in output layer with first
-expression for \(\Delta^l_j\). 4. \(\textbf{Backpropagate}\): Use third
-expression for \(\Delta^l_j\) to calculate \(\Delta^l_j\) for all
-layers. 5. \(\textbf{Calculate Gradient}\): Calculate
-\(\frac{\partial E}{\partial b^l_j}\) and
-\(\frac{\partial E}{\partial w^l_{jk}}\).
+\begin{itemize}
+    \item input: $\boldsymbol{x} = 
+        \begin{pmatrix}
+            x_{11} & \dots & x_{1d} \\
+            \vdots & \ddots & \vdots \\
+            x_{d1} & \dots & x_{nd}
+        \end{pmatrix}$
+    \item $\{\boldsymbol{w}\}^m_{l=1} = \left(\boldsymbol{w}^{(1)},\dots,\boldsymbol{w}^{(m)}\right)$
+    \item Bias: $z^{(l)} = \boldsymbol{w}^{(l)}\cdot \boldsymbol{x} + b^{(l)}$
+    \item Backpropagation:
+        \begin{itemize}
+            \item \(\textbf{Activation at input layer}\): Calculate activations $a^l_j = \sigma\left(\sum_k w^l_{kj}a^{l-1}_k\right)$
+            \item \(\textbf{Feedforward}\): Compute $z^l$ and $a^l$ for subsequent layers
+            \item \(\textbf{Error at output}\): Calculate error in output
+            \item \(\textbf{Backpropagate}\): Calculate error for all layers 
+            \item \(\textbf{Calculate Gradient}\): Calculate gradient and update weights
+        \end{itemize}
+\end{itemize}
 
-With the efficient forward sweep through the network and one
-backpropagation the gradient is readily calculated and the minimization
-can be done with the same methods as with the logistic regression
-scheme.
+\newpage
+\hypertarget{neural-networks}{%
+\section*{Neural Networks}\label{neural-networks5}}
 
-\hypertarget{cost-function}{%
-\paragraph{Cost function}\label{cost-function}}
+\begin{itemize}
+    \item input: $\boldsymbol{x} = 
+        \begin{pmatrix}
+            x_{11} & \dots & x_{1d} \\
+            \vdots & \ddots & \vdots \\
+            x_{d1} & \dots & x_{nd}
+        \end{pmatrix}$
+    \item $\{\boldsymbol{w}\}^m_{l=1} = \left(\boldsymbol{w}^{(1)},\dots,\boldsymbol{w}^{(m)}\right)$
+    \item Bias: $z^{(l)} = \boldsymbol{w}^{(l)}\cdot \boldsymbol{x} + b^{(l)}$
+    \item Backpropagation:
+        \begin{itemize}
+            \item \(\textbf{Activation at input layer}\): Calculate activations $a^l_j = \sigma\left(\sum_k w^l_{kj}a^{l-1}_k\right)$
+            \item \(\textbf{Feedforward}\): Compute $z^l$ and $a^l$ for subsequent layers
+            \item \(\textbf{Error at output}\): Calculate error in output
+            \item \(\textbf{Backpropagate}\): Calculate error for all layers 
+            \item \(\textbf{Calculate Gradient}\): Calculate gradient and update weights
+        \end{itemize}
+    \item Cost function
+\end{itemize}
 
-We have yet to mention the actual cost function with the neural network.
-These are the same as introduced with the linear regression schemes,
-that is either the mean-square error
-\[E(\boldsymbol{w},\boldsymbol{b}) = \frac{1}{N}\sum_i\left(y_i - \hat{y}_i(\boldsymbol{w},\boldsymbol{b})\right)^2,\]
-and the mean absolute error(\(L_1\)-norm)
-\[E(\boldsymbol{w},\boldsymbol{b}) = \frac{1}{N}\sum_i\left|y_i - \hat{y}_i(\boldsymbol{w},\boldsymbol{b})\right|.\]
-The cross-entropy
-\[C(\boldsymbol{w}) = -\sum\limits_{i=1}^n \left[y_i\log\left(\hat{y}_i(\boldsymbol{w})\right) + (1 - y_i)\log\left(1 - \hat{y}_i(\boldsymbol{w})\right)\right].\]
-can still be used if the data is categorical. More generally if \(y\)
-can take more values, \(y\in{0,1,\dots,M-1}\), we may define
-\[y_{im} = \left\{\begin{matrix}
-        1,& y_i = m \\
-        0,& \text{else}
-    \end{matrix}\right.,\] and the categorical cross-entropy is
-\[E(\boldsymbol{w}) = -\sum_{i=1}^n \sum_{m=0}^{M-1}\left(y_{im} \log\left(\hat{y}_{im}(\boldsymbol{w})\right) + (1 - y_{im} \log\left(1 - \hat{y}_{im}(\boldsymbol{w})\right)\right).\]
-Depending on the data one of these cost functions can be used in the
-backpropagation algorithm and the training can proceed.
-
-    \hypertarget{implementation-and-results}{%
-\subsection{Implementation and
-Results}\label{implementation-and-results}}
-
+\newpage
 \hypertarget{estimating-the-coupling-constant-of-the-1d-ising-model}{%
-\subsubsection{Estimating the Coupling Constant of the 1D Ising
+\section*{Estimating the Coupling Constant of the 1D Ising
 Model}\label{estimating-the-coupling-constant-of-the-1d-ising-model}}
 
-In estimating the coupling constant we use data generated with \(J=1\)
-and use the linear regression schemes presented.
+\begin{itemize}
+    \item Data with $J=1$
+\end{itemize}
 
-In order to use linear regression with the Ising model we assume the
-model (without any prior knowledge) the all-to-all Ising model
-\[E^{(i)} = -\sum\limits_{kl}^NJ_{kl}s^{(i)}_ks^{(i)}_l,\] with the
-\(J_{kl}\) being the coupling strengths we wish to learn. The index
-\(i\) represents a sample point. This equation can be rewritten as the
-matrix equation
-\[E^{(i)} = -\boldsymbol{X}^{(i)} \cdot \boldsymbol{J},\] with
-\(\boldsymbol{X}^{(i)}\) representing the two-body interactions
-\[\left\{s^{(i)}_k,s^{(i)}_l\right\}_{k,l=1}^N.\] This is the exact
-linear regression presented earlier.
+\newpage
+\hypertarget{estimating-the-coupling-constant-of-the-1d-ising-model}{%
+\section*{Estimating the Coupling Constant of the 1D Ising
+Model}\label{estimating-the-coupling-constant-of-the-1d-ising-model2}}
 
-Let us first generate \(N=10000\) states of a system of length \(L=40\)
-and divide the data into a training set and test set. This is to test
-the performance of the algorithm on a set it has not seen before (hence
-the test set).
+\begin{itemize}
+    \item Data with $J=1$
+    \item $E^{(i)} = -\boldsymbol{X}^{(i)} \cdot \boldsymbol{J}$
+\end{itemize}
 
-    \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}51}]:} \PY{k+kn}{import} \PY{n+nn}{numpy} \PY{k}{as} \PY{n+nn}{np}
-         \PY{k+kn}{import} \PY{n+nn}{scipy}\PY{n+nn}{.}\PY{n+nn}{sparse} \PY{k}{as} \PY{n+nn}{sp}
-         
-         \PY{n}{np}\PY{o}{.}\PY{n}{random}\PY{o}{.}\PY{n}{seed}\PY{p}{(}\PY{l+m+mi}{12}\PY{p}{)}
-         
-         \PY{k}{def} \PY{n+nf}{ising\PYZus{}energies}\PY{p}{(}\PY{n}{states}\PY{p}{,} \PY{n}{L}\PY{p}{)}\PY{p}{:}
-             \PY{l+s+sd}{\PYZdq{}\PYZdq{}\PYZdq{} Calculate energy \PYZdq{}\PYZdq{}\PYZdq{}}
-             \PY{n}{J} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{zeros}\PY{p}{(}\PY{p}{(}\PY{n}{L}\PY{p}{,}\PY{n}{L}\PY{p}{)}\PY{p}{,}\PY{p}{)}
-             \PY{k}{for} \PY{n}{i} \PY{o+ow}{in} \PY{n+nb}{range}\PY{p}{(}\PY{n}{L}\PY{p}{)}\PY{p}{:}
-                 \PY{n}{J}\PY{p}{[}\PY{n}{i}\PY{p}{,} \PY{p}{(}\PY{n}{i}\PY{o}{+}\PY{l+m+mi}{1}\PY{p}{)}\PY{o}{\PYZpc{}}\PY{k}{L}] \PYZhy{}= 1.0
-             \PY{c+c1}{\PYZsh{} end for}
-             
-             \PY{k}{return} \PY{n}{np}\PY{o}{.}\PY{n}{einsum}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{...i,ij,...j\PYZhy{}\PYZgt{}...}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{n}{states}\PY{p}{,} \PY{n}{J}\PY{p}{,} \PY{n}{states}\PY{p}{)}
-         \PY{c+c1}{\PYZsh{} end function ising\PYZus{}energies}
-         
-         \PY{n}{L}\PY{o}{=} \PY{l+m+mi}{40} \PY{c+c1}{\PYZsh{} system size}
-         \PY{n}{N} \PY{o}{=} \PY{l+m+mi}{10000} \PY{c+c1}{\PYZsh{} number of states}
-         
-         \PY{c+c1}{\PYZsh{} generate Ising states}
-         \PY{n}{states} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{random}\PY{o}{.}\PY{n}{choice}\PY{p}{(}\PY{p}{[}\PY{o}{\PYZhy{}}\PY{l+m+mi}{1}\PY{p}{,}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{,} \PY{n}{size}\PY{o}{=}\PY{p}{(}\PY{n}{N}\PY{p}{,} \PY{n}{L}\PY{p}{)}\PY{p}{)}
-         
-         \PY{n}{energies} \PY{o}{=} \PY{n}{ising\PYZus{}energies}\PY{p}{(}\PY{n}{states}\PY{p}{,} \PY{n}{L}\PY{p}{)}
-         
-         \PY{c+c1}{\PYZsh{} reshape states into a single index (i,j) \PYZhy{}\PYZhy{}\PYZgt{} p}
-         \PY{n}{states} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{einsum}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{...i,...j\PYZhy{}\PYZgt{}...ij}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{n}{states}\PY{p}{,} \PY{n}{states}\PY{p}{)}
-         \PY{n}{shape} \PY{o}{=} \PY{n}{states}\PY{o}{.}\PY{n}{shape}
-         \PY{n}{states} \PY{o}{=} \PY{n}{states}\PY{o}{.}\PY{n}{reshape}\PY{p}{(}\PY{p}{(}\PY{n}{shape}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{p}{,} \PY{n}{shape}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{o}{*}\PY{n}{shape}\PY{p}{[}\PY{l+m+mi}{2}\PY{p}{]}\PY{p}{)}\PY{p}{)}
-         
-         \PY{c+c1}{\PYZsh{} build final set}
-         \PY{n}{data} \PY{o}{=} \PY{p}{[}\PY{n}{states}\PY{p}{,} \PY{n}{energies}\PY{p}{]}
-         
-         \PY{n}{n\PYZus{}samples} \PY{o}{=} \PY{l+m+mi}{400} \PY{c+c1}{\PYZsh{} number of samples}
-         
-         \PY{c+c1}{\PYZsh{} define training and test data}
-         \PY{n}{X\PYZus{}train}\PY{o}{=}\PY{n}{data}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{p}{[}\PY{p}{:}\PY{n}{n\PYZus{}samples}\PY{p}{]}
-         \PY{n}{Y\PYZus{}train}\PY{o}{=}\PY{n}{data}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{[}\PY{p}{:}\PY{n}{n\PYZus{}samples}\PY{p}{]} \PY{c+c1}{\PYZsh{}+ np.random.normal(0,4.0,size=X\PYZus{}train.shape[0])}
-         \PY{n}{X\PYZus{}test}\PY{o}{=}\PY{n}{data}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{p}{[}\PY{n}{n\PYZus{}samples}\PY{p}{:}\PY{l+m+mi}{3}\PY{o}{*}\PY{n}{n\PYZus{}samples}\PY{o}{/}\PY{o}{/}\PY{l+m+mi}{2}\PY{p}{]}
-         \PY{n}{Y\PYZus{}test}\PY{o}{=}\PY{n}{data}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{[}\PY{n}{n\PYZus{}samples}\PY{p}{:}\PY{l+m+mi}{3}\PY{o}{*}\PY{n}{n\PYZus{}samples}\PY{o}{/}\PY{o}{/}\PY{l+m+mi}{2}\PY{p}{]} \PY{c+c1}{\PYZsh{}+ np.random.normal(0,4.0,size=X\PYZus{}test.shape[0])}
-\end{Verbatim}
-
-
-    Now we can start to apply the least-squares, ridge regression and LASSO
-methods using the scikit-learn package.
-
-    \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}52}]:} \PY{k+kn}{from} \PY{n+nn}{sklearn} \PY{k}{import} \PY{n}{linear\PYZus{}model}
-         \PY{k+kn}{import} \PY{n+nn}{matplotlib}\PY{n+nn}{.}\PY{n+nn}{pyplot} \PY{k}{as} \PY{n+nn}{plt}
-         \PY{k+kn}{from} \PY{n+nn}{mpl\PYZus{}toolkits}\PY{n+nn}{.}\PY{n+nn}{axes\PYZus{}grid1} \PY{k}{import} \PY{n}{make\PYZus{}axes\PYZus{}locatable}
-         
-         \PY{k}{def} \PY{n+nf}{make\PYZus{}plot}\PY{p}{(}\PY{n}{coefs}\PY{p}{,} \PY{n}{L}\PY{p}{,} \PY{n}{lamdas}\PY{p}{,} \PY{n}{titles}\PY{o}{=}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{OLS}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Ridge}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{LASSO}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{p}{)}\PY{p}{:}
-             \PY{l+s+sd}{\PYZdq{}\PYZdq{}\PYZdq{} plot results \PYZdq{}\PYZdq{}\PYZdq{}}
-               
-             \PY{n}{cmap\PYZus{}args} \PY{o}{=} \PY{n+nb}{dict}\PY{p}{(}\PY{n}{vmin}\PY{o}{=}\PY{o}{\PYZhy{}}\PY{l+m+mf}{1.}\PY{p}{,} \PY{n}{vmax}\PY{o}{=}\PY{l+m+mf}{1.}\PY{p}{,} \PY{n}{cmap}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{seismic}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
-             \PY{k}{for} \PY{n}{l}\PY{p}{,}\PY{n}{lamda} \PY{o+ow}{in} \PY{n+nb}{enumerate}\PY{p}{(}\PY{n}{lamdas}\PY{p}{)}\PY{p}{:}
-                 \PY{n}{fig}\PY{p}{,} \PY{n}{ax} \PY{o}{=} \PY{n}{plt}\PY{o}{.}\PY{n}{subplots}\PY{p}{(}\PY{n}{nrows}\PY{o}{=}\PY{l+m+mi}{1}\PY{p}{,} \PY{n}{ncols}\PY{o}{=}\PY{n+nb}{len}\PY{p}{(}\PY{n}{coefs}\PY{p}{)}\PY{p}{)}
-                 \PY{k}{for} \PY{n}{i}\PY{p}{,}\PY{n}{coeff} \PY{o+ow}{in} \PY{n+nb}{enumerate}\PY{p}{(}\PY{n}{coefs}\PY{p}{)}\PY{p}{:}
-                     \PY{n}{J} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{array}\PY{p}{(}\PY{n}{coeff}\PY{p}{[}\PY{n}{l}\PY{p}{]}\PY{p}{)}\PY{o}{.}\PY{n}{reshape}\PY{p}{(}\PY{p}{(}\PY{n}{L}\PY{p}{,}\PY{n}{L}\PY{p}{)}\PY{p}{)}
-                     \PY{n}{im} \PY{o}{=} \PY{n}{ax}\PY{p}{[}\PY{n}{i}\PY{p}{]}\PY{o}{.}\PY{n}{imshow}\PY{p}{(}\PY{n}{J}\PY{p}{,} \PY{o}{*}\PY{o}{*}\PY{n}{cmap\PYZus{}args}\PY{p}{)}
-                     \PY{n}{ax}\PY{p}{[}\PY{n}{i}\PY{p}{]}\PY{o}{.}\PY{n}{set\PYZus{}title}\PY{p}{(}\PY{n}{titles}\PY{p}{[}\PY{n}{i}\PY{p}{]} \PY{o}{+} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{, \PYZdl{}}\PY{l+s+se}{\PYZbs{}\PYZbs{}}\PY{l+s+s2}{lambda=}\PY{l+s+si}{\PYZpc{}.5g}\PY{l+s+s2}{\PYZdl{}}\PY{l+s+s2}{\PYZdq{}} \PY{o}{\PYZpc{}} \PY{n}{lamda}\PY{p}{,} \PY{n}{fontsize}\PY{o}{=}\PY{l+m+mi}{16}\PY{p}{)}
-                     \PY{n}{ax}\PY{p}{[}\PY{n}{i}\PY{p}{]}\PY{o}{.}\PY{n}{tick\PYZus{}params}\PY{p}{(}\PY{n}{labelsize}\PY{o}{=}\PY{l+m+mi}{16}\PY{p}{)}
-                 \PY{c+c1}{\PYZsh{} end forl}
-                   
-                 \PY{n}{divider} \PY{o}{=} \PY{n}{make\PYZus{}axes\PYZus{}locatable}\PY{p}{(}\PY{n}{ax}\PY{p}{[}\PY{l+m+mi}{2}\PY{p}{]}\PY{p}{)}
-                 \PY{n}{cax} \PY{o}{=} \PY{n}{divider}\PY{o}{.}\PY{n}{append\PYZus{}axes}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{right}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{n}{size}\PY{o}{=}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{5}\PY{l+s+s2}{\PYZpc{}}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{n}{pad}\PY{o}{=}\PY{l+m+mf}{0.05}\PY{p}{)}
-                 \PY{n}{cbar} \PY{o}{=} \PY{n}{fig}\PY{o}{.}\PY{n}{colorbar}\PY{p}{(}\PY{n}{im}\PY{p}{,} \PY{n}{cax}\PY{o}{=}\PY{n}{cax}\PY{p}{)}
-             
-                 \PY{n}{cbar}\PY{o}{.}\PY{n}{set\PYZus{}label}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{\PYZdl{}J\PYZus{}}\PY{l+s+s1}{\PYZob{}}\PY{l+s+s1}{i,j\PYZcb{}\PYZdl{}}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{n}{labelpad}\PY{o}{=}\PY{o}{\PYZhy{}}\PY{l+m+mi}{40}\PY{p}{,} \PY{n}{y}\PY{o}{=}\PY{l+m+mf}{1.12}\PY{p}{,} \PY{n}{fontsize}\PY{o}{=}\PY{l+m+mi}{16}\PY{p}{,} \PY{n}{rotation}\PY{o}{=}\PY{l+m+mi}{0}\PY{p}{)}
-                 \PY{n}{fig}\PY{o}{.}\PY{n}{subplots\PYZus{}adjust}\PY{p}{(}\PY{n}{right}\PY{o}{=}\PY{l+m+mf}{2.0}\PY{p}{)}
-             \PY{c+c1}{\PYZsh{} end fori}
-               
-             \PY{n}{plt}\PY{o}{.}\PY{n}{show}\PY{p}{(}\PY{p}{)}
-         \PY{c+c1}{\PYZsh{} end function make\PYZus{}plot}
-         
-         \PY{k}{def} \PY{n+nf}{apply\PYZus{}method}\PY{p}{(}\PY{n}{model}\PY{p}{,} \PY{n}{x\PYZus{}train}\PY{p}{,} \PY{n}{y\PYZus{}train}\PY{p}{,} \PY{n}{x\PYZus{}test}\PY{p}{,} \PY{n}{y\PYZus{}test}\PY{p}{,} \PY{n}{lamda}\PY{o}{=}\PY{k+kc}{None}\PY{p}{)}\PY{p}{:}
-             \PY{l+s+sd}{\PYZdq{}\PYZdq{}\PYZdq{} apply model, return weights and performance score \PYZdq{}\PYZdq{}\PYZdq{}}
-             
-             \PY{c+c1}{\PYZsh{} set regularization parameter if given}
-             \PY{k}{if} \PY{n}{lamda}\PY{p}{:}
-                 \PY{n}{model}\PY{o}{.}\PY{n}{set\PYZus{}params}\PY{p}{(}\PY{n}{alpha}\PY{o}{=}\PY{n}{lamda}\PY{p}{)}
-             \PY{c+c1}{\PYZsh{} end if}
-             
-             \PY{c+c1}{\PYZsh{} run fitting and store weights}
-             \PY{n}{model}\PY{o}{.}\PY{n}{fit}\PY{p}{(}\PY{n}{x\PYZus{}train}\PY{p}{,} \PY{n}{y\PYZus{}train}\PY{p}{)}
-             
-             \PY{k}{return} \PY{n}{model}\PY{o}{.}\PY{n}{coef\PYZus{}}\PY{p}{,} \PY{n}{model}\PY{o}{.}\PY{n}{score}\PY{p}{(}\PY{n}{x\PYZus{}train}\PY{p}{,} \PY{n}{y\PYZus{}train}\PY{p}{)}\PY{p}{,} \PY{n}{model}\PY{o}{.}\PY{n}{score}\PY{p}{(}\PY{n}{x\PYZus{}test}\PY{p}{,} \PY{n}{y\PYZus{}test}\PY{p}{)}
-         \PY{c+c1}{\PYZsh{} end function apply\PYZus{}method}
-         
-         \PY{k}{def} \PY{n+nf}{grab\PYZus{}axis}\PY{p}{(}\PY{n}{nested\PYZus{}list}\PY{p}{,} \PY{n}{j}\PY{o}{=}\PY{l+m+mi}{0}\PY{p}{)}\PY{p}{:}
-             \PY{l+s+sd}{\PYZdq{}\PYZdq{}\PYZdq{} slice list and return axis j \PYZdq{}\PYZdq{}\PYZdq{}}
-             \PY{k}{return} \PY{p}{[}\PY{p}{[}\PY{n}{i}\PY{p}{[}\PY{n}{j}\PY{p}{]} \PY{k}{for} \PY{n}{i} \PY{o+ow}{in} \PY{n}{r}\PY{p}{]} \PY{k}{for} \PY{n}{r} \PY{o+ow}{in} \PY{n}{nested\PYZus{}list}\PY{p}{]}
-         \PY{c+c1}{\PYZsh{} end function grab\PYZus{}axis\PYZus{}i}
-         
-         \PY{c+c1}{\PYZsh{} list for results}
-         \PY{n}{results} \PY{o}{=} \PY{p}{[}\PY{p}{]}
-         
-         \PY{c+c1}{\PYZsh{} regularization parameters}
-         \PY{n}{lamdas} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{logspace}\PY{p}{(}\PY{o}{\PYZhy{}}\PY{l+m+mi}{4}\PY{p}{,}\PY{l+m+mi}{8}\PY{p}{,}\PY{l+m+mi}{10}\PY{p}{)}
-         
-         \PY{n}{least\PYZus{}squares\PYZus{}results} \PY{o}{=} \PY{n}{apply\PYZus{}method}\PY{p}{(}\PY{n}{linear\PYZus{}model}\PY{o}{.}\PY{n}{LinearRegression}\PY{p}{(}\PY{p}{)}\PY{p}{,} \PY{n}{X\PYZus{}train}\PY{p}{,} \PY{n}{Y\PYZus{}train}\PY{p}{,} \PY{n}{X\PYZus{}test}\PY{p}{,} \PY{n}{Y\PYZus{}test}\PY{p}{)}
-         \PY{n}{results}\PY{o}{.}\PY{n}{append}\PY{p}{(}\PY{p}{[}\PY{n}{least\PYZus{}squares\PYZus{}results} \PY{k}{for} \PY{n}{r} \PY{o+ow}{in} \PY{n+nb}{range}\PY{p}{(}\PY{n+nb}{len}\PY{p}{(}\PY{n}{lamdas}\PY{p}{)}\PY{p}{)}\PY{p}{]}\PY{p}{)}
-         
-         \PY{k}{for} \PY{n}{rl} \PY{o+ow}{in} \PY{p}{[}\PY{n}{linear\PYZus{}model}\PY{o}{.}\PY{n}{Ridge}\PY{p}{(}\PY{p}{)}\PY{p}{,} \PY{n}{linear\PYZus{}model}\PY{o}{.}\PY{n}{Lasso}\PY{p}{(}\PY{p}{)}\PY{p}{]}\PY{p}{:}
-             \PY{n}{tmp\PYZus{}res} \PY{o}{=} \PY{p}{[}\PY{p}{]}
-             \PY{k}{for} \PY{n}{lamda} \PY{o+ow}{in} \PY{n}{lamdas}\PY{p}{:}
-                 \PY{n}{tmp\PYZus{}res}\PY{o}{.}\PY{n}{append}\PY{p}{(}\PY{n}{apply\PYZus{}method}\PY{p}{(}\PY{n}{rl}\PY{p}{,} \PY{n}{X\PYZus{}train}\PY{p}{,} \PY{n}{Y\PYZus{}train}\PY{p}{,} \PY{n}{X\PYZus{}test}\PY{p}{,} \PY{n}{Y\PYZus{}test}\PY{p}{,} \PY{n}{lamda}\PY{p}{)}\PY{p}{)}
-             \PY{c+c1}{\PYZsh{} end for lamda}
-             \PY{n}{results}\PY{o}{.}\PY{n}{append}\PY{p}{(}\PY{n}{tmp\PYZus{}res}\PY{p}{)}
-         \PY{c+c1}{\PYZsh{} end for rl}
-         
-         \PY{n}{make\PYZus{}plot}\PY{p}{(}\PY{n}{grab\PYZus{}axis}\PY{p}{(}\PY{n}{results}\PY{p}{,}\PY{l+m+mi}{0}\PY{p}{)}\PY{p}{,} \PY{n}{L}\PY{p}{,} \PY{n}{lamdas}\PY{p}{)}
-\end{Verbatim}
-
-
-    \begin{Verbatim}[commandchars=\\\{\}]
-/usr/local/lib/python3.6/dist-packages/sklearn/linear\_model/coordinate\_descent.py:491: ConvergenceWarning: Objective did not converge. You might want to increase the number of iterations. Fitting data with very small alpha may cause precision problems.
-  ConvergenceWarning)
-
-    \end{Verbatim}
-
+\newpage
+\hypertarget{estimating-the-coupling-constant-of-the-1d-ising-model}{%
+\section*{Estimating the Coupling Constant of the 1D Ising
+Model}\label{estimating-the-coupling-constant-of-the-1d-ising-model3}}
     \begin{center}
     \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{output_6_1.png}
     \end{center}
@@ -645,6 +581,10 @@ methods using the scikit-learn package.
     \end{center}
     { \hspace*{\fill} \\}
     
+\newpage
+\hypertarget{estimating-the-coupling-constant-of-the-1d-ising-model}{%
+\section*{Estimating the Coupling Constant of the 1D Ising
+Model}\label{estimating-the-coupling-constant-of-the-1d-ising-model4}}
     \begin{center}
     \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{output_6_4.png}
     \end{center}
@@ -660,6 +600,10 @@ methods using the scikit-learn package.
     \end{center}
     { \hspace*{\fill} \\}
     
+\newpage
+\hypertarget{estimating-the-coupling-constant-of-the-1d-ising-model}{%
+\section*{Estimating the Coupling Constant of the 1D Ising
+Model}\label{estimating-the-coupling-constant-of-the-1d-ising-model5}}
     \begin{center}
     \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{output_6_7.png}
     \end{center}
@@ -675,1298 +619,133 @@ methods using the scikit-learn package.
     \end{center}
     { \hspace*{\fill} \\}
     
+\newpage
+\hypertarget{estimating-the-coupling-constant-of-the-1d-ising-model}{%
+\section*{Estimating the Coupling Constant of the 1D Ising
+Model}\label{estimating-the-coupling-constant-of-the-1d-ising-model6}}
     \begin{center}
     \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{output_6_10.png}
     \end{center}
     { \hspace*{\fill} \\}
-    
-    In order to actually see the performance we plot the training and test
-errors.
 
-    \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}53}]:} \PY{k}{def} \PY{n+nf}{plot\PYZus{}errors}\PY{p}{(}\PY{n}{train\PYZus{}errors}\PY{p}{,} \PY{n}{test\PYZus{}errors}\PY{p}{,} \PY{n}{lamdas}\PY{p}{,} \PY{n}{titles}\PY{o}{=}\PY{p}{[}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{OLS}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Ridge}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{LASSO}\PY{l+s+s2}{\PYZdq{}}\PY{p}{]}\PY{p}{)}\PY{p}{:}
-             \PY{l+s+sd}{\PYZdq{}\PYZdq{}\PYZdq{} plot in\PYZhy{}sample and out\PYZhy{}of\PYZhy{}sample errors, aka performance\PYZdq{}\PYZdq{}\PYZdq{}}
-             \PY{k}{for} \PY{n}{i}\PY{p}{,}\PY{n}{trnerr} \PY{o+ow}{in} \PY{n+nb}{enumerate}\PY{p}{(}\PY{n}{train\PYZus{}errors}\PY{p}{)}\PY{p}{:}
-                 \PY{n}{plt}\PY{o}{.}\PY{n}{semilogx}\PY{p}{(}\PY{n}{lamdas}\PY{p}{,} \PY{n}{trnerr}\PY{p}{,} \PY{n}{label}\PY{o}{=}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Train }\PY{l+s+s2}{\PYZdq{}} \PY{o}{+} \PY{n}{titles}\PY{p}{[}\PY{n}{i}\PY{p}{]}\PY{p}{)}
-             \PY{c+c1}{\PYZsh{} end fori}
-             
-             \PY{k}{for} \PY{n}{i}\PY{p}{,}\PY{n}{tsterr} \PY{o+ow}{in} \PY{n+nb}{enumerate}\PY{p}{(}\PY{n}{test\PYZus{}errors}\PY{p}{)}\PY{p}{:}
-                 \PY{n}{plt}\PY{o}{.}\PY{n}{semilogx}\PY{p}{(}\PY{n}{lamdas}\PY{p}{,} \PY{n}{tsterr}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{\PYZhy{}\PYZhy{}}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{n}{label}\PY{o}{=}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Test }\PY{l+s+s2}{\PYZdq{}} \PY{o}{+} \PY{n}{titles}\PY{p}{[}\PY{n}{i}\PY{p}{]}\PY{p}{)}
-             \PY{c+c1}{\PYZsh{} end fori}
-             
-             \PY{n}{fig} \PY{o}{=} \PY{n}{plt}\PY{o}{.}\PY{n}{gcf}\PY{p}{(}\PY{p}{)}
-             \PY{n}{fig}\PY{o}{.}\PY{n}{set\PYZus{}size\PYZus{}inches}\PY{p}{(}\PY{l+m+mf}{10.0}\PY{p}{,} \PY{l+m+mf}{6.0}\PY{p}{)}
-             
-             \PY{n}{plt}\PY{o}{.}\PY{n}{legend}\PY{p}{(}\PY{n}{bbox\PYZus{}to\PYZus{}anchor}\PY{o}{=}\PY{p}{(}\PY{l+m+mf}{1.0}\PY{p}{,} \PY{l+m+mf}{1.03}\PY{p}{)}\PY{p}{,}\PY{n}{fontsize}\PY{o}{=}\PY{l+m+mi}{16}\PY{p}{)}
-             \PY{n}{plt}\PY{o}{.}\PY{n}{ylim}\PY{p}{(}\PY{p}{[}\PY{o}{\PYZhy{}}\PY{l+m+mf}{0.01}\PY{p}{,} \PY{l+m+mf}{1.01}\PY{p}{]}\PY{p}{)}
-             \PY{n}{plt}\PY{o}{.}\PY{n}{xlim}\PY{p}{(}\PY{p}{[}\PY{n+nb}{min}\PY{p}{(}\PY{n}{lamdas}\PY{p}{)}\PY{p}{,} \PY{n+nb}{max}\PY{p}{(}\PY{n}{lamdas}\PY{p}{)}\PY{p}{]}\PY{p}{)}
-             \PY{n}{plt}\PY{o}{.}\PY{n}{xlabel}\PY{p}{(}\PY{l+s+sa}{r}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{\PYZdl{}}\PY{l+s+s1}{\PYZbs{}}\PY{l+s+s1}{lambda\PYZdl{}}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,}\PY{n}{fontsize}\PY{o}{=}\PY{l+m+mi}{16}\PY{p}{)}
-             \PY{n}{plt}\PY{o}{.}\PY{n}{ylabel}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Performance}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,}\PY{n}{fontsize}\PY{o}{=}\PY{l+m+mi}{16}\PY{p}{)}
-             \PY{n}{plt}\PY{o}{.}\PY{n}{tick\PYZus{}params}\PY{p}{(}\PY{n}{labelsize}\PY{o}{=}\PY{l+m+mi}{16}\PY{p}{)}
-             \PY{n}{plt}\PY{o}{.}\PY{n}{show}\PY{p}{(}\PY{p}{)}
-         \PY{c+c1}{\PYZsh{} end function plot\PYZus{}errors}
-         
-         \PY{n}{plot\PYZus{}errors}\PY{p}{(}\PY{n}{grab\PYZus{}axis}\PY{p}{(}\PY{n}{results}\PY{p}{,} \PY{l+m+mi}{1}\PY{p}{)}\PY{p}{,} \PY{n}{grab\PYZus{}axis}\PY{p}{(}\PY{n}{results}\PY{p}{,} \PY{l+m+mi}{2}\PY{p}{)}\PY{p}{,} \PY{n}{lamdas}\PY{p}{)}
-\end{Verbatim}
-
-
+\newpage
+\hypertarget{estimating-the-coupling-constant-of-the-1d-ising-model}{%
+\section*{Estimating the Coupling Constant of the 1D Ising
+Model}\label{estimating-the-coupling-constant-of-the-1d-ising-model7}}
     \begin{center}
     \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{output_8_0.png}
     \end{center}
     { \hspace*{\fill} \\}
-    
-    From the plot of the linear fit we can see that all methods seemingly
-fits the data well, however the performance plot indicates that all
-three methods overfit the data. With the OLS the overfitting cannot be
-fixed since no regularization is involved. For the Ridge method the
-overfitting is less as \(\lambda\) is increased, however the fit is
-worse. For the LASSO method the same applies, but the overfitting is
-much less and the performance is actually indicates that the fit is
-spot-on for \(\lambda\approx 10^{-2}\). For this \(\lambda\) we see that
-\(J\) only contains nearest-neghbour terms which is how the original
-data was generated.
 
-    \hypertarget{determine-the-phase-of-the-two-dimensional-ising-model}{%
-\subsubsection{Determine the Phase of the Two-Dimensional Ising
+\newpage
+\hypertarget{estimating-the-coupling-constant-of-the-1d-ising-model}{%
+\section*{Estimating the Coupling Constant of the 1D Ising
+Model}\label{estimating-the-coupling-constant-of-the-1d-ising-model8}}
+    \begin{center}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{output_8_0.png}
+    \end{center}
+    { \hspace*{\fill} \\}
+   
+\newpage
+\hypertarget{determine-the-phase-of-the-two-dimensional-ising-model}{%
+\section*{Determine the Phase of the Two-Dimensional Ising
 Model}\label{determine-the-phase-of-the-two-dimensional-ising-model}}
-
-The binary logistic regression can be used to determine the phase of the
-two-dimensional Ising model. The Hamiltonian is given by
-\[H = -J\sum_{<kl>}s_ks_l,\] with the \(k\) and \(l\) indices running
-over the nearest neighbors on a 2D square lattice. \(J\) is the energy
-scale. It has been proved by Onsager that the system undergoas a phase
-transition in between the ordered and disordered state at a critical
-temperature
-\[\frac{T_c}{J} = \frac{2}{\log\left(1 + \sqrt{2}\right)} \approx 2.26.\]
-The question is then, can we train a classifier to distinguish the two
-phases of the Ising model. The problem is then a binary classification
-since we have two categories, namely ordered and unordered. With -
-Ordered: \(\frac{T}{J} < 2.0\) - Near-critical:
-\(2.0 \leq \frac{T}{J} \leq 2.5\) - Disorderd: \(\frac{T}{J} \geq 2.0\)
-
-Firstly we need some data. We use the data provided by the mentioned
-article. These are data of \(10^{4}\) states from Monte-Carlo
-simulations on a \(L\times L\) square lattice with \(L=40\).
-
-    \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}54}]:} \PY{k+kn}{import} \PY{n+nn}{pickle}
-         \PY{k+kn}{import} \PY{n+nn}{os}
-         \PY{k+kn}{from} \PY{n+nn}{sklearn}\PY{n+nn}{.}\PY{n+nn}{model\PYZus{}selection} \PY{k}{import} \PY{n}{train\PYZus{}test\PYZus{}split}
-         
-         \PY{k}{def} \PY{n+nf}{plot\PYZus{}2D\PYZus{}states}\PY{p}{(}\PY{n}{states}\PY{p}{,} \PY{n}{L}\PY{p}{,} \PY{n}{titles}\PY{o}{=}\PY{p}{[}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{ordered}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{critical}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{disordered}\PY{l+s+s2}{\PYZdq{}}\PY{p}{]}\PY{p}{)}\PY{p}{:}
-             \PY{l+s+sd}{\PYZdq{}\PYZdq{}\PYZdq{}visualize states\PYZdq{}\PYZdq{}\PYZdq{}}
-             \PY{n}{cmap\PYZus{}args} \PY{o}{=} \PY{n+nb}{dict}\PY{p}{(}\PY{n}{cmap}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{plasma\PYZus{}r}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
-             
-             \PY{n}{fig}\PY{p}{,} \PY{n}{ax} \PY{o}{=} \PY{n}{plt}\PY{o}{.}\PY{n}{subplots}\PY{p}{(}\PY{n}{nrows}\PY{o}{=}\PY{l+m+mi}{1}\PY{p}{,} \PY{n}{ncols}\PY{o}{=}\PY{n+nb}{len}\PY{p}{(}\PY{n}{states}\PY{p}{)}\PY{p}{)}
-             
-             \PY{k}{for} \PY{n}{i}\PY{p}{,}\PY{n}{s} \PY{o+ow}{in} \PY{n+nb}{enumerate}\PY{p}{(}\PY{n}{states}\PY{p}{)}\PY{p}{:}
-                 \PY{n}{ax}\PY{p}{[}\PY{n}{i}\PY{p}{]}\PY{o}{.}\PY{n}{imshow}\PY{p}{(}\PY{n}{s}\PY{o}{.}\PY{n}{reshape}\PY{p}{(}\PY{n}{L}\PY{p}{,}\PY{n}{L}\PY{p}{)}\PY{p}{,} \PY{o}{*}\PY{o}{*}\PY{n}{cmap\PYZus{}args}\PY{p}{)}
-                 \PY{n}{ax}\PY{p}{[}\PY{n}{i}\PY{p}{]}\PY{o}{.}\PY{n}{set\PYZus{}title}\PY{p}{(}\PY{n}{titles}\PY{p}{[}\PY{n}{i}\PY{p}{]}\PY{p}{,} \PY{n}{fontsize}\PY{o}{=}\PY{l+m+mi}{16}\PY{p}{)}
-                 \PY{n}{ax}\PY{p}{[}\PY{n}{i}\PY{p}{]}\PY{o}{.}\PY{n}{tick\PYZus{}params}\PY{p}{(}\PY{n}{labelsize}\PY{o}{=}\PY{l+m+mi}{16}\PY{p}{)}
-             \PY{c+c1}{\PYZsh{} end fors}
-             
-             \PY{n}{fig}\PY{o}{.}\PY{n}{subplots\PYZus{}adjust}\PY{p}{(}\PY{n}{right}\PY{o}{=}\PY{l+m+mf}{2.0}\PY{p}{)}
-             
-             \PY{n}{plt}\PY{o}{.}\PY{n}{show}\PY{p}{(}\PY{p}{)}
-         \PY{c+c1}{\PYZsh{} end function plot\PYZus{}2D\PYZus{}states}
-         
-         \PY{c+c1}{\PYZsh{} shuffle generator seed}
-         \PY{n}{np}\PY{o}{.}\PY{n}{random}\PY{o}{.}\PY{n}{seed}\PY{p}{(}\PY{p}{)}
-         
-         \PY{c+c1}{\PYZsh{} Ising parameters}
-         \PY{n}{L} \PY{o}{=} \PY{l+m+mi}{40}
-         \PY{n}{J} \PY{o}{=} \PY{o}{\PYZhy{}}\PY{l+m+mf}{1.0}
-         \PY{n}{T} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{linspace}\PY{p}{(}\PY{l+m+mf}{0.25}\PY{p}{,}\PY{l+m+mf}{4.0}\PY{p}{,}\PY{l+m+mi}{16}\PY{p}{)}
-         \PY{n}{T\PYZus{}c} \PY{o}{=} \PY{l+m+mf}{2.26}
-         
-         \PY{c+c1}{\PYZsh{} define regression parameters}
-         \PY{n}{num\PYZus{}classes} \PY{o}{=} \PY{l+m+mi}{2}
-         \PY{n}{train\PYZus{}test\PYZus{}ratio} \PY{o}{=} \PY{l+m+mf}{0.5}
-         
-         \PY{c+c1}{\PYZsh{} load data (all of it)}
-         \PY{n}{data\PYZus{}path} \PY{o}{=} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{IsingData/}\PY{l+s+s2}{\PYZdq{}}
-         \PY{n}{data} \PY{o}{=} \PY{n}{pickle}\PY{o}{.}\PY{n}{load}\PY{p}{(}\PY{n+nb}{open}\PY{p}{(}\PY{n}{data\PYZus{}path} \PY{o}{+} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Ising2DFM\PYZus{}reSample\PYZus{}L40\PYZus{}T=All.pkl}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{rb}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}\PY{p}{)}
-         \PY{n}{data} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{unpackbits}\PY{p}{(}\PY{n}{data}\PY{p}{)}\PY{o}{.}\PY{n}{reshape}\PY{p}{(}\PY{o}{\PYZhy{}}\PY{l+m+mi}{1}\PY{p}{,} \PY{l+m+mi}{1600}\PY{p}{)}
-         \PY{n}{data} \PY{o}{=} \PY{n}{data}\PY{o}{.}\PY{n}{astype}\PY{p}{(}\PY{n}{np}\PY{o}{.}\PY{n}{int32}\PY{p}{)}
-         \PY{n}{data}\PY{p}{[}\PY{n}{np}\PY{o}{.}\PY{n}{where}\PY{p}{(}\PY{n}{data}\PY{o}{==}\PY{l+m+mi}{0}\PY{p}{)}\PY{p}{]} \PY{o}{=} \PY{o}{\PYZhy{}}\PY{l+m+mi}{1}
-         
-         \PY{c+c1}{\PYZsh{} load labels (all of it)}
-         \PY{n}{labels} \PY{o}{=} \PY{n}{pickle}\PY{o}{.}\PY{n}{load}\PY{p}{(}\PY{n+nb}{open}\PY{p}{(}\PY{n}{data\PYZus{}path} \PY{o}{+} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Ising2DFM\PYZus{}reSample\PYZus{}L40\PYZus{}T=All\PYZus{}labels.pkl}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{rb}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}\PY{p}{)}
-         
-         \PY{c+c1}{\PYZsh{} divide data into ordered, critical and disordered}
-         \PY{n}{start1} \PY{o}{=} \PY{l+m+mi}{0}
-         \PY{n}{end1} \PY{o}{=} \PY{l+m+mi}{70000}
-         \PY{n}{end2} \PY{o}{=} \PY{l+m+mi}{100000}
-         \PY{n}{end3} \PY{o}{=} \PY{o}{\PYZhy{}}\PY{l+m+mi}{1}
-         \PY{n}{X\PYZus{}ordered}\PY{o}{=}\PY{n}{data}\PY{p}{[}\PY{n}{start1}\PY{p}{:}\PY{n}{end1}\PY{p}{,}\PY{p}{:}\PY{p}{]}
-         \PY{n}{Y\PYZus{}ordered}\PY{o}{=}\PY{n}{labels}\PY{p}{[}\PY{n}{start1}\PY{p}{:}\PY{n}{end1}\PY{p}{]}
-         
-         \PY{n}{X\PYZus{}critical}\PY{o}{=}\PY{n}{data}\PY{p}{[}\PY{n}{end1}\PY{p}{:}\PY{n}{end2}\PY{p}{,}\PY{p}{:}\PY{p}{]}
-         \PY{n}{Y\PYZus{}critical}\PY{o}{=}\PY{n}{labels}\PY{p}{[}\PY{n}{end1}\PY{p}{:}\PY{n}{end2}\PY{p}{]}
-         
-         \PY{n}{X\PYZus{}disordered}\PY{o}{=}\PY{n}{data}\PY{p}{[}\PY{n}{end2}\PY{p}{:}\PY{n}{end3}\PY{p}{,}\PY{p}{:}\PY{p}{]}
-         \PY{n}{Y\PYZus{}disordered}\PY{o}{=}\PY{n}{labels}\PY{p}{[}\PY{n}{end2}\PY{p}{:}\PY{n}{end3}\PY{p}{]}
-         
-         \PY{k}{del} \PY{n}{data}\PY{p}{,}\PY{n}{labels}
-         
-         \PY{c+c1}{\PYZsh{} define training and test}
-         \PY{n}{Xt}\PY{o}{=}\PY{n}{np}\PY{o}{.}\PY{n}{concatenate}\PY{p}{(}\PY{p}{(}\PY{n}{X\PYZus{}ordered}\PY{p}{,}\PY{n}{X\PYZus{}disordered}\PY{p}{)}\PY{p}{)}
-         \PY{n}{Yt}\PY{o}{=}\PY{n}{np}\PY{o}{.}\PY{n}{concatenate}\PY{p}{(}\PY{p}{(}\PY{n}{Y\PYZus{}ordered}\PY{p}{,}\PY{n}{Y\PYZus{}disordered}\PY{p}{)}\PY{p}{)}
-         
-         \PY{c+c1}{\PYZsh{} pick at random to create training and test}
-         \PY{n}{X\PYZus{}train}\PY{p}{,} \PY{n}{X\PYZus{}test}\PY{p}{,} \PY{n}{Y\PYZus{}train}\PY{p}{,} \PY{n}{Y\PYZus{}test} \PY{o}{=} \PY{n}{train\PYZus{}test\PYZus{}split}\PY{p}{(}\PY{n}{Xt}\PY{p}{,} \PY{n}{Yt}\PY{p}{,} \PY{n}{train\PYZus{}size}\PY{o}{=}\PY{n}{train\PYZus{}test\PYZus{}ratio}\PY{p}{)}
-         
-         \PY{c+c1}{\PYZsh{} create full data set}
-         \PY{n}{X} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{concatenate}\PY{p}{(}\PY{p}{(}\PY{n}{X\PYZus{}critical}\PY{p}{,}\PY{n}{Xt}\PY{p}{)}\PY{p}{)}
-         \PY{n}{Y} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{concatenate}\PY{p}{(}\PY{p}{(}\PY{n}{Y\PYZus{}critical}\PY{p}{,}\PY{n}{Yt}\PY{p}{)}\PY{p}{)}
-         
-         \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{X\PYZus{}train shape:}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{n}{X\PYZus{}train}\PY{o}{.}\PY{n}{shape}\PY{p}{)}
-         \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Y\PYZus{}train shape:}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{n}{Y\PYZus{}train}\PY{o}{.}\PY{n}{shape}\PY{p}{)}
-         \PY{n+nb}{print}\PY{p}{(}\PY{p}{)}
-         \PY{n+nb}{print}\PY{p}{(}\PY{n}{X\PYZus{}train}\PY{o}{.}\PY{n}{shape}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{train samples}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
-         \PY{n+nb}{print}\PY{p}{(}\PY{n}{X\PYZus{}critical}\PY{o}{.}\PY{n}{shape}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{critical samples}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
-         \PY{n+nb}{print}\PY{p}{(}\PY{n}{X\PYZus{}test}\PY{o}{.}\PY{n}{shape}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{test samples}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
-         
-         \PY{c+c1}{\PYZsh{} plot data}
-         \PY{n}{plot\PYZus{}2D\PYZus{}states}\PY{p}{(}\PY{p}{[}\PY{n}{X\PYZus{}ordered}\PY{p}{[}\PY{n+nb}{int}\PY{p}{(}\PY{p}{(}\PY{n}{end1}\PY{o}{\PYZhy{}}\PY{n}{start1}\PY{p}{)}\PY{o}{/}\PY{l+m+mi}{2}\PY{p}{)}\PY{p}{]}\PY{p}{,} 
-                         \PY{n}{X\PYZus{}critical}\PY{p}{[}\PY{n+nb}{int}\PY{p}{(}\PY{p}{(}\PY{n}{end2}\PY{o}{\PYZhy{}}\PY{n}{end1}\PY{p}{)}\PY{o}{/}\PY{l+m+mi}{2}\PY{p}{)}\PY{p}{]}\PY{p}{,} 
-                         \PY{n}{X\PYZus{}disordered}\PY{p}{[}\PY{n+nb}{int}\PY{p}{(}\PY{p}{(}\PY{n}{end3}\PY{o}{\PYZhy{}}\PY{n}{end2}\PY{p}{)}\PY{o}{/}\PY{l+m+mi}{2}\PY{p}{)}\PY{p}{]}\PY{p}{]}\PY{p}{,} \PY{n}{L}\PY{p}{)}
-\end{Verbatim}
-
-
-    \begin{Verbatim}[commandchars=\\\{\}]
-/usr/local/lib/python3.6/dist-packages/sklearn/model\_selection/\_split.py:2026: FutureWarning: From version 0.21, test\_size will always complement train\_size unless both are specified.
-  FutureWarning)
-
-    \end{Verbatim}
-
-    \begin{Verbatim}[commandchars=\\\{\}]
-X\_train shape: (64999, 1600)
-Y\_train shape: (64999,)
-
-64999 train samples
-30000 critical samples
-65000 test samples
-
-    \end{Verbatim}
 
     \begin{center}
     \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{output_11_2.png}
     \end{center}
     { \hspace*{\fill} \\}
-    
-    Now that we have the data, the regression can be applied.
 
-    \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}57}]:} \PY{k+kn}{from} \PY{n+nn}{sklearn} \PY{k}{import} \PY{n}{linear\PYZus{}model}
-         
-         \PY{c+c1}{\PYZsh{} set regularization parameters}
-         \PY{n}{lamdas} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{logspace}\PY{p}{(}\PY{o}{\PYZhy{}}\PY{l+m+mi}{5}\PY{p}{,}\PY{l+m+mi}{5}\PY{p}{,}\PY{l+m+mi}{5}\PY{p}{)}
-         
-         \PY{c+c1}{\PYZsh{} preallocate data}
-         \PY{n}{train\PYZus{}accuracy}\PY{o}{=}\PY{n}{np}\PY{o}{.}\PY{n}{zeros}\PY{p}{(}\PY{n}{lamdas}\PY{o}{.}\PY{n}{shape}\PY{p}{,}\PY{n}{np}\PY{o}{.}\PY{n}{float64}\PY{p}{)}
-         \PY{n}{test\PYZus{}accuracy}\PY{o}{=}\PY{n}{np}\PY{o}{.}\PY{n}{zeros}\PY{p}{(}\PY{n}{lamdas}\PY{o}{.}\PY{n}{shape}\PY{p}{,}\PY{n}{np}\PY{o}{.}\PY{n}{float64}\PY{p}{)}
-         \PY{n}{critical\PYZus{}accuracy}\PY{o}{=}\PY{n}{np}\PY{o}{.}\PY{n}{zeros}\PY{p}{(}\PY{n}{lamdas}\PY{o}{.}\PY{n}{shape}\PY{p}{,}\PY{n}{np}\PY{o}{.}\PY{n}{float64}\PY{p}{)}
-         
-         \PY{n}{train\PYZus{}accuracy\PYZus{}l1}\PY{o}{=}\PY{n}{np}\PY{o}{.}\PY{n}{zeros}\PY{p}{(}\PY{n}{lamdas}\PY{o}{.}\PY{n}{shape}\PY{p}{,}\PY{n}{np}\PY{o}{.}\PY{n}{float64}\PY{p}{)}
-         \PY{n}{test\PYZus{}accuracy\PYZus{}l1}\PY{o}{=}\PY{n}{np}\PY{o}{.}\PY{n}{zeros}\PY{p}{(}\PY{n}{lamdas}\PY{o}{.}\PY{n}{shape}\PY{p}{,}\PY{n}{np}\PY{o}{.}\PY{n}{float64}\PY{p}{)}
-         \PY{n}{critical\PYZus{}accuracy\PYZus{}l1}\PY{o}{=}\PY{n}{np}\PY{o}{.}\PY{n}{zeros}\PY{p}{(}\PY{n}{lamdas}\PY{o}{.}\PY{n}{shape}\PY{p}{,}\PY{n}{np}\PY{o}{.}\PY{n}{float64}\PY{p}{)}
-         
-         \PY{n}{train\PYZus{}accuracy\PYZus{}SGD}\PY{o}{=}\PY{n}{np}\PY{o}{.}\PY{n}{zeros}\PY{p}{(}\PY{n}{lamdas}\PY{o}{.}\PY{n}{shape}\PY{p}{,}\PY{n}{np}\PY{o}{.}\PY{n}{float64}\PY{p}{)}
-         \PY{n}{test\PYZus{}accuracy\PYZus{}SGD}\PY{o}{=}\PY{n}{np}\PY{o}{.}\PY{n}{zeros}\PY{p}{(}\PY{n}{lamdas}\PY{o}{.}\PY{n}{shape}\PY{p}{,}\PY{n}{np}\PY{o}{.}\PY{n}{float64}\PY{p}{)}
-         \PY{n}{critical\PYZus{}accuracy\PYZus{}SGD}\PY{o}{=}\PY{n}{np}\PY{o}{.}\PY{n}{zeros}\PY{p}{(}\PY{n}{lamdas}\PY{o}{.}\PY{n}{shape}\PY{p}{,}\PY{n}{np}\PY{o}{.}\PY{n}{float64}\PY{p}{)}
-         
-         \PY{n}{train\PYZus{}preds} \PY{o}{=} \PY{p}{[}\PY{p}{]}
-         \PY{n}{test\PYZus{}preds} \PY{o}{=} \PY{p}{[}\PY{p}{]}
-         \PY{n}{critical\PYZus{}preds} \PY{o}{=} \PY{p}{[}\PY{p}{]}
-         
-         \PY{n}{train\PYZus{}preds\PYZus{}l1} \PY{o}{=} \PY{p}{[}\PY{p}{]}
-         \PY{n}{test\PYZus{}preds\PYZus{}l1} \PY{o}{=} \PY{p}{[}\PY{p}{]}
-         \PY{n}{critical\PYZus{}preds\PYZus{}l1} \PY{o}{=} \PY{p}{[}\PY{p}{]}
-         
-         \PY{n}{train\PYZus{}preds\PYZus{}SGD} \PY{o}{=} \PY{p}{[}\PY{p}{]}
-         \PY{n}{test\PYZus{}preds\PYZus{}SGD} \PY{o}{=} \PY{p}{[}\PY{p}{]}
-         \PY{n}{critical\PYZus{}preds\PYZus{}SGD} \PY{o}{=} \PY{p}{[}\PY{p}{]}
-         
-         \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{accuracy: train, test, critical}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
-         \PY{k}{for} \PY{n}{i}\PY{p}{,}\PY{n}{lamda} \PY{o+ow}{in} \PY{n+nb}{enumerate}\PY{p}{(}\PY{n}{lamdas}\PY{p}{)}\PY{p}{:}
-             \PY{c+c1}{\PYZsh{} perform liblinear based logistic regression  }
-             \PY{n}{logreg} \PY{o}{=} \PY{n}{linear\PYZus{}model}\PY{o}{.}\PY{n}{LogisticRegression}\PY{p}{(}\PY{n}{C}\PY{o}{=}\PY{l+m+mf}{1.}\PY{o}{/}\PY{n}{lamda}\PY{p}{,} \PY{n}{random\PYZus{}state}\PY{o}{=}\PY{l+m+mi}{1}\PY{p}{,} \PY{n}{verbose}\PY{o}{=}\PY{l+m+mi}{0}\PY{p}{,} \PY{n}{max\PYZus{}iter}\PY{o}{=}\PY{l+m+mf}{1e3}\PY{p}{,} \PY{n}{tol}\PY{o}{=}\PY{l+m+mf}{1e\PYZhy{}5}\PY{p}{)}
-             \PY{n}{logreg}\PY{o}{.}\PY{n}{fit}\PY{p}{(}\PY{n}{X\PYZus{}train}\PY{p}{,} \PY{n}{Y\PYZus{}train}\PY{p}{)}
-             \PY{n}{train\PYZus{}accuracy}\PY{p}{[}\PY{n}{i}\PY{p}{]} \PY{o}{=} \PY{n}{logreg}\PY{o}{.}\PY{n}{score}\PY{p}{(}\PY{n}{X\PYZus{}train}\PY{p}{,} \PY{n}{Y\PYZus{}train}\PY{p}{)}
-             \PY{n}{test\PYZus{}accuracy}\PY{p}{[}\PY{n}{i}\PY{p}{]} \PY{o}{=} \PY{n}{logreg}\PY{o}{.}\PY{n}{score}\PY{p}{(}\PY{n}{X\PYZus{}test}\PY{p}{,} \PY{n}{Y\PYZus{}test}\PY{p}{)}
-             \PY{n}{critical\PYZus{}accuracy}\PY{p}{[}\PY{n}{i}\PY{p}{]} \PY{o}{=} \PY{n}{logreg}\PY{o}{.}\PY{n}{score}\PY{p}{(}\PY{n}{X\PYZus{}critical}\PY{p}{,} \PY{n}{Y\PYZus{}critical}\PY{p}{)}
-             
-             \PY{n}{train\PYZus{}preds}\PY{o}{.}\PY{n}{append}\PY{p}{(}\PY{n}{logreg}\PY{o}{.}\PY{n}{predict\PYZus{}proba}\PY{p}{(}\PY{n}{X\PYZus{}train}\PY{p}{)}\PY{p}{[}\PY{p}{:}\PY{p}{,}\PY{l+m+mi}{0}\PY{p}{]}\PY{p}{)}
-             \PY{n}{test\PYZus{}preds}\PY{o}{.}\PY{n}{append}\PY{p}{(}\PY{n}{logreg}\PY{o}{.}\PY{n}{predict\PYZus{}proba}\PY{p}{(}\PY{n}{X\PYZus{}test}\PY{p}{)}\PY{p}{[}\PY{p}{:}\PY{p}{,}\PY{l+m+mi}{0}\PY{p}{]}\PY{p}{)}
-             \PY{n}{critical\PYZus{}preds}\PY{o}{.}\PY{n}{append}\PY{p}{(}\PY{n}{logreg}\PY{o}{.}\PY{n}{predict\PYZus{}proba}\PY{p}{(}\PY{n}{X\PYZus{}critical}\PY{p}{)}\PY{p}{[}\PY{p}{:}\PY{p}{,}\PY{l+m+mi}{0}\PY{p}{]}\PY{p}{)}
-         
-             \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{liblin: }\PY{l+s+si}{\PYZpc{}0.4f}\PY{l+s+s1}{, }\PY{l+s+si}{\PYZpc{}0.4f}\PY{l+s+s1}{, }\PY{l+s+si}{\PYZpc{}0.4f}\PY{l+s+s1}{\PYZsq{}} \PY{o}{\PYZpc{}} \PY{p}{(}\PY{n}{train\PYZus{}accuracy}\PY{p}{[}\PY{n}{i}\PY{p}{]}\PY{p}{,}\PY{n}{test\PYZus{}accuracy}\PY{p}{[}\PY{n}{i}\PY{p}{]}\PY{p}{,}\PY{n}{critical\PYZus{}accuracy}\PY{p}{[}\PY{n}{i}\PY{p}{]}\PY{p}{)}\PY{p}{)}
-             
-             \PY{c+c1}{\PYZsh{} perform liblinear with L1\PYZhy{}norm based logistic regression  }
-             \PY{n}{logreg\PYZus{}l1} \PY{o}{=} \PY{n}{linear\PYZus{}model}\PY{o}{.}\PY{n}{LogisticRegression}\PY{p}{(}\PY{n}{penalty}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{l1}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{n}{C}\PY{o}{=}\PY{l+m+mf}{1.}\PY{o}{/}\PY{n}{lamda}\PY{p}{,} \PY{n}{random\PYZus{}state}\PY{o}{=}\PY{l+m+mi}{1}\PY{p}{,} \PY{n}{verbose}\PY{o}{=}\PY{l+m+mi}{0}\PY{p}{,} 
-                                                            \PY{n}{max\PYZus{}iter}\PY{o}{=}\PY{l+m+mf}{1e3}\PY{p}{,} \PY{n}{tol}\PY{o}{=}\PY{l+m+mf}{1e\PYZhy{}5}\PY{p}{)}
-             \PY{n}{logreg\PYZus{}l1}\PY{o}{.}\PY{n}{fit}\PY{p}{(}\PY{n}{X\PYZus{}train}\PY{p}{,} \PY{n}{Y\PYZus{}train}\PY{p}{)}
-             \PY{n}{train\PYZus{}accuracy\PYZus{}l1}\PY{p}{[}\PY{n}{i}\PY{p}{]} \PY{o}{=} \PY{n}{logreg\PYZus{}l1}\PY{o}{.}\PY{n}{score}\PY{p}{(}\PY{n}{X\PYZus{}train}\PY{p}{,} \PY{n}{Y\PYZus{}train}\PY{p}{)}
-             \PY{n}{test\PYZus{}accuracy\PYZus{}l1}\PY{p}{[}\PY{n}{i}\PY{p}{]} \PY{o}{=} \PY{n}{logreg\PYZus{}l1}\PY{o}{.}\PY{n}{score}\PY{p}{(}\PY{n}{X\PYZus{}test}\PY{p}{,} \PY{n}{Y\PYZus{}test}\PY{p}{)}
-             \PY{n}{critical\PYZus{}accuracy\PYZus{}l1}\PY{p}{[}\PY{n}{i}\PY{p}{]} \PY{o}{=} \PY{n}{logreg\PYZus{}l1}\PY{o}{.}\PY{n}{score}\PY{p}{(}\PY{n}{X\PYZus{}critical}\PY{p}{,} \PY{n}{Y\PYZus{}critical}\PY{p}{)}
-             
-             \PY{n}{train\PYZus{}preds\PYZus{}l1}\PY{o}{.}\PY{n}{append}\PY{p}{(}\PY{n}{logreg\PYZus{}l1}\PY{o}{.}\PY{n}{predict\PYZus{}proba}\PY{p}{(}\PY{n}{X\PYZus{}train}\PY{p}{)}\PY{p}{[}\PY{p}{:}\PY{p}{,}\PY{l+m+mi}{0}\PY{p}{]}\PY{p}{)}
-             \PY{n}{test\PYZus{}preds\PYZus{}l1}\PY{o}{.}\PY{n}{append}\PY{p}{(}\PY{n}{logreg\PYZus{}l1}\PY{o}{.}\PY{n}{predict\PYZus{}proba}\PY{p}{(}\PY{n}{X\PYZus{}test}\PY{p}{)}\PY{p}{[}\PY{p}{:}\PY{p}{,}\PY{l+m+mi}{0}\PY{p}{]}\PY{p}{)}
-             \PY{n}{critical\PYZus{}preds\PYZus{}l1}\PY{o}{.}\PY{n}{append}\PY{p}{(}\PY{n}{logreg\PYZus{}l1}\PY{o}{.}\PY{n}{predict\PYZus{}proba}\PY{p}{(}\PY{n}{X\PYZus{}critical}\PY{p}{)}\PY{p}{[}\PY{p}{:}\PY{p}{,}\PY{l+m+mi}{0}\PY{p}{]}\PY{p}{)}
-         
-             \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{liblinl1: }\PY{l+s+si}{\PYZpc{}0.4f}\PY{l+s+s1}{, }\PY{l+s+si}{\PYZpc{}0.4f}\PY{l+s+s1}{, }\PY{l+s+si}{\PYZpc{}0.4f}\PY{l+s+s1}{\PYZsq{}} \PY{o}{\PYZpc{}} \PY{p}{(}\PY{n}{train\PYZus{}accuracy\PYZus{}l1}\PY{p}{[}\PY{n}{i}\PY{p}{]}\PY{p}{,}\PY{n}{test\PYZus{}accuracy\PYZus{}l1}\PY{p}{[}\PY{n}{i}\PY{p}{]}\PY{p}{,}\PY{n}{critical\PYZus{}accuracy\PYZus{}l1}\PY{p}{[}\PY{n}{i}\PY{p}{]}\PY{p}{)}\PY{p}{)}
-             
-             \PY{c+c1}{\PYZsh{} perform SGD\PYZhy{}based logistic regression}
-             \PY{n}{logreg\PYZus{}SGD} \PY{o}{=} \PY{n}{linear\PYZus{}model}\PY{o}{.}\PY{n}{SGDClassifier}\PY{p}{(}\PY{n}{loss}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{log}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{n}{penalty}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{l2}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{n}{alpha}\PY{o}{=}\PY{n}{lamda}\PY{p}{,} \PY{n}{max\PYZus{}iter}\PY{o}{=}\PY{l+m+mi}{100}\PY{p}{,} 
-                                                     \PY{n}{shuffle}\PY{o}{=}\PY{k+kc}{True}\PY{p}{,} \PY{n}{random\PYZus{}state}\PY{o}{=}\PY{l+m+mi}{1}\PY{p}{,} \PY{n}{learning\PYZus{}rate}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{optimal}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
-             \PY{n}{logreg\PYZus{}SGD}\PY{o}{.}\PY{n}{fit}\PY{p}{(}\PY{n}{X\PYZus{}train}\PY{p}{,} \PY{n}{Y\PYZus{}train}\PY{p}{)}
-             \PY{n}{train\PYZus{}accuracy\PYZus{}SGD}\PY{p}{[}\PY{n}{i}\PY{p}{]} \PY{o}{=} \PY{n}{logreg\PYZus{}SGD}\PY{o}{.}\PY{n}{score}\PY{p}{(}\PY{n}{X\PYZus{}train}\PY{p}{,} \PY{n}{Y\PYZus{}train}\PY{p}{)}
-             \PY{n}{test\PYZus{}accuracy\PYZus{}SGD}\PY{p}{[}\PY{n}{i}\PY{p}{]} \PY{o}{=} \PY{n}{logreg\PYZus{}SGD}\PY{o}{.}\PY{n}{score}\PY{p}{(}\PY{n}{X\PYZus{}test}\PY{p}{,} \PY{n}{Y\PYZus{}test}\PY{p}{)}
-             \PY{n}{critical\PYZus{}accuracy\PYZus{}SGD}\PY{p}{[}\PY{n}{i}\PY{p}{]} \PY{o}{=} \PY{n}{logreg\PYZus{}SGD}\PY{o}{.}\PY{n}{score}\PY{p}{(}\PY{n}{X\PYZus{}critical}\PY{p}{,} \PY{n}{Y\PYZus{}critical}\PY{p}{)}
-             
-             \PY{n}{train\PYZus{}preds\PYZus{}SGD}\PY{o}{.}\PY{n}{append}\PY{p}{(}\PY{n}{logreg\PYZus{}SGD}\PY{o}{.}\PY{n}{predict\PYZus{}proba}\PY{p}{(}\PY{n}{X\PYZus{}train}\PY{p}{)}\PY{p}{[}\PY{p}{:}\PY{p}{,}\PY{l+m+mi}{0}\PY{p}{]}\PY{p}{)}
-             \PY{n}{test\PYZus{}preds\PYZus{}SGD}\PY{o}{.}\PY{n}{append}\PY{p}{(}\PY{n}{logreg\PYZus{}SGD}\PY{o}{.}\PY{n}{predict\PYZus{}proba}\PY{p}{(}\PY{n}{X\PYZus{}test}\PY{p}{)}\PY{p}{[}\PY{p}{:}\PY{p}{,}\PY{l+m+mi}{0}\PY{p}{]}\PY{p}{)}
-             \PY{n}{critical\PYZus{}preds\PYZus{}SGD}\PY{o}{.}\PY{n}{append}\PY{p}{(}\PY{n}{logreg\PYZus{}SGD}\PY{o}{.}\PY{n}{predict\PYZus{}proba}\PY{p}{(}\PY{n}{X\PYZus{}critical}\PY{p}{)}\PY{p}{[}\PY{p}{:}\PY{p}{,}\PY{l+m+mi}{0}\PY{p}{]}\PY{p}{)}
-             
-             \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{SGD: }\PY{l+s+si}{\PYZpc{}0.4f}\PY{l+s+s1}{, }\PY{l+s+si}{\PYZpc{}0.4f}\PY{l+s+s1}{, }\PY{l+s+si}{\PYZpc{}0.4f}\PY{l+s+s1}{\PYZsq{}} \PY{o}{\PYZpc{}} \PY{p}{(}\PY{n}{train\PYZus{}accuracy\PYZus{}SGD}\PY{p}{[}\PY{n}{i}\PY{p}{]}\PY{p}{,}\PY{n}{test\PYZus{}accuracy\PYZus{}SGD}\PY{p}{[}\PY{n}{i}\PY{p}{]}\PY{p}{,}\PY{n}{critical\PYZus{}accuracy\PYZus{}SGD}\PY{p}{[}\PY{n}{i}\PY{p}{]}\PY{p}{)}\PY{p}{)}
-         \PY{c+c1}{\PYZsh{} end fori}
-\end{Verbatim}
+\newpage
+\hypertarget{determine-the-phase-of-the-two-dimensional-ising-model}{%
+\section*{Determine the Phase of the Two-Dimensional Ising
+Model}\label{determine-the-phase-of-the-two-dimensional-ising-model2}}
 
-
-    \begin{Verbatim}[commandchars=\\\{\}]
-accuracy: train, test, critical
-liblin: 0.7272, 0.6917, 0.6209
-liblinl1: 0.7272, 0.6917, 0.6209
-SGD: 0.4811, 0.4658, 0.5219
-liblin: 0.7272, 0.6917, 0.6209
-liblinl1: 0.7272, 0.6917, 0.6209
-SGD: 0.7259, 0.6897, 0.6208
-liblin: 0.7272, 0.6917, 0.6209
-liblinl1: 0.7269, 0.6913, 0.6214
-SGD: 0.5383, 0.5387, 0.6667
-liblin: 0.7260, 0.6904, 0.6246
-liblinl1: 0.5383, 0.5386, 0.6667
-SGD: 0.5383, 0.5386, 0.6667
-liblin: 0.6992, 0.6701, 0.6647
-liblinl1: 0.4617, 0.4614, 0.3333
-SGD: 0.5383, 0.5386, 0.6667
-
-    \end{Verbatim}
-
-    \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}58}]:} \PY{n}{plt}\PY{o}{.}\PY{n}{semilogx}\PY{p}{(}\PY{n}{lamdas}\PY{p}{,} \PY{n}{train\PYZus{}accuracy}\PY{p}{,} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{*\PYZhy{}}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{n}{label}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{liblinear \PYZdl{}L\PYZus{}2\PYZdl{} train}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
-         \PY{n}{plt}\PY{o}{.}\PY{n}{semilogx}\PY{p}{(}\PY{n}{lamdas}\PY{p}{,} \PY{n}{test\PYZus{}accuracy}\PY{p}{,} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{*\PYZhy{}}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{n}{label}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{liblinear \PYZdl{}L\PYZus{}2\PYZdl{} test}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
-         \PY{n}{plt}\PY{o}{.}\PY{n}{semilogx}\PY{p}{(}\PY{n}{lamdas}\PY{p}{,} \PY{n}{critical\PYZus{}accuracy}\PY{p}{,} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{*\PYZhy{}}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{n}{label}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{liblinear \PYZdl{}L\PYZus{}2\PYZdl{} critical}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
-         
-         \PY{n}{plt}\PY{o}{.}\PY{n}{semilogx}\PY{p}{(}\PY{n}{lamdas}\PY{p}{,} \PY{n}{train\PYZus{}accuracy\PYZus{}l1}\PY{p}{,} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{o\PYZhy{}}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{n}{label}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{liblinear \PYZdl{}L\PYZus{}1\PYZdl{} train}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
-         \PY{n}{plt}\PY{o}{.}\PY{n}{semilogx}\PY{p}{(}\PY{n}{lamdas}\PY{p}{,} \PY{n}{test\PYZus{}accuracy\PYZus{}l1}\PY{p}{,} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{o\PYZhy{}}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{n}{label}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{liblinear \PYZdl{}L\PYZus{}1\PYZdl{} test}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
-         \PY{n}{plt}\PY{o}{.}\PY{n}{semilogx}\PY{p}{(}\PY{n}{lamdas}\PY{p}{,} \PY{n}{critical\PYZus{}accuracy\PYZus{}l1}\PY{p}{,} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{o\PYZhy{}}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{n}{label}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{liblinear \PYZdl{}L\PYZus{}1\PYZdl{} critical}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
-         
-         \PY{n}{plt}\PY{o}{.}\PY{n}{semilogx}\PY{p}{(}\PY{n}{lamdas}\PY{p}{,} \PY{n}{train\PYZus{}accuracy\PYZus{}SGD}\PY{p}{,} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{o\PYZhy{}\PYZhy{}}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{n}{label}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{SGD \PYZdl{}L\PYZus{}2\PYZdl{} train}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
-         \PY{n}{plt}\PY{o}{.}\PY{n}{semilogx}\PY{p}{(}\PY{n}{lamdas}\PY{p}{,} \PY{n}{test\PYZus{}accuracy\PYZus{}SGD}\PY{p}{,} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{o\PYZhy{}\PYZhy{}}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{n}{label}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{SGD \PYZdl{}L\PYZus{}2\PYZdl{} test}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
-         \PY{n}{plt}\PY{o}{.}\PY{n}{semilogx}\PY{p}{(}\PY{n}{lamdas}\PY{p}{,} \PY{n}{critical\PYZus{}accuracy\PYZus{}SGD}\PY{p}{,} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{o\PYZhy{}\PYZhy{}}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{n}{label}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{SGD \PYZdl{}L\PYZus{}2\PYZdl{} critical}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
-         
-         \PY{n}{plt}\PY{o}{.}\PY{n}{grid}\PY{p}{(}\PY{p}{)}
-         \PY{n}{plt}\PY{o}{.}\PY{n}{ylabel}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Accuracy}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{n}{fontsize}\PY{o}{=}\PY{l+m+mi}{14}\PY{p}{)}
-         \PY{n}{plt}\PY{o}{.}\PY{n}{xlabel}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{\PYZdl{}}\PY{l+s+se}{\PYZbs{}\PYZbs{}}\PY{l+s+s2}{lambda\PYZdl{}}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{n}{fontsize}\PY{o}{=}\PY{l+m+mi}{14}\PY{p}{)}
-         \PY{n}{plt}\PY{o}{.}\PY{n}{legend}\PY{p}{(}\PY{n}{bbox\PYZus{}to\PYZus{}anchor}\PY{o}{=}\PY{p}{(}\PY{l+m+mf}{1.0}\PY{p}{,} \PY{l+m+mf}{1.0}\PY{p}{)}\PY{p}{,} \PY{n}{fontsize}\PY{o}{=}\PY{l+m+mi}{12}\PY{p}{)}
-         
-         \PY{n}{plt}\PY{o}{.}\PY{n}{show}\PY{p}{(}\PY{p}{)}
-\end{Verbatim}
-
+    \begin{center}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{output_11_2.png}
+    \end{center}
+    { \hspace*{\fill} \\}
 
     \begin{center}
     \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{output_14_0.png}
     \end{center}
     { \hspace*{\fill} \\}
-    
-    We can immedietly see a degree og overfitting and the performance of the
-optimizer depends on the regularization strength \(\lambda\). There is
-also a sweet spot similarly to the logistic regression case for the SGD.
-Here it is around \(\lambda\approx 10^{-1}\). The phase is also
-difficult to predict around the critical region. For the liblinear,
-lbfgs and saga the performance only drops as \(\lambda\) is increased
-much (above around \(10^3\)). This just indicates that the
-regularisation strength does not have much impact.
 
-We can also make a receiver operator characteristic (ROC) to further
-diagonize the classifier.
-
-    \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}59}]:} \PY{k+kn}{from} \PY{n+nn}{sklearn}\PY{n+nn}{.}\PY{n+nn}{metrics} \PY{k}{import} \PY{n}{roc\PYZus{}curve}\PY{p}{,} \PY{n}{roc\PYZus{}auc\PYZus{}score}
-         
-         \PY{k}{for} \PY{n}{i}\PY{p}{,}\PY{n}{lamda} \PY{o+ow}{in} \PY{n+nb}{enumerate}\PY{p}{(}\PY{n}{lamdas}\PY{p}{)}\PY{p}{:}
-             \PY{n}{logreg\PYZus{}tpr}\PY{p}{,} \PY{n}{logreg\PYZus{}fpr}\PY{p}{,} \PY{n}{\PYZus{}} \PY{o}{=} \PY{n}{roc\PYZus{}curve}\PY{p}{(}\PY{n}{Y\PYZus{}test}\PY{p}{,} \PY{n}{test\PYZus{}preds}\PY{p}{[}\PY{n}{i}\PY{p}{]}\PY{p}{)}
-             \PY{n}{logreg\PYZus{}l1\PYZus{}tpr}\PY{p}{,} \PY{n}{logreg\PYZus{}l1\PYZus{}fpr}\PY{p}{,} \PY{n}{\PYZus{}} \PY{o}{=} \PY{n}{roc\PYZus{}curve}\PY{p}{(}\PY{n}{Y\PYZus{}test}\PY{p}{,} \PY{n}{test\PYZus{}preds\PYZus{}l1}\PY{p}{[}\PY{n}{i}\PY{p}{]}\PY{p}{)}
-             \PY{n}{logreg\PYZus{}SGD\PYZus{}tpr}\PY{p}{,} \PY{n}{logreg\PYZus{}SGD\PYZus{}fpr}\PY{p}{,} \PY{n}{\PYZus{}} \PY{o}{=} \PY{n}{roc\PYZus{}curve}\PY{p}{(}\PY{n}{Y\PYZus{}test}\PY{p}{,} \PY{n}{test\PYZus{}preds\PYZus{}SGD}\PY{p}{[}\PY{n}{i}\PY{p}{]}\PY{p}{)}
-             
-             \PY{n}{logreg\PYZus{}auc} \PY{o}{=} \PY{n}{roc\PYZus{}auc\PYZus{}score}\PY{p}{(}\PY{n}{Y\PYZus{}test}\PY{p}{,} \PY{n}{test\PYZus{}preds}\PY{p}{[}\PY{n}{i}\PY{p}{]}\PY{p}{)}
-             \PY{n}{logreg\PYZus{}l1\PYZus{}auc} \PY{o}{=} \PY{n}{roc\PYZus{}auc\PYZus{}score}\PY{p}{(}\PY{n}{Y\PYZus{}test}\PY{p}{,} \PY{n}{test\PYZus{}preds\PYZus{}l1}\PY{p}{[}\PY{n}{i}\PY{p}{]}\PY{p}{)}
-             \PY{n}{logreg\PYZus{}SGD\PYZus{}auc} \PY{o}{=} \PY{n}{roc\PYZus{}auc\PYZus{}score}\PY{p}{(}\PY{n}{Y\PYZus{}test}\PY{p}{,} \PY{n}{test\PYZus{}preds\PYZus{}SGD}\PY{p}{[}\PY{n}{i}\PY{p}{]}\PY{p}{)}
-         
-             \PY{n}{plt}\PY{o}{.}\PY{n}{plot}\PY{p}{(}\PY{n}{logreg\PYZus{}fpr}\PY{p}{,} \PY{n}{logreg\PYZus{}tpr}\PY{p}{,} \PY{n}{label}\PY{o}{=}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{test liblin \PYZdl{}L\PYZus{}2\PYZdl{},  \PYZdl{}}\PY{l+s+s2}{\PYZbs{}}\PY{l+s+s2}{lambda=}\PY{l+s+si}{\PYZpc{}.5f}\PY{l+s+s2}{\PYZdl{}, AUC=\PYZdl{}}\PY{l+s+si}{\PYZpc{}.5f}\PY{l+s+s2}{\PYZdl{}}\PY{l+s+s2}{\PYZdq{}} \PY{o}{\PYZpc{}} \PY{p}{(}\PY{n}{lamda}\PY{p}{,} \PY{n}{logreg\PYZus{}auc}\PY{p}{)}\PY{p}{)}
-             \PY{n}{plt}\PY{o}{.}\PY{n}{plot}\PY{p}{(}\PY{n}{logreg\PYZus{}l1\PYZus{}fpr}\PY{p}{,} \PY{n}{logreg\PYZus{}l1\PYZus{}tpr}\PY{p}{,} \PY{n}{label}\PY{o}{=}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{test liblin \PYZdl{}L\PYZus{}1\PYZdl{},  \PYZdl{}}\PY{l+s+s2}{\PYZbs{}}\PY{l+s+s2}{lambda=}\PY{l+s+si}{\PYZpc{}.5f}\PY{l+s+s2}{\PYZdl{}, AUC=\PYZdl{}}\PY{l+s+si}{\PYZpc{}.5f}\PY{l+s+s2}{\PYZdl{}}\PY{l+s+s2}{\PYZdq{}} \PY{o}{\PYZpc{}} \PY{p}{(}\PY{n}{lamda}\PY{p}{,} \PY{n}{logreg\PYZus{}l1\PYZus{}auc}\PY{p}{)}\PY{p}{)}
-             \PY{n}{plt}\PY{o}{.}\PY{n}{plot}\PY{p}{(}\PY{n}{logreg\PYZus{}SGD\PYZus{}fpr}\PY{p}{,} \PY{n}{logreg\PYZus{}SGD\PYZus{}tpr}\PY{p}{,} \PY{n}{label}\PY{o}{=}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{test SGD \PYZdl{}L\PYZus{}2\PYZdl{},  \PYZdl{}}\PY{l+s+s2}{\PYZbs{}}\PY{l+s+s2}{lambda=}\PY{l+s+si}{\PYZpc{}.5f}\PY{l+s+s2}{\PYZdl{}, AUC=\PYZdl{}}\PY{l+s+si}{\PYZpc{}.5f}\PY{l+s+s2}{\PYZdl{}}\PY{l+s+s2}{\PYZdq{}} \PY{o}{\PYZpc{}} \PY{p}{(}\PY{n}{lamda}\PY{p}{,} \PY{n}{logreg\PYZus{}SGD\PYZus{}auc}\PY{p}{)}\PY{p}{)}
-             
-             \PY{n}{logreg\PYZus{}tpr}\PY{p}{,} \PY{n}{logreg\PYZus{}fpr}\PY{p}{,} \PY{n}{\PYZus{}} \PY{o}{=} \PY{n}{roc\PYZus{}curve}\PY{p}{(}\PY{n}{Y\PYZus{}train}\PY{p}{,} \PY{n}{train\PYZus{}preds}\PY{p}{[}\PY{n}{i}\PY{p}{]}\PY{p}{)}
-             \PY{n}{logreg\PYZus{}l1\PYZus{}tpr}\PY{p}{,} \PY{n}{logreg\PYZus{}l1\PYZus{}fpr}\PY{p}{,} \PY{n}{\PYZus{}} \PY{o}{=} \PY{n}{roc\PYZus{}curve}\PY{p}{(}\PY{n}{Y\PYZus{}train}\PY{p}{,} \PY{n}{train\PYZus{}preds\PYZus{}l1}\PY{p}{[}\PY{n}{i}\PY{p}{]}\PY{p}{)}
-             \PY{n}{logreg\PYZus{}SGD\PYZus{}tpr}\PY{p}{,} \PY{n}{logreg\PYZus{}SGD\PYZus{}fpr}\PY{p}{,} \PY{n}{\PYZus{}} \PY{o}{=} \PY{n}{roc\PYZus{}curve}\PY{p}{(}\PY{n}{Y\PYZus{}train}\PY{p}{,} \PY{n}{train\PYZus{}preds\PYZus{}SGD}\PY{p}{[}\PY{n}{i}\PY{p}{]}\PY{p}{)}
-             
-             \PY{n}{logreg\PYZus{}auc} \PY{o}{=} \PY{n}{roc\PYZus{}auc\PYZus{}score}\PY{p}{(}\PY{n}{Y\PYZus{}train}\PY{p}{,} \PY{n}{train\PYZus{}preds}\PY{p}{[}\PY{n}{i}\PY{p}{]}\PY{p}{)}
-             \PY{n}{logreg\PYZus{}l1\PYZus{}auc} \PY{o}{=} \PY{n}{roc\PYZus{}auc\PYZus{}score}\PY{p}{(}\PY{n}{Y\PYZus{}train}\PY{p}{,} \PY{n}{train\PYZus{}preds\PYZus{}l1}\PY{p}{[}\PY{n}{i}\PY{p}{]}\PY{p}{)}
-             \PY{n}{logreg\PYZus{}SGD\PYZus{}auc} \PY{o}{=} \PY{n}{roc\PYZus{}auc\PYZus{}score}\PY{p}{(}\PY{n}{Y\PYZus{}train}\PY{p}{,} \PY{n}{train\PYZus{}preds\PYZus{}SGD}\PY{p}{[}\PY{n}{i}\PY{p}{]}\PY{p}{)}
-         
-             \PY{n}{plt}\PY{o}{.}\PY{n}{plot}\PY{p}{(}\PY{n}{logreg\PYZus{}fpr}\PY{p}{,} \PY{n}{logreg\PYZus{}tpr}\PY{p}{,} \PY{n}{label}\PY{o}{=}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{train liblin \PYZdl{}L\PYZus{}2\PYZdl{},  \PYZdl{}}\PY{l+s+s2}{\PYZbs{}}\PY{l+s+s2}{lambda=}\PY{l+s+si}{\PYZpc{}.5f}\PY{l+s+s2}{\PYZdl{}, AUC=\PYZdl{}}\PY{l+s+si}{\PYZpc{}.5f}\PY{l+s+s2}{\PYZdl{}}\PY{l+s+s2}{\PYZdq{}} \PY{o}{\PYZpc{}} \PY{p}{(}\PY{n}{lamda}\PY{p}{,} \PY{n}{logreg\PYZus{}auc}\PY{p}{)}\PY{p}{)}
-             \PY{n}{plt}\PY{o}{.}\PY{n}{plot}\PY{p}{(}\PY{n}{logreg\PYZus{}l1\PYZus{}fpr}\PY{p}{,} \PY{n}{logreg\PYZus{}l1\PYZus{}tpr}\PY{p}{,} \PY{n}{label}\PY{o}{=}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{train liblin \PYZdl{}L\PYZus{}1\PYZdl{},  \PYZdl{}}\PY{l+s+s2}{\PYZbs{}}\PY{l+s+s2}{lambda=}\PY{l+s+si}{\PYZpc{}.5f}\PY{l+s+s2}{\PYZdl{}, AUC=\PYZdl{}}\PY{l+s+si}{\PYZpc{}.5f}\PY{l+s+s2}{\PYZdl{}}\PY{l+s+s2}{\PYZdq{}} \PY{o}{\PYZpc{}} \PY{p}{(}\PY{n}{lamda}\PY{p}{,} \PY{n}{logreg\PYZus{}l1\PYZus{}auc}\PY{p}{)}\PY{p}{)}
-             \PY{n}{plt}\PY{o}{.}\PY{n}{plot}\PY{p}{(}\PY{n}{logreg\PYZus{}SGD\PYZus{}fpr}\PY{p}{,} \PY{n}{logreg\PYZus{}SGD\PYZus{}tpr}\PY{p}{,} \PY{n}{label}\PY{o}{=}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{train SGD \PYZdl{}L\PYZus{}2\PYZdl{},  \PYZdl{}}\PY{l+s+s2}{\PYZbs{}}\PY{l+s+s2}{lambda=}\PY{l+s+si}{\PYZpc{}.5f}\PY{l+s+s2}{\PYZdl{}, AUC=\PYZdl{}}\PY{l+s+si}{\PYZpc{}.5f}\PY{l+s+s2}{\PYZdl{}}\PY{l+s+s2}{\PYZdq{}} \PY{o}{\PYZpc{}} \PY{p}{(}\PY{n}{lamda}\PY{p}{,} \PY{n}{logreg\PYZus{}SGD\PYZus{}auc}\PY{p}{)}\PY{p}{)}
-             
-             \PY{n}{logreg\PYZus{}tpr}\PY{p}{,} \PY{n}{logreg\PYZus{}fpr}\PY{p}{,} \PY{n}{\PYZus{}} \PY{o}{=} \PY{n}{roc\PYZus{}curve}\PY{p}{(}\PY{n}{Y\PYZus{}critical}\PY{p}{,} \PY{n}{critical\PYZus{}preds}\PY{p}{[}\PY{n}{i}\PY{p}{]}\PY{p}{)}
-             \PY{n}{logreg\PYZus{}l1\PYZus{}tpr}\PY{p}{,} \PY{n}{logreg\PYZus{}l1\PYZus{}fpr}\PY{p}{,} \PY{n}{\PYZus{}} \PY{o}{=} \PY{n}{roc\PYZus{}curve}\PY{p}{(}\PY{n}{Y\PYZus{}critical}\PY{p}{,} \PY{n}{critical\PYZus{}preds\PYZus{}l1}\PY{p}{[}\PY{n}{i}\PY{p}{]}\PY{p}{)}
-             \PY{n}{logreg\PYZus{}SGD\PYZus{}tpr}\PY{p}{,} \PY{n}{logreg\PYZus{}SGD\PYZus{}fpr}\PY{p}{,} \PY{n}{\PYZus{}} \PY{o}{=} \PY{n}{roc\PYZus{}curve}\PY{p}{(}\PY{n}{Y\PYZus{}critical}\PY{p}{,} \PY{n}{critical\PYZus{}preds\PYZus{}SGD}\PY{p}{[}\PY{n}{i}\PY{p}{]}\PY{p}{)}
-             
-             \PY{n}{logreg\PYZus{}auc} \PY{o}{=} \PY{n}{roc\PYZus{}auc\PYZus{}score}\PY{p}{(}\PY{n}{Y\PYZus{}critical}\PY{p}{,} \PY{n}{critical\PYZus{}preds}\PY{p}{[}\PY{n}{i}\PY{p}{]}\PY{p}{)}
-             \PY{n}{logreg\PYZus{}l1\PYZus{}auc} \PY{o}{=} \PY{n}{roc\PYZus{}auc\PYZus{}score}\PY{p}{(}\PY{n}{Y\PYZus{}critical}\PY{p}{,} \PY{n}{critical\PYZus{}preds\PYZus{}l1}\PY{p}{[}\PY{n}{i}\PY{p}{]}\PY{p}{)}
-             \PY{n}{logreg\PYZus{}SGD\PYZus{}auc} \PY{o}{=} \PY{n}{roc\PYZus{}auc\PYZus{}score}\PY{p}{(}\PY{n}{Y\PYZus{}critical}\PY{p}{,} \PY{n}{critical\PYZus{}preds\PYZus{}SGD}\PY{p}{[}\PY{n}{i}\PY{p}{]}\PY{p}{)}
-         
-             \PY{n}{plt}\PY{o}{.}\PY{n}{plot}\PY{p}{(}\PY{n}{logreg\PYZus{}fpr}\PY{p}{,} \PY{n}{logreg\PYZus{}tpr}\PY{p}{,} \PY{n}{label}\PY{o}{=}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{critical liblin \PYZdl{}L\PYZus{}2\PYZdl{},  \PYZdl{}}\PY{l+s+s2}{\PYZbs{}}\PY{l+s+s2}{lambda=}\PY{l+s+si}{\PYZpc{}.5f}\PY{l+s+s2}{\PYZdl{}, AUC=\PYZdl{}}\PY{l+s+si}{\PYZpc{}.5f}\PY{l+s+s2}{\PYZdl{}}\PY{l+s+s2}{\PYZdq{}} \PY{o}{\PYZpc{}} \PY{p}{(}\PY{n}{lamda}\PY{p}{,} \PY{n}{logreg\PYZus{}auc}\PY{p}{)}\PY{p}{)}
-             \PY{n}{plt}\PY{o}{.}\PY{n}{plot}\PY{p}{(}\PY{n}{logreg\PYZus{}l1\PYZus{}fpr}\PY{p}{,} \PY{n}{logreg\PYZus{}l1\PYZus{}tpr}\PY{p}{,} \PY{n}{label}\PY{o}{=}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{critical liblin \PYZdl{}L\PYZus{}1\PYZdl{},  \PYZdl{}}\PY{l+s+s2}{\PYZbs{}}\PY{l+s+s2}{lambda=}\PY{l+s+si}{\PYZpc{}.5f}\PY{l+s+s2}{\PYZdl{}, AUC=\PYZdl{}}\PY{l+s+si}{\PYZpc{}.5f}\PY{l+s+s2}{\PYZdl{}}\PY{l+s+s2}{\PYZdq{}} \PY{o}{\PYZpc{}} \PY{p}{(}\PY{n}{lamda}\PY{p}{,} \PY{n}{logreg\PYZus{}l1\PYZus{}auc}\PY{p}{)}\PY{p}{)}
-             \PY{n}{plt}\PY{o}{.}\PY{n}{plot}\PY{p}{(}\PY{n}{logreg\PYZus{}SGD\PYZus{}fpr}\PY{p}{,} \PY{n}{logreg\PYZus{}SGD\PYZus{}tpr}\PY{p}{,} \PY{n}{label}\PY{o}{=}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{critical SGD \PYZdl{}L\PYZus{}2\PYZdl{},  \PYZdl{}}\PY{l+s+s2}{\PYZbs{}}\PY{l+s+s2}{lambda=}\PY{l+s+si}{\PYZpc{}.5f}\PY{l+s+s2}{\PYZdl{}, AUC=\PYZdl{}}\PY{l+s+si}{\PYZpc{}.5f}\PY{l+s+s2}{\PYZdl{}}\PY{l+s+s2}{\PYZdq{}} \PY{o}{\PYZpc{}} \PY{p}{(}\PY{n}{lamda}\PY{p}{,} \PY{n}{logreg\PYZus{}SGD\PYZus{}auc}\PY{p}{)}\PY{p}{)}
-         \PY{c+c1}{\PYZsh{} end fori}
-         
-         \PY{n}{plt}\PY{o}{.}\PY{n}{plot}\PY{p}{(}\PY{p}{(}\PY{l+m+mi}{0}\PY{p}{,}\PY{l+m+mi}{1}\PY{p}{)}\PY{p}{,} \PY{p}{(}\PY{l+m+mi}{0}\PY{p}{,}\PY{l+m+mi}{1}\PY{p}{)}\PY{p}{,} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{\PYZhy{}\PYZhy{}k}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{n}{label}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{50}\PY{l+s+s1}{\PYZpc{}}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
-         
-         \PY{n}{plt}\PY{o}{.}\PY{n}{legend}\PY{p}{(}\PY{n}{bbox\PYZus{}to\PYZus{}anchor}\PY{o}{=}\PY{p}{(}\PY{l+m+mf}{1.0}\PY{p}{,} \PY{l+m+mf}{1.027}\PY{p}{)}\PY{p}{,} \PY{n}{shadow}\PY{o}{=}\PY{k+kc}{True}\PY{p}{,} \PY{n}{fancybox}\PY{o}{=}\PY{k+kc}{True}\PY{p}{,} \PY{n}{ncol}\PY{o}{=}\PY{l+m+mi}{2}\PY{p}{)}
-         \PY{n}{plt}\PY{o}{.}\PY{n}{xlabel}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{False Positive}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
-         \PY{n}{plt}\PY{o}{.}\PY{n}{ylabel}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{True Positive}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
-         \PY{n}{plt}\PY{o}{.}\PY{n}{show}\PY{p}{(}\PY{p}{)}
-\end{Verbatim}
-
+\newpage
+\hypertarget{determine-the-phase-of-the-two-dimensional-ising-model}{%
+\section*{Determine the Phase of the Two-Dimensional Ising
+Model}\label{determine-the-phase-of-the-two-dimensional-ising-model4}}
 
     \begin{center}
     \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{output_16_0.png}
     \end{center}
     { \hspace*{\fill} \\}
-    
-    The ROC-curve tells us how many predictions were actually correct.
-Essentially this means the more the graph is above the naive-guess-line
-(diagonal), the better since the ratio between positive and negative
-then favors positive. The AUC score (area under curve) gives the
-probability for the classifier to rank a randomly choosen positive
-instance higher than an equally choosen negative one.
 
-    \hypertarget{using-random-forest-to-classify-phases-in-the-ising-model}{%
+\newpage
+\hypertarget{using-random-forest-to-classify-phases-in-the-ising-model}{%
 \subsubsection{Using Random Forest to Classify Phases in the Ising
 Model}\label{using-random-forest-to-classify-phases-in-the-ising-model}}
-
-As with the logistic regression, Random Forest algorithm can be used to
-determine the phases of the Ising model. We start with the ordinary
-out-of-bag method (ordinary bagging).
-
-    \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}60}]:} \PY{c+c1}{\PYZsh{} increase training set, reduce test set}
-         \PY{n}{train\PYZus{}test\PYZus{}ratio} \PY{o}{=} \PY{l+m+mf}{0.8}
-         
-         \PY{c+c1}{\PYZsh{} pick at random to create training and test}
-         \PY{n}{X\PYZus{}train}\PY{p}{,} \PY{n}{X\PYZus{}test}\PY{p}{,} \PY{n}{Y\PYZus{}train}\PY{p}{,} \PY{n}{Y\PYZus{}test} \PY{o}{=} \PY{n}{train\PYZus{}test\PYZus{}split}\PY{p}{(}\PY{n}{Xt}\PY{p}{,} \PY{n}{Yt}\PY{p}{,} \PY{n}{train\PYZus{}size}\PY{o}{=}\PY{n}{train\PYZus{}test\PYZus{}ratio}\PY{p}{)}
-         
-         \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{X\PYZus{}train shape:}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{n}{X\PYZus{}train}\PY{o}{.}\PY{n}{shape}\PY{p}{)}
-         \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Y\PYZus{}train shape:}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{n}{Y\PYZus{}train}\PY{o}{.}\PY{n}{shape}\PY{p}{)}
-         \PY{n+nb}{print}\PY{p}{(}\PY{p}{)}
-         \PY{n+nb}{print}\PY{p}{(}\PY{n}{X\PYZus{}train}\PY{o}{.}\PY{n}{shape}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{train samples}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
-         \PY{n+nb}{print}\PY{p}{(}\PY{n}{X\PYZus{}critical}\PY{o}{.}\PY{n}{shape}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{critical samples}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
-         \PY{n+nb}{print}\PY{p}{(}\PY{n}{X\PYZus{}test}\PY{o}{.}\PY{n}{shape}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{test samples}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
-\end{Verbatim}
-
-
-    \begin{Verbatim}[commandchars=\\\{\}]
-/usr/local/lib/python3.6/dist-packages/sklearn/model\_selection/\_split.py:2026: FutureWarning: From version 0.21, test\_size will always complement train\_size unless both are specified.
-  FutureWarning)
-
-    \end{Verbatim}
-
-    \begin{Verbatim}[commandchars=\\\{\}]
-X\_train shape: (103999, 1600)
-Y\_train shape: (103999,)
-
-103999 train samples
-30000 critical samples
-26000 test samples
-
-    \end{Verbatim}
-
-    \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}61}]:} \PY{k+kn}{from} \PY{n+nn}{sklearn}\PY{n+nn}{.}\PY{n+nn}{ensemble} \PY{k}{import} \PY{n}{RandomForestClassifier}
-         
-         \PY{n}{min\PYZus{}estimators} \PY{o}{=} \PY{l+m+mi}{10}
-         \PY{n}{max\PYZus{}estimators} \PY{o}{=} \PY{l+m+mi}{61}
-         \PY{n}{n\PYZus{}estimators} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{arange}\PY{p}{(}\PY{n}{min\PYZus{}estimators}\PY{p}{,} \PY{n}{max\PYZus{}estimators}\PY{p}{,} \PY{l+m+mi}{5}\PY{p}{)}
-         \PY{n}{leaf\PYZus{}sizes} \PY{o}{=} \PY{p}{[}\PY{l+m+mi}{2}\PY{p}{,} \PY{l+m+mi}{10000}\PY{p}{]}
-         \PY{n}{n} \PY{o}{=} \PY{n+nb}{len}\PY{p}{(}\PY{n}{n\PYZus{}estimators}\PY{p}{)}
-         \PY{n}{m} \PY{o}{=} \PY{n+nb}{len}\PY{p}{(}\PY{n}{leaf\PYZus{}sizes}\PY{p}{)}
-         
-         \PY{n}{RFC\PYZus{}OOB\PYZus{}accuracy} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{zeros}\PY{p}{(}\PY{p}{(}\PY{n}{n}\PY{p}{,}\PY{n}{m}\PY{p}{)}\PY{p}{)}
-         \PY{n}{RFC\PYZus{}train\PYZus{}accuracy} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{zeros}\PY{p}{(}\PY{p}{(}\PY{n}{n}\PY{p}{,}\PY{n}{m}\PY{p}{)}\PY{p}{)}
-         \PY{n}{RFC\PYZus{}test\PYZus{}accuracy} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{zeros}\PY{p}{(}\PY{p}{(}\PY{n}{n}\PY{p}{,}\PY{n}{m}\PY{p}{)}\PY{p}{)}
-         \PY{n}{RFC\PYZus{}critical\PYZus{}accuracy} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{zeros}\PY{p}{(}\PY{p}{(}\PY{n}{n}\PY{p}{,}\PY{n}{m}\PY{p}{)}\PY{p}{)}
-         
-         \PY{n}{rfc\PYZus{}train\PYZus{}preds} \PY{o}{=} \PY{p}{[}\PY{p}{]}
-         \PY{n}{rfc\PYZus{}test\PYZus{}preds} \PY{o}{=} \PY{p}{[}\PY{p}{]}
-         \PY{n}{rfc\PYZus{}critical\PYZus{}preds} \PY{o}{=} \PY{p}{[}\PY{p}{]}
-         
-         \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{train estimate test critical}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
-         \PY{k}{for} \PY{n}{i} \PY{o+ow}{in} \PY{n+nb}{range}\PY{p}{(}\PY{l+m+mi}{0}\PY{p}{,}\PY{n}{n}\PY{p}{)}\PY{p}{:}
-             \PY{k}{for} \PY{n}{j} \PY{o+ow}{in} \PY{n+nb}{range}\PY{p}{(}\PY{l+m+mi}{0}\PY{p}{,}\PY{n}{m}\PY{p}{)}\PY{p}{:}
-                 \PY{n}{RFC} \PY{o}{=} \PY{n}{RandomForestClassifier}\PY{p}{(}\PY{n}{n\PYZus{}estimators}\PY{o}{=}\PY{n}{n\PYZus{}estimators}\PY{p}{[}\PY{n}{i}\PY{p}{]}\PY{p}{,} \PY{n}{max\PYZus{}depth}\PY{o}{=}\PY{k+kc}{None}\PY{p}{,}
-                                              \PY{n}{min\PYZus{}samples\PYZus{}split}\PY{o}{=}\PY{n}{leaf\PYZus{}sizes}\PY{p}{[}\PY{n}{j}\PY{p}{]}\PY{p}{,} \PY{n}{oob\PYZus{}score}\PY{o}{=}\PY{k+kc}{True}\PY{p}{,} \PY{n}{random\PYZus{}state}\PY{o}{=}\PY{l+m+mi}{0}\PY{p}{)}
-                 \PY{n}{RFC}\PY{o}{.}\PY{n}{fit}\PY{p}{(}\PY{n}{X\PYZus{}train}\PY{p}{,} \PY{n}{Y\PYZus{}train}\PY{p}{)}
-                 
-                 \PY{n}{RFC\PYZus{}train\PYZus{}accuracy}\PY{p}{[}\PY{n}{i}\PY{p}{,}\PY{n}{j}\PY{p}{]} \PY{o}{=} \PY{n}{RFC}\PY{o}{.}\PY{n}{score}\PY{p}{(}\PY{n}{X\PYZus{}train}\PY{p}{,} \PY{n}{Y\PYZus{}train}\PY{p}{)}
-                 \PY{n}{RFC\PYZus{}OOB\PYZus{}accuracy}\PY{p}{[}\PY{n}{i}\PY{p}{,}\PY{n}{j}\PY{p}{]} \PY{o}{=} \PY{n}{RFC}\PY{o}{.}\PY{n}{oob\PYZus{}score}
-                 \PY{n}{RFC\PYZus{}test\PYZus{}accuracy}\PY{p}{[}\PY{n}{i}\PY{p}{,}\PY{n}{j}\PY{p}{]} \PY{o}{=} \PY{n}{RFC}\PY{o}{.}\PY{n}{score}\PY{p}{(}\PY{n}{X\PYZus{}test}\PY{p}{,} \PY{n}{Y\PYZus{}test}\PY{p}{)}
-                 \PY{n}{RFC\PYZus{}critical\PYZus{}accuracy}\PY{p}{[}\PY{n}{i}\PY{p}{,}\PY{n}{j}\PY{p}{]} \PY{o}{=} \PY{n}{RFC}\PY{o}{.}\PY{n}{score}\PY{p}{(}\PY{n}{X\PYZus{}critical}\PY{p}{,} \PY{n}{Y\PYZus{}critical}\PY{p}{)}
-                 
-                 \PY{n}{rfc\PYZus{}train\PYZus{}preds}\PY{o}{.}\PY{n}{append}\PY{p}{(}\PY{n}{RFC}\PY{o}{.}\PY{n}{predict\PYZus{}proba}\PY{p}{(}\PY{n}{X\PYZus{}train}\PY{p}{)}\PY{p}{[}\PY{p}{:}\PY{p}{,}\PY{l+m+mi}{0}\PY{p}{]}\PY{p}{)}
-                 \PY{n}{rfc\PYZus{}test\PYZus{}preds}\PY{o}{.}\PY{n}{append}\PY{p}{(}\PY{n}{RFC}\PY{o}{.}\PY{n}{predict\PYZus{}proba}\PY{p}{(}\PY{n}{X\PYZus{}test}\PY{p}{)}\PY{p}{[}\PY{p}{:}\PY{p}{,}\PY{l+m+mi}{0}\PY{p}{]}\PY{p}{)}
-                 \PY{n}{rfc\PYZus{}critical\PYZus{}preds}\PY{o}{.}\PY{n}{append}\PY{p}{(}\PY{n}{RFC}\PY{o}{.}\PY{n}{predict\PYZus{}proba}\PY{p}{(}\PY{n}{X\PYZus{}critical}\PY{p}{)}\PY{p}{[}\PY{p}{:}\PY{p}{,}\PY{l+m+mi}{0}\PY{p}{]}\PY{p}{)}
-                 
-                 \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{n\PYZus{}estimators: }\PY{l+s+s1}{\PYZsq{}} \PY{o}{+} \PY{n+nb}{str}\PY{p}{(}\PY{n}{n\PYZus{}estimators}\PY{p}{[}\PY{n}{i}\PY{p}{]}\PY{p}{)} \PY{o}{+} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{, leaf\PYZus{}size: }\PY{l+s+s1}{\PYZsq{}} \PY{o}{+} \PY{n+nb}{str}\PY{p}{(}\PY{n}{leaf\PYZus{}sizes}\PY{p}{[}\PY{n}{j}\PY{p}{]}\PY{p}{)}\PY{p}{)}
-                 \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{liblin: }\PY{l+s+si}{\PYZpc{}0.4f}\PY{l+s+s1}{, }\PY{l+s+si}{\PYZpc{}0.4f}\PY{l+s+s1}{,  }\PY{l+s+si}{\PYZpc{}0.4f}\PY{l+s+s1}{, }\PY{l+s+si}{\PYZpc{}0.4f}\PY{l+s+s1}{ }\PY{l+s+se}{\PYZbs{}n}\PY{l+s+se}{\PYZbs{}n}\PY{l+s+s1}{\PYZsq{}} \PY{o}{\PYZpc{}} \PY{p}{(}\PY{n}{RFC\PYZus{}train\PYZus{}accuracy}\PY{p}{[}\PY{n}{i}\PY{p}{,}\PY{n}{j}\PY{p}{]}\PY{p}{,}
-                                                                     \PY{n}{RFC\PYZus{}OOB\PYZus{}accuracy}\PY{p}{[}\PY{n}{i}\PY{p}{,}\PY{n}{j}\PY{p}{]}\PY{p}{,}
-                                                                     \PY{n}{RFC\PYZus{}test\PYZus{}accuracy}\PY{p}{[}\PY{n}{i}\PY{p}{,}\PY{n}{j}\PY{p}{]}\PY{p}{,}
-                                                                     \PY{n}{RFC\PYZus{}critical\PYZus{}accuracy}\PY{p}{[}\PY{n}{i}\PY{p}{,}\PY{n}{j}\PY{p}{]}\PY{p}{)}\PY{p}{)}
-             \PY{c+c1}{\PYZsh{} end forj}
-         \PY{c+c1}{\PYZsh{} end fori}
-\end{Verbatim}
-
-
-    \begin{Verbatim}[commandchars=\\\{\}]
-train estimate test critical
-
-    \end{Verbatim}
-
-    \begin{Verbatim}[commandchars=\\\{\}]
-/usr/local/lib/python3.6/dist-packages/sklearn/ensemble/forest.py:453: UserWarning: Some inputs do not have OOB scores. This probably means too few trees were used to compute any reliable oob estimates.
-  warn("Some inputs do not have OOB scores. "
-/usr/local/lib/python3.6/dist-packages/sklearn/ensemble/forest.py:458: RuntimeWarning: invalid value encountered in true\_divide
-  predictions[k].sum(axis=1)[:, np.newaxis])
-
-    \end{Verbatim}
-
-    \begin{Verbatim}[commandchars=\\\{\}]
-n\_estimators: 10, leaf\_size: 2
-liblin: 1.0000, 1.0000,  0.9999, 0.8031 
-
-
-
-    \end{Verbatim}
-
-    \begin{Verbatim}[commandchars=\\\{\}]
-/usr/local/lib/python3.6/dist-packages/sklearn/ensemble/forest.py:453: UserWarning: Some inputs do not have OOB scores. This probably means too few trees were used to compute any reliable oob estimates.
-  warn("Some inputs do not have OOB scores. "
-/usr/local/lib/python3.6/dist-packages/sklearn/ensemble/forest.py:458: RuntimeWarning: invalid value encountered in true\_divide
-  predictions[k].sum(axis=1)[:, np.newaxis])
-
-    \end{Verbatim}
-
-    \begin{Verbatim}[commandchars=\\\{\}]
-n\_estimators: 10, leaf\_size: 10000
-liblin: 0.9992, 1.0000,  0.9991, 0.6778 
-
-
-
-    \end{Verbatim}
-
-    \begin{Verbatim}[commandchars=\\\{\}]
-/usr/local/lib/python3.6/dist-packages/sklearn/ensemble/forest.py:453: UserWarning: Some inputs do not have OOB scores. This probably means too few trees were used to compute any reliable oob estimates.
-  warn("Some inputs do not have OOB scores. "
-/usr/local/lib/python3.6/dist-packages/sklearn/ensemble/forest.py:458: RuntimeWarning: invalid value encountered in true\_divide
-  predictions[k].sum(axis=1)[:, np.newaxis])
-
-    \end{Verbatim}
-
-    \begin{Verbatim}[commandchars=\\\{\}]
-n\_estimators: 15, leaf\_size: 2
-liblin: 1.0000, 1.0000,  1.0000, 0.8309 
-
-
-
-    \end{Verbatim}
-
-    \begin{Verbatim}[commandchars=\\\{\}]
-/usr/local/lib/python3.6/dist-packages/sklearn/ensemble/forest.py:453: UserWarning: Some inputs do not have OOB scores. This probably means too few trees were used to compute any reliable oob estimates.
-  warn("Some inputs do not have OOB scores. "
-/usr/local/lib/python3.6/dist-packages/sklearn/ensemble/forest.py:458: RuntimeWarning: invalid value encountered in true\_divide
-  predictions[k].sum(axis=1)[:, np.newaxis])
-
-    \end{Verbatim}
-
-    \begin{Verbatim}[commandchars=\\\{\}]
-n\_estimators: 15, leaf\_size: 10000
-liblin: 0.9993, 1.0000,  0.9992, 0.6812 
-
-
-
-    \end{Verbatim}
-
-    \begin{Verbatim}[commandchars=\\\{\}]
-/usr/local/lib/python3.6/dist-packages/sklearn/ensemble/forest.py:453: UserWarning: Some inputs do not have OOB scores. This probably means too few trees were used to compute any reliable oob estimates.
-  warn("Some inputs do not have OOB scores. "
-/usr/local/lib/python3.6/dist-packages/sklearn/ensemble/forest.py:458: RuntimeWarning: invalid value encountered in true\_divide
-  predictions[k].sum(axis=1)[:, np.newaxis])
-
-    \end{Verbatim}
-
-    \begin{Verbatim}[commandchars=\\\{\}]
-n\_estimators: 20, leaf\_size: 2
-liblin: 1.0000, 1.0000,  1.0000, 0.8199 
-
-
-
-    \end{Verbatim}
-
-    \begin{Verbatim}[commandchars=\\\{\}]
-/usr/local/lib/python3.6/dist-packages/sklearn/ensemble/forest.py:453: UserWarning: Some inputs do not have OOB scores. This probably means too few trees were used to compute any reliable oob estimates.
-  warn("Some inputs do not have OOB scores. "
-/usr/local/lib/python3.6/dist-packages/sklearn/ensemble/forest.py:458: RuntimeWarning: invalid value encountered in true\_divide
-  predictions[k].sum(axis=1)[:, np.newaxis])
-
-    \end{Verbatim}
-
-    \begin{Verbatim}[commandchars=\\\{\}]
-n\_estimators: 20, leaf\_size: 10000
-liblin: 0.9993, 1.0000,  0.9993, 0.6829 
-
-
-
-    \end{Verbatim}
-
-    \begin{Verbatim}[commandchars=\\\{\}]
-/usr/local/lib/python3.6/dist-packages/sklearn/ensemble/forest.py:453: UserWarning: Some inputs do not have OOB scores. This probably means too few trees were used to compute any reliable oob estimates.
-  warn("Some inputs do not have OOB scores. "
-/usr/local/lib/python3.6/dist-packages/sklearn/ensemble/forest.py:458: RuntimeWarning: invalid value encountered in true\_divide
-  predictions[k].sum(axis=1)[:, np.newaxis])
-
-    \end{Verbatim}
-
-    \begin{Verbatim}[commandchars=\\\{\}]
-n\_estimators: 25, leaf\_size: 2
-liblin: 1.0000, 1.0000,  1.0000, 0.8328 
-
-
-
-    \end{Verbatim}
-
-    \begin{Verbatim}[commandchars=\\\{\}]
-/usr/local/lib/python3.6/dist-packages/sklearn/ensemble/forest.py:453: UserWarning: Some inputs do not have OOB scores. This probably means too few trees were used to compute any reliable oob estimates.
-  warn("Some inputs do not have OOB scores. "
-/usr/local/lib/python3.6/dist-packages/sklearn/ensemble/forest.py:458: RuntimeWarning: invalid value encountered in true\_divide
-  predictions[k].sum(axis=1)[:, np.newaxis])
-
-    \end{Verbatim}
-
-    \begin{Verbatim}[commandchars=\\\{\}]
-n\_estimators: 25, leaf\_size: 10000
-liblin: 0.9993, 1.0000,  0.9993, 0.6848 
-
-
-n\_estimators: 30, leaf\_size: 2
-liblin: 1.0000, 1.0000,  1.0000, 0.8238 
-
-
-n\_estimators: 30, leaf\_size: 10000
-liblin: 0.9993, 1.0000,  0.9993, 0.6864 
-
-
-n\_estimators: 35, leaf\_size: 2
-liblin: 1.0000, 1.0000,  1.0000, 0.8348 
-
-
-n\_estimators: 35, leaf\_size: 10000
-liblin: 0.9993, 1.0000,  0.9993, 0.6857 
-
-
-n\_estimators: 40, leaf\_size: 2
-liblin: 1.0000, 1.0000,  1.0000, 0.8279 
-
-
-n\_estimators: 40, leaf\_size: 10000
-liblin: 0.9993, 1.0000,  0.9993, 0.6854 
-
-
-n\_estimators: 45, leaf\_size: 2
-liblin: 1.0000, 1.0000,  1.0000, 0.8345 
-
-
-n\_estimators: 45, leaf\_size: 10000
-liblin: 0.9993, 1.0000,  0.9993, 0.6864 
-
-
-n\_estimators: 50, leaf\_size: 2
-liblin: 1.0000, 1.0000,  1.0000, 0.8292 
-
-
-n\_estimators: 50, leaf\_size: 10000
-liblin: 0.9993, 1.0000,  0.9993, 0.6859 
-
-
-n\_estimators: 55, leaf\_size: 2
-liblin: 1.0000, 1.0000,  1.0000, 0.8360 
-
-
-n\_estimators: 55, leaf\_size: 10000
-liblin: 0.9993, 1.0000,  0.9993, 0.6857 
-
-
-n\_estimators: 60, leaf\_size: 2
-liblin: 1.0000, 1.0000,  1.0000, 0.8319 
-
-
-n\_estimators: 60, leaf\_size: 10000
-liblin: 0.9993, 1.0000,  0.9993, 0.6853 
-
-
-
-    \end{Verbatim}
-
-    \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}62}]:} \PY{n}{plt}\PY{o}{.}\PY{n}{figure}\PY{p}{(}\PY{p}{)}
-         \PY{n}{plt}\PY{o}{.}\PY{n}{plot}\PY{p}{(}\PY{n}{n\PYZus{}estimators}\PY{p}{,}\PY{n}{RFC\PYZus{}train\PYZus{}accuracy}\PY{p}{[}\PY{p}{:}\PY{p}{,}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{,}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{\PYZhy{}\PYZhy{}b\PYZca{}}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,}\PY{n}{label}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Train leaf\PYZhy{}size: 10000}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
-         \PY{n}{plt}\PY{o}{.}\PY{n}{plot}\PY{p}{(}\PY{n}{n\PYZus{}estimators}\PY{p}{,}\PY{n}{RFC\PYZus{}test\PYZus{}accuracy}\PY{p}{[}\PY{p}{:}\PY{p}{,}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{,}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{\PYZhy{}\PYZhy{}r\PYZca{}}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,}\PY{n}{label}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Test leaf\PYZhy{}size: 10000}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
-         \PY{n}{plt}\PY{o}{.}\PY{n}{plot}\PY{p}{(}\PY{n}{n\PYZus{}estimators}\PY{p}{,}\PY{n}{RFC\PYZus{}critical\PYZus{}accuracy}\PY{p}{[}\PY{p}{:}\PY{p}{,}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{,}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{\PYZhy{}\PYZhy{}g\PYZca{}}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,}\PY{n}{label}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Critical leaf\PYZhy{}size: 10000}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
-         
-         \PY{n}{plt}\PY{o}{.}\PY{n}{plot}\PY{p}{(}\PY{n}{n\PYZus{}estimators}\PY{p}{,}\PY{n}{RFC\PYZus{}train\PYZus{}accuracy}\PY{p}{[}\PY{p}{:}\PY{p}{,}\PY{l+m+mi}{0}\PY{p}{]}\PY{p}{,}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{o\PYZhy{}b}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,}\PY{n}{label}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Train leaf\PYZhy{}size: 2}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
-         \PY{n}{plt}\PY{o}{.}\PY{n}{plot}\PY{p}{(}\PY{n}{n\PYZus{}estimators}\PY{p}{,}\PY{n}{RFC\PYZus{}test\PYZus{}accuracy}\PY{p}{[}\PY{p}{:}\PY{p}{,}\PY{l+m+mi}{0}\PY{p}{]}\PY{p}{,}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{o\PYZhy{}r}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,}\PY{n}{label}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Test leaf\PYZhy{}size: 2}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
-         \PY{n}{plt}\PY{o}{.}\PY{n}{plot}\PY{p}{(}\PY{n}{n\PYZus{}estimators}\PY{p}{,}\PY{n}{RFC\PYZus{}critical\PYZus{}accuracy}\PY{p}{[}\PY{p}{:}\PY{p}{,}\PY{l+m+mi}{0}\PY{p}{]}\PY{p}{,}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{o\PYZhy{}g}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,}\PY{n}{label}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Critical leaf\PYZhy{}size: 2}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
-         
-         \PY{n}{plt}\PY{o}{.}\PY{n}{xlabel}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{\PYZdl{}N\PYZus{}}\PY{l+s+s1}{\PYZbs{}}\PY{l+s+s1}{mathrm}\PY{l+s+si}{\PYZob{}estimators\PYZcb{}}\PY{l+s+s1}{\PYZdl{}}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{n}{fontsize}\PY{o}{=}\PY{l+m+mi}{14}\PY{p}{)}
-         \PY{n}{plt}\PY{o}{.}\PY{n}{ylabel}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Accuracy}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{n}{fontsize}\PY{o}{=}\PY{l+m+mi}{14}\PY{p}{)}
-         \PY{n}{lgd}\PY{o}{=}\PY{n}{plt}\PY{o}{.}\PY{n}{legend}\PY{p}{(}\PY{n}{bbox\PYZus{}to\PYZus{}anchor}\PY{o}{=}\PY{p}{(}\PY{l+m+mf}{1.05}\PY{p}{,} \PY{l+m+mi}{1}\PY{p}{)}\PY{p}{,} \PY{n}{loc}\PY{o}{=}\PY{l+m+mi}{2}\PY{p}{,} \PY{n}{borderaxespad}\PY{o}{=}\PY{l+m+mf}{0.}\PY{p}{,} \PY{n}{fontsize}\PY{o}{=}\PY{l+m+mi}{14}\PY{p}{)}
-         
-         \PY{n}{plt}\PY{o}{.}\PY{n}{show}\PY{p}{(}\PY{p}{)}
-\end{Verbatim}
-
 
     \begin{center}
     \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{output_21_0.png}
     \end{center}
     { \hspace*{\fill} \\}
-    
-    Again we can plot an ROC-curve to see how well the prediction is.
 
-    \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}66}]:} \PY{k+kn}{from} \PY{n+nn}{sklearn}\PY{n+nn}{.}\PY{n+nn}{metrics} \PY{k}{import} \PY{n}{roc\PYZus{}curve}\PY{p}{,} \PY{n}{roc\PYZus{}auc\PYZus{}score}
-         
-         
-         \PY{n}{rfc\PYZus{}preds} \PY{o}{=} \PY{p}{[}\PY{n}{rfc\PYZus{}train\PYZus{}preds}\PY{p}{,} \PY{n}{rfc\PYZus{}test\PYZus{}preds}\PY{p}{,} \PY{n}{rfc\PYZus{}critical\PYZus{}preds}\PY{p}{]}
-         \PY{n}{Ys} \PY{o}{=} \PY{p}{[}\PY{n}{Y\PYZus{}train}\PY{p}{,} \PY{n}{Y\PYZus{}test}\PY{p}{,} \PY{n}{Y\PYZus{}critical}\PY{p}{]}
-         \PY{n}{labs} \PY{o}{=} \PY{p}{[}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{train}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{test}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{critical}\PY{l+s+s2}{\PYZdq{}}\PY{p}{]}
-         \PY{n}{ttc\PYZus{}colors} \PY{o}{=} \PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{blue}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{red}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{green}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}
-         
-         \PY{k}{for} \PY{n}{i}\PY{p}{,}\PY{n}{e} \PY{o+ow}{in} \PY{n+nb}{enumerate}\PY{p}{(}\PY{n}{n\PYZus{}estimators}\PY{p}{)}\PY{p}{:}
-             \PY{k}{for} \PY{n}{j}\PY{p}{,}\PY{n}{l} \PY{o+ow}{in} \PY{n+nb}{enumerate}\PY{p}{(}\PY{n}{leaf\PYZus{}sizes}\PY{p}{)}\PY{p}{:}
-                 \PY{k}{for} \PY{n}{k}\PY{p}{,}\PY{n}{rp} \PY{o+ow}{in} \PY{n+nb}{enumerate}\PY{p}{(}\PY{n}{rfc\PYZus{}preds}\PY{p}{)}\PY{p}{:}
-                     \PY{n}{rfc\PYZus{}tpr}\PY{p}{,} \PY{n}{rfc\PYZus{}fpr}\PY{p}{,} \PY{n}{\PYZus{}} \PY{o}{=} \PY{n}{roc\PYZus{}curve}\PY{p}{(}\PY{n}{Ys}\PY{p}{[}\PY{n}{k}\PY{p}{]}\PY{p}{,} \PY{n}{rp}\PY{p}{[}\PY{n}{i}\PY{o}{*}\PY{n}{m}\PY{o}{+}\PY{n}{j}\PY{p}{]}\PY{p}{)}
-             
-                     \PY{n}{rfc\PYZus{}auc} \PY{o}{=} \PY{l+m+mi}{1}\PY{o}{\PYZhy{}}\PY{n}{roc\PYZus{}auc\PYZus{}score}\PY{p}{(}\PY{n}{Ys}\PY{p}{[}\PY{n}{k}\PY{p}{]}\PY{p}{,} \PY{n}{rp}\PY{p}{[}\PY{n}{i}\PY{o}{+}\PY{n}{j}\PY{o}{*}\PY{n}{m}\PY{p}{]}\PY{p}{)}
-             
-                     \PY{n}{plt}\PY{o}{.}\PY{n}{plot}\PY{p}{(}\PY{n}{rfc\PYZus{}fpr}\PY{p}{,} \PY{n}{rfc\PYZus{}tpr}\PY{p}{,} \PY{n}{ttc\PYZus{}colors}\PY{p}{[}\PY{n}{k}\PY{p}{]}\PY{p}{,} \PY{n}{label}\PY{o}{=}\PY{n}{labs}\PY{p}{[}\PY{n}{k}\PY{p}{]} \PY{o}{+} \PYZbs{}
-                              \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{ estimator=\PYZdl{}}\PY{l+s+si}{\PYZpc{}.5f}\PY{l+s+s2}{\PYZdl{}, leaf\PYZhy{}size=\PYZdl{}}\PY{l+s+si}{\PYZpc{}.5g}\PY{l+s+s2}{\PYZdl{} , AUC=\PYZdl{}}\PY{l+s+si}{\PYZpc{}.5f}\PY{l+s+s2}{\PYZdl{}}\PY{l+s+s2}{\PYZdq{}} 
-                              \PY{o}{\PYZpc{}} \PY{p}{(}\PY{n}{e}\PY{p}{,} \PY{n}{l}\PY{p}{,} \PY{n}{rfc\PYZus{}auc}\PY{p}{)}\PY{p}{)}
-                 \PY{c+c1}{\PYZsh{} end fork}
-             \PY{c+c1}{\PYZsh{} end forj}
-         \PY{c+c1}{\PYZsh{} end fori}
-         
-         \PY{n}{plt}\PY{o}{.}\PY{n}{plot}\PY{p}{(}\PY{p}{(}\PY{l+m+mi}{0}\PY{p}{,}\PY{l+m+mi}{1}\PY{p}{)}\PY{p}{,} \PY{p}{(}\PY{l+m+mi}{0}\PY{p}{,}\PY{l+m+mi}{1}\PY{p}{)}\PY{p}{,} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{\PYZhy{}\PYZhy{}k}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{n}{label}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{50}\PY{l+s+s1}{\PYZpc{}}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
-         
-         \PY{n}{plt}\PY{o}{.}\PY{n}{legend}\PY{p}{(}\PY{n}{bbox\PYZus{}to\PYZus{}anchor}\PY{o}{=}\PY{p}{(}\PY{l+m+mf}{1.0}\PY{p}{,} \PY{l+m+mf}{1.027}\PY{p}{)}\PY{p}{,} \PY{n}{fancybox}\PY{o}{=}\PY{k+kc}{True}\PY{p}{,} \PY{n}{shadow}\PY{o}{=}\PY{k+kc}{True}\PY{p}{,} \PY{n}{ncol}\PY{o}{=}\PY{l+m+mi}{2}\PY{p}{)}
-         \PY{n}{plt}\PY{o}{.}\PY{n}{xlabel}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{False Positive}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{n}{fontsize}\PY{o}{=}\PY{l+m+mi}{14}\PY{p}{)}
-         \PY{n}{plt}\PY{o}{.}\PY{n}{ylabel}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{True Positive}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{n}{fontsize}\PY{o}{=}\PY{l+m+mi}{14}\PY{p}{)}
-         \PY{n}{plt}\PY{o}{.}\PY{n}{show}\PY{p}{(}\PY{p}{)}
-\end{Verbatim}
+\newpage
+\hypertarget{using-random-forest-to-classify-phases-in-the-ising-model}{%
+\subsubsection{Using Random Forest to Classify Phases in the Ising
+Model}\label{using-random-forest-to-classify-phases-in-the-ising-model2}}
 
+    \begin{center}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{output_21_0.png}
+    \end{center}
+    { \hspace*{\fill} \\}
 
     \begin{center}
     \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{output_23_0.png}
     \end{center}
     { \hspace*{\fill} \\}
-    
-    And secondly the Extremely Randomized Trees.
 
-    \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}67}]:} \PY{k+kn}{from} \PY{n+nn}{sklearn}\PY{n+nn}{.}\PY{n+nn}{ensemble} \PY{k}{import} \PY{n}{ExtraTreesClassifier}
-         
-         \PY{n}{ETC\PYZus{}train\PYZus{}accuracy}\PY{o}{=}\PY{n}{np}\PY{o}{.}\PY{n}{zeros}\PY{p}{(}\PY{p}{(}\PY{n}{n}\PY{p}{,}\PY{n}{m}\PY{p}{)}\PY{p}{)}
-         \PY{n}{ETC\PYZus{}test\PYZus{}accuracy}\PY{o}{=}\PY{n}{np}\PY{o}{.}\PY{n}{zeros}\PY{p}{(}\PY{p}{(}\PY{n}{n}\PY{p}{,}\PY{n}{m}\PY{p}{)}\PY{p}{)}
-         \PY{n}{ETC\PYZus{}critical\PYZus{}accuracy}\PY{o}{=}\PY{n}{np}\PY{o}{.}\PY{n}{zeros}\PY{p}{(}\PY{p}{(}\PY{n}{n}\PY{p}{,}\PY{n}{m}\PY{p}{)}\PY{p}{)}
-         
-         \PY{n}{etc\PYZus{}train\PYZus{}preds} \PY{o}{=} \PY{p}{[}\PY{p}{]}
-         \PY{n}{etc\PYZus{}test\PYZus{}preds} \PY{o}{=} \PY{p}{[}\PY{p}{]}
-         \PY{n}{etc\PYZus{}critical\PYZus{}preds} \PY{o}{=} \PY{p}{[}\PY{p}{]}
-         
-         \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{train test critical}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
-         \PY{k}{for} \PY{n}{i} \PY{o+ow}{in} \PY{n+nb}{range}\PY{p}{(}\PY{l+m+mi}{0}\PY{p}{,}\PY{n}{n}\PY{p}{)}\PY{p}{:}
-             \PY{k}{for} \PY{n}{j} \PY{o+ow}{in} \PY{n+nb}{range}\PY{p}{(}\PY{l+m+mi}{0}\PY{p}{,}\PY{n}{m}\PY{p}{)}\PY{p}{:}
-                 \PY{n}{ETC} \PY{o}{=} \PY{n}{ExtraTreesClassifier}\PY{p}{(}\PY{n}{n\PYZus{}estimators}\PY{o}{=}\PY{n}{n\PYZus{}estimators}\PY{p}{[}\PY{n}{i}\PY{p}{]}\PY{p}{,} \PY{n}{max\PYZus{}depth}\PY{o}{=}\PY{k+kc}{None}\PY{p}{,} 
-                                            \PY{n}{min\PYZus{}samples\PYZus{}split}\PY{o}{=}\PY{n}{leaf\PYZus{}sizes}\PY{p}{[}\PY{n}{j}\PY{p}{]}\PY{p}{,}\PY{n}{random\PYZus{}state}\PY{o}{=}\PY{l+m+mi}{0}\PY{p}{)}
-                 \PY{n}{ETC}\PY{o}{.}\PY{n}{fit}\PY{p}{(}\PY{n}{X\PYZus{}train}\PY{p}{,} \PY{n}{Y\PYZus{}train}\PY{p}{)}
-                 
-                 \PY{n}{ETC\PYZus{}train\PYZus{}accuracy}\PY{p}{[}\PY{n}{i}\PY{p}{,}\PY{n}{j}\PY{p}{]} \PY{o}{=} \PY{n}{ETC}\PY{o}{.}\PY{n}{score}\PY{p}{(}\PY{n}{X\PYZus{}train}\PY{p}{,}\PY{n}{Y\PYZus{}train}\PY{p}{)}
-                 \PY{n}{ETC\PYZus{}test\PYZus{}accuracy}\PY{p}{[}\PY{n}{i}\PY{p}{,}\PY{n}{j}\PY{p}{]} \PY{o}{=} \PY{n}{ETC}\PY{o}{.}\PY{n}{score}\PY{p}{(}\PY{n}{X\PYZus{}test}\PY{p}{,}\PY{n}{Y\PYZus{}test}\PY{p}{)}
-                 \PY{n}{ETC\PYZus{}critical\PYZus{}accuracy}\PY{p}{[}\PY{n}{i}\PY{p}{,}\PY{n}{j}\PY{p}{]} \PY{o}{=} \PY{n}{ETC}\PY{o}{.}\PY{n}{score}\PY{p}{(}\PY{n}{X\PYZus{}critical}\PY{p}{,}\PY{n}{Y\PYZus{}critical}\PY{p}{)}
-                 
-                 \PY{n}{etc\PYZus{}train\PYZus{}preds}\PY{o}{.}\PY{n}{append}\PY{p}{(}\PY{n}{ETC}\PY{o}{.}\PY{n}{predict\PYZus{}proba}\PY{p}{(}\PY{n}{X\PYZus{}train}\PY{p}{)}\PY{p}{[}\PY{p}{:}\PY{p}{,}\PY{l+m+mi}{0}\PY{p}{]}\PY{p}{)}
-                 \PY{n}{etc\PYZus{}test\PYZus{}preds}\PY{o}{.}\PY{n}{append}\PY{p}{(}\PY{n}{ETC}\PY{o}{.}\PY{n}{predict\PYZus{}proba}\PY{p}{(}\PY{n}{X\PYZus{}test}\PY{p}{)}\PY{p}{[}\PY{p}{:}\PY{p}{,}\PY{l+m+mi}{0}\PY{p}{]}\PY{p}{)}
-                 \PY{n}{etc\PYZus{}critical\PYZus{}preds}\PY{o}{.}\PY{n}{append}\PY{p}{(}\PY{n}{ETC}\PY{o}{.}\PY{n}{predict\PYZus{}proba}\PY{p}{(}\PY{n}{X\PYZus{}critical}\PY{p}{)}\PY{p}{[}\PY{p}{:}\PY{p}{,}\PY{l+m+mi}{0}\PY{p}{]}\PY{p}{)}
-                 
-                 \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{n\PYZus{}estimators: }\PY{l+s+s1}{\PYZsq{}} \PY{o}{+} \PY{n+nb}{str}\PY{p}{(}\PY{n}{n\PYZus{}estimators}\PY{p}{[}\PY{n}{i}\PY{p}{]}\PY{p}{)} \PY{o}{+} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{, leaf\PYZus{}size: }\PY{l+s+s1}{\PYZsq{}} \PY{o}{+} \PY{n+nb}{str}\PY{p}{(}\PY{n}{leaf\PYZus{}sizes}\PY{p}{[}\PY{n}{j}\PY{p}{]}\PY{p}{)}\PY{p}{)}
-                 \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{liblin: }\PY{l+s+si}{\PYZpc{}0.4f}\PY{l+s+s1}{,  }\PY{l+s+si}{\PYZpc{}0.4f}\PY{l+s+s1}{, }\PY{l+s+si}{\PYZpc{}0.4f}\PY{l+s+s1}{ }\PY{l+s+se}{\PYZbs{}n}\PY{l+s+s1}{\PYZsq{}} \PY{o}{\PYZpc{}} \PY{p}{(}\PY{n}{ETC\PYZus{}train\PYZus{}accuracy}\PY{p}{[}\PY{n}{i}\PY{p}{,}\PY{n}{j}\PY{p}{]}\PY{p}{,}
-                                                              \PY{n}{ETC\PYZus{}test\PYZus{}accuracy}\PY{p}{[}\PY{n}{i}\PY{p}{,}\PY{n}{j}\PY{p}{]}\PY{p}{,}
-                                                              \PY{n}{ETC\PYZus{}critical\PYZus{}accuracy}\PY{p}{[}\PY{n}{i}\PY{p}{,}\PY{n}{j}\PY{p}{]}\PY{p}{)}\PY{p}{)}
-\end{Verbatim}
-
-
-    \begin{Verbatim}[commandchars=\\\{\}]
-train test critical
-n\_estimators: 10, leaf\_size: 2
-liblin: 1.0000,  1.0000, 0.8039 
-
-n\_estimators: 10, leaf\_size: 10000
-liblin: 0.9991,  0.9991, 0.6789 
-
-n\_estimators: 15, leaf\_size: 2
-liblin: 1.0000,  1.0000, 0.8297 
-
-n\_estimators: 15, leaf\_size: 10000
-liblin: 0.9992,  0.9992, 0.6819 
-
-n\_estimators: 20, leaf\_size: 2
-liblin: 1.0000,  1.0000, 0.8187 
-
-n\_estimators: 20, leaf\_size: 10000
-liblin: 0.9993,  0.9992, 0.6825 
-
-n\_estimators: 25, leaf\_size: 2
-liblin: 1.0000,  1.0000, 0.8324 
-
-n\_estimators: 25, leaf\_size: 10000
-liblin: 0.9993,  0.9992, 0.6835 
-
-n\_estimators: 30, leaf\_size: 2
-liblin: 1.0000,  1.0000, 0.8255 
-
-n\_estimators: 30, leaf\_size: 10000
-liblin: 0.9993,  0.9992, 0.6849 
-
-n\_estimators: 35, leaf\_size: 2
-liblin: 1.0000,  1.0000, 0.8352 
-
-n\_estimators: 35, leaf\_size: 10000
-liblin: 0.9993,  0.9992, 0.6843 
-
-n\_estimators: 40, leaf\_size: 2
-liblin: 1.0000,  1.0000, 0.8276 
-
-n\_estimators: 40, leaf\_size: 10000
-liblin: 0.9993,  0.9993, 0.6843 
-
-n\_estimators: 45, leaf\_size: 2
-liblin: 1.0000,  1.0000, 0.8355 
-
-n\_estimators: 45, leaf\_size: 10000
-liblin: 0.9993,  0.9993, 0.6850 
-
-n\_estimators: 50, leaf\_size: 2
-liblin: 1.0000,  1.0000, 0.8303 
-
-n\_estimators: 50, leaf\_size: 10000
-liblin: 0.9993,  0.9993, 0.6850 
-
-n\_estimators: 55, leaf\_size: 2
-liblin: 1.0000,  1.0000, 0.8366 
-
-n\_estimators: 55, leaf\_size: 10000
-liblin: 0.9993,  0.9993, 0.6859 
-
-n\_estimators: 60, leaf\_size: 2
-liblin: 1.0000,  1.0000, 0.8317 
-
-n\_estimators: 60, leaf\_size: 10000
-liblin: 0.9993,  0.9993, 0.6857 
-
-
-    \end{Verbatim}
-
-    \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}68}]:} \PY{c+c1}{\PYZsh{} plot accuracy against regularisation strength}
-         \PY{n}{plt}\PY{o}{.}\PY{n}{figure}\PY{p}{(}\PY{p}{)}
-         \PY{n}{plt}\PY{o}{.}\PY{n}{plot}\PY{p}{(}\PY{n}{n\PYZus{}estimators}\PY{p}{,}\PY{n}{ETC\PYZus{}train\PYZus{}accuracy}\PY{p}{[}\PY{p}{:}\PY{p}{,}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{,}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{\PYZhy{}\PYZhy{}b\PYZca{}}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,}\PY{n}{label}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Train leaf\PYZhy{}size: 10000}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
-         \PY{n}{plt}\PY{o}{.}\PY{n}{plot}\PY{p}{(}\PY{n}{n\PYZus{}estimators}\PY{p}{,}\PY{n}{ETC\PYZus{}test\PYZus{}accuracy}\PY{p}{[}\PY{p}{:}\PY{p}{,}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{,}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{\PYZhy{}\PYZhy{}r\PYZca{}}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,}\PY{n}{label}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Test leaf\PYZhy{}size: 10000}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
-         \PY{n}{plt}\PY{o}{.}\PY{n}{plot}\PY{p}{(}\PY{n}{n\PYZus{}estimators}\PY{p}{,}\PY{n}{ETC\PYZus{}critical\PYZus{}accuracy}\PY{p}{[}\PY{p}{:}\PY{p}{,}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{,}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{\PYZhy{}\PYZhy{}g\PYZca{}}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,}\PY{n}{label}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Critical leaf\PYZhy{}size: 10000}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
-         
-         \PY{n}{plt}\PY{o}{.}\PY{n}{plot}\PY{p}{(}\PY{n}{n\PYZus{}estimators}\PY{p}{,}\PY{n}{ETC\PYZus{}train\PYZus{}accuracy}\PY{p}{[}\PY{p}{:}\PY{p}{,}\PY{l+m+mi}{0}\PY{p}{]}\PY{p}{,}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{o\PYZhy{}b}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,}\PY{n}{label}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Train leaf\PYZhy{}size: 2}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
-         \PY{n}{plt}\PY{o}{.}\PY{n}{plot}\PY{p}{(}\PY{n}{n\PYZus{}estimators}\PY{p}{,}\PY{n}{ETC\PYZus{}test\PYZus{}accuracy}\PY{p}{[}\PY{p}{:}\PY{p}{,}\PY{l+m+mi}{0}\PY{p}{]}\PY{p}{,}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{o\PYZhy{}r}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,}\PY{n}{label}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Test leaf\PYZhy{}size: 2}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
-         \PY{n}{plt}\PY{o}{.}\PY{n}{plot}\PY{p}{(}\PY{n}{n\PYZus{}estimators}\PY{p}{,}\PY{n}{ETC\PYZus{}critical\PYZus{}accuracy}\PY{p}{[}\PY{p}{:}\PY{p}{,}\PY{l+m+mi}{0}\PY{p}{]}\PY{p}{,}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{o\PYZhy{}g}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,}\PY{n}{label}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Critical leaf\PYZhy{}size: 2}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
-         
-         \PY{n}{plt}\PY{o}{.}\PY{n}{xlabel}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{\PYZdl{}N\PYZus{}}\PY{l+s+s1}{\PYZbs{}}\PY{l+s+s1}{mathrm}\PY{l+s+si}{\PYZob{}estimators\PYZcb{}}\PY{l+s+s1}{\PYZdl{}}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{n}{fontsize}\PY{o}{=}\PY{l+m+mi}{14}\PY{p}{)}
-         \PY{n}{plt}\PY{o}{.}\PY{n}{ylabel}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Accuracy}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{n}{fontsize}\PY{o}{=}\PY{l+m+mi}{14}\PY{p}{)}
-         \PY{n}{plt}\PY{o}{.}\PY{n}{legend}\PY{p}{(}\PY{n}{bbox\PYZus{}to\PYZus{}anchor}\PY{o}{=}\PY{p}{(}\PY{l+m+mf}{1.05}\PY{p}{,} \PY{l+m+mi}{1}\PY{p}{)}\PY{p}{,} \PY{n}{loc}\PY{o}{=}\PY{l+m+mi}{2}\PY{p}{,} \PY{n}{borderaxespad}\PY{o}{=}\PY{l+m+mf}{0.}\PY{p}{,} \PY{n}{fancybox}\PY{o}{=}\PY{k+kc}{True}\PY{p}{,} \PY{n}{shadow}\PY{o}{=}\PY{k+kc}{True}\PY{p}{,} \PY{n}{fontsize}\PY{o}{=}\PY{l+m+mi}{14}\PY{p}{)}
-         
-         \PY{n}{plt}\PY{o}{.}\PY{n}{show}\PY{p}{(}\PY{p}{)}
-\end{Verbatim}
-
-
+\newpage
+\hypertarget{using-random-forest-to-classify-phases-in-the-ising-model}{%
+\subsubsection{Using Random Forest to Classify Phases in the Ising
+Model}\label{using-random-forest-to-classify-phases-in-the-ising-model3}}
     \begin{center}
     \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{output_26_0.png}
     \end{center}
     { \hspace*{\fill} \\}
-    
-    \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}70}]:} \PY{k+kn}{from} \PY{n+nn}{sklearn}\PY{n+nn}{.}\PY{n+nn}{metrics} \PY{k}{import} \PY{n}{roc\PYZus{}curve}\PY{p}{,} \PY{n}{roc\PYZus{}auc\PYZus{}score}
-         
-         \PY{n}{etc\PYZus{}preds} \PY{o}{=} \PY{p}{[}\PY{n}{etc\PYZus{}train\PYZus{}preds}\PY{p}{,} \PY{n}{etc\PYZus{}test\PYZus{}preds}\PY{p}{,} \PY{n}{etc\PYZus{}critical\PYZus{}preds}\PY{p}{]}
-         
-         \PY{k}{for} \PY{n}{i}\PY{p}{,}\PY{n}{e} \PY{o+ow}{in} \PY{n+nb}{enumerate}\PY{p}{(}\PY{n}{n\PYZus{}estimators}\PY{p}{)}\PY{p}{:}
-             \PY{k}{for} \PY{n}{j}\PY{p}{,}\PY{n}{l} \PY{o+ow}{in} \PY{n+nb}{enumerate}\PY{p}{(}\PY{n}{leaf\PYZus{}sizes}\PY{p}{)}\PY{p}{:}
-                 \PY{k}{for} \PY{n}{k}\PY{p}{,}\PY{n}{ep} \PY{o+ow}{in} \PY{n+nb}{enumerate}\PY{p}{(}\PY{n}{etc\PYZus{}preds}\PY{p}{)}\PY{p}{:}
-                     \PY{n}{etc\PYZus{}tpr}\PY{p}{,} \PY{n}{etc\PYZus{}fpr}\PY{p}{,} \PY{n}{\PYZus{}} \PY{o}{=} \PY{n}{roc\PYZus{}curve}\PY{p}{(}\PY{n}{Ys}\PY{p}{[}\PY{n}{k}\PY{p}{]}\PY{p}{,} \PY{n}{ep}\PY{p}{[}\PY{n}{i}\PY{o}{*}\PY{n}{m}\PY{o}{+}\PY{n}{j}\PY{p}{]}\PY{p}{)}
-             
-                     \PY{n}{etc\PYZus{}auc} \PY{o}{=} \PY{l+m+mi}{1}\PY{o}{\PYZhy{}}\PY{n}{roc\PYZus{}auc\PYZus{}score}\PY{p}{(}\PY{n}{Ys}\PY{p}{[}\PY{n}{k}\PY{p}{]}\PY{p}{,} \PY{n}{ep}\PY{p}{[}\PY{n}{i}\PY{o}{+}\PY{n}{j}\PY{o}{*}\PY{n}{m}\PY{p}{]}\PY{p}{)}
-             
-                     \PY{n}{plt}\PY{o}{.}\PY{n}{plot}\PY{p}{(}\PY{n}{etc\PYZus{}fpr}\PY{p}{,} \PY{n}{etc\PYZus{}tpr}\PY{p}{,} \PY{n}{ttc\PYZus{}colors}\PY{p}{[}\PY{n}{k}\PY{p}{]}\PY{p}{,} \PY{n}{label}\PY{o}{=}\PY{n}{labs}\PY{p}{[}\PY{n}{k}\PY{p}{]} \PY{o}{+} \PYZbs{}
-                              \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{estimator=\PYZdl{}}\PY{l+s+si}{\PYZpc{}.5f}\PY{l+s+s2}{\PYZdl{}, leaf\PYZhy{}size=\PYZdl{}}\PY{l+s+si}{\PYZpc{}.5g}\PY{l+s+s2}{\PYZdl{} , AUC=\PYZdl{}}\PY{l+s+si}{\PYZpc{}.5f}\PY{l+s+s2}{\PYZdl{}}\PY{l+s+s2}{\PYZdq{}} 
-                              \PY{o}{\PYZpc{}} \PY{p}{(}\PY{n}{e}\PY{p}{,} \PY{n}{l}\PY{p}{,} \PY{n}{etc\PYZus{}auc}\PY{p}{)}\PY{p}{)}
-                 \PY{c+c1}{\PYZsh{} end fok}
-             \PY{c+c1}{\PYZsh{} end forj}
-         \PY{c+c1}{\PYZsh{} end fori}
-         
-         \PY{n}{plt}\PY{o}{.}\PY{n}{plot}\PY{p}{(}\PY{p}{(}\PY{l+m+mi}{0}\PY{p}{,}\PY{l+m+mi}{1}\PY{p}{)}\PY{p}{,} \PY{p}{(}\PY{l+m+mi}{0}\PY{p}{,}\PY{l+m+mi}{1}\PY{p}{)}\PY{p}{,} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{\PYZhy{}\PYZhy{}k}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{n}{label}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{50}\PY{l+s+s1}{\PYZpc{}}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
-         
-         \PY{n}{plt}\PY{o}{.}\PY{n}{legend}\PY{p}{(}\PY{n}{bbox\PYZus{}to\PYZus{}anchor}\PY{o}{=}\PY{p}{(}\PY{l+m+mf}{1.0}\PY{p}{,} \PY{l+m+mf}{1.027}\PY{p}{)}\PY{p}{,} \PY{n}{fancybox}\PY{o}{=}\PY{k+kc}{True}\PY{p}{,} \PY{n}{shadow}\PY{o}{=}\PY{k+kc}{True}\PY{p}{,} \PY{n}{ncol}\PY{o}{=}\PY{l+m+mi}{2}\PY{p}{)}
-         \PY{n}{plt}\PY{o}{.}\PY{n}{xlabel}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{False Positive}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{n}{fontsize}\PY{o}{=}\PY{l+m+mi}{14}\PY{p}{)}
-         \PY{n}{plt}\PY{o}{.}\PY{n}{ylabel}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{True Positive}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{n}{fontsize}\PY{o}{=}\PY{l+m+mi}{14}\PY{p}{)}
-         \PY{n}{plt}\PY{o}{.}\PY{n}{show}\PY{p}{(}\PY{p}{)}
-\end{Verbatim}
 
+\newpage
+\hypertarget{using-random-forest-to-classify-phases-in-the-ising-model}{%
+\subsubsection{Using Random Forest to Classify Phases in the Ising
+Model}\label{using-random-forest-to-classify-phases-in-the-ising-model4}}
+    \begin{center}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{output_26_0.png}
+    \end{center}
+    { \hspace*{\fill} \\}
 
     \begin{center}
     \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{output_27_0.png}
     \end{center}
     { \hspace*{\fill} \\}
-    
-    As we can see with both the bagging and the randomized trees the
-performance is good. The critical case is still hard to determine, as is
-expected. In comparison to the logistic regression, the random forest
-seems to perform better
 
-    \hypertarget{classifying-the-ising-model-phase-using-neural-networks}{%
+\newpage
+\hypertarget{classifying-the-ising-model-phase-using-neural-networks}{%
 \subsubsection{Classifying the Ising Model Phase Using Neural
 Networks}\label{classifying-the-ising-model-phase-using-neural-networks}}
 
-Just as we could use the logistic regression and random forest methods
-to find the phases of the Ising model we can use a feed-forward neural
-network to do the same. We will use the libraries TensorFlow and Keras.
-First let us make a class to load the data and to shuffle the data as
-the latter is useful in the training procedure in TensorFlow.
-
-    \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}31}]:} \PY{k+kn}{import} \PY{n+nn}{argparse}
-         \PY{k+kn}{import} \PY{n+nn}{os}
-         \PY{k+kn}{import} \PY{n+nn}{pickle}
-         \PY{k+kn}{import} \PY{n+nn}{collections}
-         \PY{k+kn}{import} \PY{n+nn}{numpy} \PY{k}{as} \PY{n+nn}{np}
-         \PY{k+kn}{from} \PY{n+nn}{sklearn}\PY{n+nn}{.}\PY{n+nn}{model\PYZus{}selection} \PY{k}{import} \PY{n}{train\PYZus{}test\PYZus{}split}
-         \PY{k+kn}{import} \PY{n+nn}{tensorflow} \PY{k}{as} \PY{n+nn}{tf}
-         \PY{k+kn}{from} \PY{n+nn}{tensorflow}\PY{n+nn}{.}\PY{n+nn}{python}\PY{n+nn}{.}\PY{n+nn}{framework} \PY{k}{import} \PY{n}{dtypes}
-         \PY{k+kn}{from} \PY{n+nn}{keras}\PY{n+nn}{.}\PY{n+nn}{utils} \PY{k}{import} \PY{n}{to\PYZus{}categorical}
-         
-         \PY{n}{os}\PY{o}{.}\PY{n}{environ}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{TF\PYZus{}CPP\PYZus{}MIN\PYZus{}LOG\PYZus{}LEVEL}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]} \PY{o}{=} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{2}\PY{l+s+s1}{\PYZsq{}}
-         
-         \PY{n}{tf}\PY{o}{.}\PY{n}{set\PYZus{}random\PYZus{}seed}\PY{p}{(}\PY{l+m+mi}{12}\PY{p}{)}
-         
-         \PY{k}{class} \PY{n+nc}{DataSet}\PY{p}{(}\PY{n+nb}{object}\PY{p}{)}\PY{p}{:}
-             \PY{k}{def} \PY{n+nf}{\PYZus{}\PYZus{}init\PYZus{}\PYZus{}}\PY{p}{(}\PY{n+nb+bp}{self}\PY{p}{,} \PY{n}{data\PYZus{}X}\PY{p}{,} \PY{n}{data\PYZus{}Y}\PY{p}{,} \PY{n}{dtype}\PY{o}{=}\PY{n}{dtypes}\PY{o}{.}\PY{n}{float32}\PY{p}{)}\PY{p}{:}
-                 \PY{n}{dtype} \PY{o}{=} \PY{n}{dtypes}\PY{o}{.}\PY{n}{as\PYZus{}dtype}\PY{p}{(}\PY{n}{dtype}\PY{p}{)}\PY{o}{.}\PY{n}{base\PYZus{}dtype}
-                 \PY{k}{if} \PY{n}{dtype} \PY{o+ow}{not} \PY{o+ow}{in} \PY{p}{(}\PY{n}{dtypes}\PY{o}{.}\PY{n}{uint8}\PY{p}{,} \PY{n}{dtypes}\PY{o}{.}\PY{n}{float32}\PY{p}{)}\PY{p}{:}
-                     \PY{k}{raise} \PY{n+ne}{TypeError}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Invalid dtype }\PY{l+s+si}{\PYZpc{}r}\PY{l+s+s1}{, expected uint8 or float32}\PY{l+s+s1}{\PYZsq{}} \PY{o}{\PYZpc{}} \PY{n}{dtype}\PY{p}{)}
-                 
-                 \PY{k}{assert} \PY{n}{data\PYZus{}X}\PY{o}{.}\PY{n}{shape}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]} \PY{o}{==} \PY{n}{data\PYZus{}Y}\PY{o}{.}\PY{n}{shape}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{p}{,} \PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{data\PYZus{}X.shape: }\PY{l+s+si}{\PYZpc{}s}\PY{l+s+s1}{ data\PYZus{}Y.shape: }\PY{l+s+si}{\PYZpc{}s}\PY{l+s+s1}{\PYZsq{}} \PY{o}{\PYZpc{}} \PY{p}{(}\PY{n}{data\PYZus{}X}\PY{o}{.}\PY{n}{shape}\PY{p}{,} 
-                                                                                                    \PY{n}{data\PYZus{}Y}\PY{o}{.}\PY{n}{shape}\PY{p}{)}\PY{p}{)}
-                 \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{num\PYZus{}examples} \PY{o}{=} \PY{n}{data\PYZus{}X}\PY{o}{.}\PY{n}{shape}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}
-             
-                 \PY{k}{if} \PY{n}{dtype} \PY{o}{==} \PY{n}{dtypes}\PY{o}{.}\PY{n}{float32}\PY{p}{:}
-                     \PY{n}{data\PYZus{}X} \PY{o}{=} \PY{n}{data\PYZus{}X}\PY{o}{.}\PY{n}{astype}\PY{p}{(}\PY{n}{np}\PY{o}{.}\PY{n}{float32}\PY{p}{)}
-                 \PY{c+c1}{\PYZsh{} end if}
-                 
-                 \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{data\PYZus{}X} \PY{o}{=} \PY{n}{data\PYZus{}X}
-                 \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{data\PYZus{}Y} \PY{o}{=} \PY{n}{data\PYZus{}Y} 
-         
-                 \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{epochs\PYZus{}completed} \PY{o}{=} \PY{l+m+mi}{0}
-                 \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{index\PYZus{}in\PYZus{}epoch} \PY{o}{=} \PY{l+m+mi}{0}
-             \PY{c+c1}{\PYZsh{} end \PYZus{}\PYZus{}init\PYZus{}\PYZus{}}
-             
-             \PY{k}{def} \PY{n+nf}{next\PYZus{}batch}\PY{p}{(}\PY{n+nb+bp}{self}\PY{p}{,} \PY{n}{batch\PYZus{}size}\PY{p}{,} \PY{n}{seed}\PY{o}{=}\PY{k+kc}{None}\PY{p}{)}\PY{p}{:}
-                 \PY{l+s+sd}{\PYZdq{}\PYZdq{}\PYZdq{}Return the next `batch\PYZus{}size` examples from this data set.\PYZdq{}\PYZdq{}\PYZdq{}}
-         
-                 \PY{k}{if} \PY{n}{seed}\PY{p}{:}
-                     \PY{n}{np}\PY{o}{.}\PY{n}{random}\PY{o}{.}\PY{n}{seed}\PY{p}{(}\PY{n}{seed}\PY{p}{)}
-                 \PY{c+c1}{\PYZsh{} end if}
-         
-                 \PY{n}{start} \PY{o}{=} \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{index\PYZus{}in\PYZus{}epoch}
-                 \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{index\PYZus{}in\PYZus{}epoch} \PY{o}{+}\PY{o}{=} \PY{n}{batch\PYZus{}size}
-                 \PY{k}{if} \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{index\PYZus{}in\PYZus{}epoch} \PY{o}{\PYZgt{}} \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{num\PYZus{}examples}\PY{p}{:}
-                     \PY{c+c1}{\PYZsh{} Finished epoch}
-                     \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{epochs\PYZus{}completed} \PY{o}{+}\PY{o}{=} \PY{l+m+mi}{1}
-                     
-                     \PY{c+c1}{\PYZsh{} Shuffle the data}
-                     \PY{n}{perm} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{arange}\PY{p}{(}\PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{num\PYZus{}examples}\PY{p}{)}
-                     \PY{n}{np}\PY{o}{.}\PY{n}{random}\PY{o}{.}\PY{n}{shuffle}\PY{p}{(}\PY{n}{perm}\PY{p}{)}
-                     \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{data\PYZus{}X} \PY{o}{=} \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{data\PYZus{}X}\PY{p}{[}\PY{n}{perm}\PY{p}{]}
-                     \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{data\PYZus{}Y} \PY{o}{=} \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{data\PYZus{}Y}\PY{p}{[}\PY{n}{perm}\PY{p}{]}
-                     
-                     \PY{c+c1}{\PYZsh{} Start next epoch}
-                     \PY{n}{start} \PY{o}{=} \PY{l+m+mi}{0}
-                     \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{index\PYZus{}in\PYZus{}epoch} \PY{o}{=} \PY{n}{batch\PYZus{}size}
-                     \PY{k}{assert} \PY{n}{batch\PYZus{}size} \PY{o}{\PYZlt{}}\PY{o}{=} \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{num\PYZus{}examples}
-                 \PY{c+c1}{\PYZsh{} end if}
-                     
-                 \PY{n}{end} \PY{o}{=} \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{index\PYZus{}in\PYZus{}epoch}
-         
-                 \PY{k}{return} \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{data\PYZus{}X}\PY{p}{[}\PY{n}{start}\PY{p}{:}\PY{n}{end}\PY{p}{]}\PY{p}{,} \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{data\PYZus{}Y}\PY{p}{[}\PY{n}{start}\PY{p}{:}\PY{n}{end}\PY{p}{]}
-             \PY{c+c1}{\PYZsh{} end function next\PYZus{}batch}
-         \PY{c+c1}{\PYZsh{} end class DataSet}
-         
-         \PY{k}{def} \PY{n+nf}{read\PYZus{}data\PYZus{}set}\PY{p}{(}\PY{n}{dtype}\PY{o}{=}\PY{n}{dtypes}\PY{o}{.}\PY{n}{float32}\PY{p}{,} \PY{n}{train\PYZus{}size}\PY{o}{=}\PY{l+m+mi}{80000}\PY{p}{,} \PY{n}{validation\PYZus{}size}\PY{o}{=}\PY{l+m+mi}{5000}\PY{p}{)}\PY{p}{:}
-             \PY{l+s+sd}{\PYZdq{}\PYZdq{}\PYZdq{}read and reshape data\PYZdq{}\PYZdq{}\PYZdq{}}
-             
-             \PY{c+c1}{\PYZsh{} load data (all of it)}
-             \PY{n}{data\PYZus{}path} \PY{o}{=} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{IsingData/}\PY{l+s+s2}{\PYZdq{}}
-             \PY{n}{data} \PY{o}{=} \PY{n}{pickle}\PY{o}{.}\PY{n}{load}\PY{p}{(}\PY{n+nb}{open}\PY{p}{(}\PY{n}{data\PYZus{}path} \PY{o}{+} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Ising2DFM\PYZus{}reSample\PYZus{}L40\PYZus{}T=All.pkl}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{rb}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}\PY{p}{)}
-             \PY{n}{data} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{unpackbits}\PY{p}{(}\PY{n}{data}\PY{p}{)}\PY{o}{.}\PY{n}{reshape}\PY{p}{(}\PY{o}{\PYZhy{}}\PY{l+m+mi}{1}\PY{p}{,} \PY{l+m+mi}{1600}\PY{p}{)}
-             \PY{n}{data} \PY{o}{=} \PY{n}{data}\PY{o}{.}\PY{n}{astype}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{int}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
-             \PY{n}{data}\PY{p}{[}\PY{n}{np}\PY{o}{.}\PY{n}{where}\PY{p}{(}\PY{n}{data}\PY{o}{==}\PY{l+m+mi}{0}\PY{p}{)}\PY{p}{]} \PY{o}{=} \PY{o}{\PYZhy{}}\PY{l+m+mi}{1}
-         
-             \PY{c+c1}{\PYZsh{} load labels (all of it)}
-             \PY{n}{labels} \PY{o}{=} \PY{n}{pickle}\PY{o}{.}\PY{n}{load}\PY{p}{(}\PY{n+nb}{open}\PY{p}{(}\PY{n}{data\PYZus{}path} \PY{o}{+} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Ising2DFM\PYZus{}reSample\PYZus{}L40\PYZus{}T=All\PYZus{}labels.pkl}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{rb}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}\PY{p}{)}
-         
-             \PY{c+c1}{\PYZsh{} divide data into ordered, critical and disordered}
-             \PY{n}{X\PYZus{}ordered}\PY{o}{=}\PY{n}{data}\PY{p}{[}\PY{p}{:}\PY{l+m+mi}{70000}\PY{p}{,}\PY{p}{:}\PY{p}{]}
-             \PY{n}{Y\PYZus{}ordered}\PY{o}{=}\PY{n}{labels}\PY{p}{[}\PY{p}{:}\PY{l+m+mi}{70000}\PY{p}{]}
-         
-             \PY{n}{X\PYZus{}critical}\PY{o}{=}\PY{n}{data}\PY{p}{[}\PY{l+m+mi}{70000}\PY{p}{:}\PY{l+m+mi}{100000}\PY{p}{,}\PY{p}{:}\PY{p}{]}
-             \PY{n}{Y\PYZus{}critical}\PY{o}{=}\PY{n}{labels}\PY{p}{[}\PY{l+m+mi}{70000}\PY{p}{:}\PY{l+m+mi}{100000}\PY{p}{]}
-         
-             \PY{n}{X\PYZus{}disordered}\PY{o}{=}\PY{n}{data}\PY{p}{[}\PY{l+m+mi}{100000}\PY{p}{:}\PY{p}{,}\PY{p}{:}\PY{p}{]}
-             \PY{n}{Y\PYZus{}disordered}\PY{o}{=}\PY{n}{labels}\PY{p}{[}\PY{l+m+mi}{100000}\PY{p}{:}\PY{p}{]}
-         
-             \PY{k}{del} \PY{n}{data}\PY{p}{,}\PY{n}{labels}
-         
-             \PY{c+c1}{\PYZsh{} define training and test}
-             \PY{n}{X}\PY{o}{=}\PY{n}{np}\PY{o}{.}\PY{n}{concatenate}\PY{p}{(}\PY{p}{(}\PY{n}{X\PYZus{}ordered}\PY{p}{,}\PY{n}{X\PYZus{}disordered}\PY{p}{)}\PY{p}{)}
-             \PY{n}{Y}\PY{o}{=}\PY{n}{np}\PY{o}{.}\PY{n}{concatenate}\PY{p}{(}\PY{p}{(}\PY{n}{Y\PYZus{}ordered}\PY{p}{,}\PY{n}{Y\PYZus{}disordered}\PY{p}{)}\PY{p}{)}
-             
-             \PY{k}{del} \PY{n}{X\PYZus{}ordered}\PY{p}{,} \PY{n}{X\PYZus{}disordered}\PY{p}{,} \PY{n}{Y\PYZus{}ordered}\PY{p}{,} \PY{n}{Y\PYZus{}disordered}
-             
-             \PY{n}{X\PYZus{}train}\PY{p}{,} \PY{n}{X\PYZus{}test}\PY{p}{,} \PY{n}{Y\PYZus{}train}\PY{p}{,} \PY{n}{Y\PYZus{}test} \PY{o}{=} \PY{n}{train\PYZus{}test\PYZus{}split}\PY{p}{(}\PY{n}{X}\PY{p}{,} \PY{n}{Y}\PY{p}{,} \PY{n}{train\PYZus{}size}\PY{o}{=}\PY{n}{train\PYZus{}size}\PY{p}{)}
-             
-             \PY{k}{del} \PY{n}{X}\PY{p}{,}\PY{n}{Y}
-             
-             \PY{c+c1}{\PYZsh{} make data categorical}
-             \PY{n}{Y\PYZus{}train} \PY{o}{=} \PY{n}{to\PYZus{}categorical}\PY{p}{(}\PY{n}{Y\PYZus{}train}\PY{p}{)}
-             \PY{n}{Y\PYZus{}test} \PY{o}{=} \PY{n}{to\PYZus{}categorical}\PY{p}{(}\PY{n}{Y\PYZus{}test}\PY{p}{)}
-             \PY{n}{Y\PYZus{}critical} \PY{o}{=} \PY{n}{to\PYZus{}categorical}\PY{p}{(}\PY{n}{Y\PYZus{}critical}\PY{p}{)}
-             
-             \PY{n}{X\PYZus{}validation} \PY{o}{=} \PY{n}{X\PYZus{}train}\PY{p}{[}\PY{p}{:}\PY{n}{validation\PYZus{}size}\PY{p}{]}
-             \PY{n}{Y\PYZus{}validation} \PY{o}{=} \PY{n}{Y\PYZus{}train}\PY{p}{[}\PY{p}{:}\PY{n}{validation\PYZus{}size}\PY{p}{]}
-             \PY{n}{X\PYZus{}train} \PY{o}{=} \PY{n}{X\PYZus{}train}\PY{p}{[}\PY{n}{validation\PYZus{}size}\PY{p}{:}\PY{p}{]}
-             \PY{n}{Y\PYZus{}train} \PY{o}{=} \PY{n}{Y\PYZus{}train}\PY{p}{[}\PY{n}{validation\PYZus{}size}\PY{p}{:}\PY{p}{]}
-             
-             \PY{c+c1}{\PYZsh{} create data sets}
-             \PY{n}{train} \PY{o}{=} \PY{n}{DataSet}\PY{p}{(}\PY{n}{X\PYZus{}train}\PY{p}{,} \PY{n}{Y\PYZus{}train}\PY{p}{,} \PY{n}{dtype}\PY{o}{=}\PY{n}{dtype}\PY{p}{)}
-             \PY{n}{validation} \PY{o}{=} \PY{n}{DataSet}\PY{p}{(}\PY{n}{X\PYZus{}validation}\PY{p}{,} \PY{n}{Y\PYZus{}validation}\PY{p}{,} \PY{n}{dtype}\PY{o}{=}\PY{n}{dtype}\PY{p}{)}
-             \PY{n}{test} \PY{o}{=} \PY{n}{DataSet}\PY{p}{(}\PY{n}{X\PYZus{}test}\PY{p}{,} \PY{n}{Y\PYZus{}test}\PY{p}{,} \PY{n}{dtype}\PY{o}{=}\PY{n}{dtype}\PY{p}{)}
-             \PY{n}{critical} \PY{o}{=} \PY{n}{DataSet}\PY{p}{(}\PY{n}{X\PYZus{}critical}\PY{p}{,} \PY{n}{Y\PYZus{}critical}\PY{p}{,} \PY{n}{dtype}\PY{o}{=}\PY{n}{dtype}\PY{p}{)}
-             
-             \PY{n}{Datasets} \PY{o}{=} \PY{n}{collections}\PY{o}{.}\PY{n}{namedtuple}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Datasets}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{train}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{validation}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{test}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{critical}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{p}{)}
-             
-             \PY{k}{return} \PY{n}{Datasets}\PY{p}{(}\PY{n}{train}\PY{o}{=}\PY{n}{train}\PY{p}{,} \PY{n}{validation}\PY{o}{=}\PY{n}{validation}\PY{p}{,} \PY{n}{test}\PY{o}{=}\PY{n}{test}\PY{p}{,} \PY{n}{critical}\PY{o}{=}\PY{n}{critical}\PY{p}{)}
-\end{Verbatim}
-
-
-    \begin{Verbatim}[commandchars=\\\{\}]
-/usr/lib/python3/dist-packages/h5py/\_\_init\_\_.py:36: FutureWarning: Conversion of the second argument of issubdtype from `float` to `np.floating` is deprecated. In future, it will be treated as `np.float64 == np.dtype(float).type`.
-  from .\_conv import register\_converters as \_register\_converters
-Using TensorFlow backend.
-
-    \end{Verbatim}
-
-    With the function for handling the data available we can proceed with
-creating the neural net and its architecture. We will make the DNN with
-a class model with some placeholders used by TensorFlow.
-
-    \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}32}]:} \PY{k}{class} \PY{n+nc}{model}\PY{p}{(}\PY{n+nb}{object}\PY{p}{)}\PY{p}{:}
-             \PY{k}{def} \PY{n+nf}{\PYZus{}\PYZus{}init\PYZus{}\PYZus{}}\PY{p}{(}\PY{n+nb+bp}{self}\PY{p}{,} \PY{n}{N\PYZus{}neurons}\PY{p}{,} \PY{n}{opt\PYZus{}kwargs}\PY{p}{)}\PY{p}{:}
-                 \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{global\PYZus{}step} \PY{o}{=} \PY{n}{tf}\PY{o}{.}\PY{n}{Variable}\PY{p}{(}\PY{l+m+mi}{0}\PY{p}{,} \PY{n}{dtype}\PY{o}{=}\PY{n}{tf}\PY{o}{.}\PY{n}{int32}\PY{p}{,} \PY{n}{trainable}\PY{o}{=}\PY{k+kc}{False}\PY{p}{,} \PY{n}{name}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{global\PYZus{}step}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
-                 
-                 \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{L} \PY{o}{=} \PY{l+m+mi}{40}
-                 \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{n\PYZus{}feats} \PY{o}{=} \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{L}\PY{o}{*}\PY{o}{*}\PY{l+m+mi}{2}
-                 \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{n\PYZus{}categories} \PY{o}{=} \PY{l+m+mi}{2}
-                 
-                 \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{create\PYZus{}placeholders}\PY{p}{(}\PY{p}{)}
-                 \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{deep\PYZus{}layer\PYZus{}neurons} \PY{o}{=} \PY{n}{N\PYZus{}neurons}
-                 \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{create\PYZus{}DNN}\PY{p}{(}\PY{p}{)}
-                 \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{create\PYZus{}loss}\PY{p}{(}\PY{p}{)}
-                 \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{create\PYZus{}optimiser}\PY{p}{(}\PY{n}{opt\PYZus{}kwargs}\PY{p}{)}
-                 \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{create\PYZus{}accuracy}\PY{p}{(}\PY{p}{)}
-             \PY{c+c1}{\PYZsh{} end \PYZus{}\PYZus{}init\PYZus{}\PYZus{}}
-             
-             \PY{k}{def} \PY{n+nf}{create\PYZus{}placeholders}\PY{p}{(}\PY{n+nb+bp}{self}\PY{p}{)}\PY{p}{:}
-                 \PY{l+s+sd}{\PYZdq{}\PYZdq{}\PYZdq{}define placeholders used by TensorFlow\PYZdq{}\PYZdq{}\PYZdq{}}
-                 \PY{k}{with} \PY{n}{tf}\PY{o}{.}\PY{n}{name\PYZus{}scope}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{data}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}\PY{p}{:}
-                     \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{X} \PY{o}{=} \PY{n}{tf}\PY{o}{.}\PY{n}{placeholder}\PY{p}{(}\PY{n}{tf}\PY{o}{.}\PY{n}{float32}\PY{p}{,} \PY{n}{shape}\PY{o}{=}\PY{p}{(}\PY{k+kc}{None}\PY{p}{,} \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{n\PYZus{}feats}\PY{p}{)}\PY{p}{,} \PY{n}{name}\PY{o}{=}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{X\PYZus{}data}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
-                     \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{Y} \PY{o}{=} \PY{n}{tf}\PY{o}{.}\PY{n}{placeholder}\PY{p}{(}\PY{n}{tf}\PY{o}{.}\PY{n}{float32}\PY{p}{,} \PY{n}{shape}\PY{o}{=}\PY{p}{(}\PY{k+kc}{None}\PY{p}{,} \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{n\PYZus{}categories}\PY{p}{)}\PY{p}{,} \PY{n}{name}\PY{o}{=}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Y\PYZus{}data}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
-                     \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{dropout\PYZus{}keepprob} \PY{o}{=} \PY{n}{tf}\PY{o}{.}\PY{n}{placeholder}\PY{p}{(}\PY{n}{tf}\PY{o}{.}\PY{n}{float32}\PY{p}{,} \PY{n}{name}\PY{o}{=}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{keep\PYZus{}probability}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
-                 \PY{c+c1}{\PYZsh{} end with}
-             \PY{c+c1}{\PYZsh{} end function create\PYZus{}placeholders}
-             
-             \PY{k}{def} \PY{n+nf}{\PYZus{}weight\PYZus{}variable}\PY{p}{(}\PY{n+nb+bp}{self}\PY{p}{,} \PY{n}{shape}\PY{p}{,} \PY{n}{name}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{n}{dtype}\PY{o}{=}\PY{n}{tf}\PY{o}{.}\PY{n}{float32}\PY{p}{)}\PY{p}{:}
-                 \PY{l+s+sd}{\PYZdq{}\PYZdq{}\PYZdq{}make a weight of given shape\PYZdq{}\PYZdq{}\PYZdq{}}
-                 \PY{n}{initial} \PY{o}{=} \PY{n}{tf}\PY{o}{.}\PY{n}{truncated\PYZus{}normal}\PY{p}{(}\PY{n}{shape}\PY{p}{,} \PY{n}{stddev}\PY{o}{=}\PY{l+m+mf}{0.1}\PY{p}{)}
-                 \PY{k}{return} \PY{n}{tf}\PY{o}{.}\PY{n}{Variable}\PY{p}{(}\PY{n}{initial}\PY{p}{,} \PY{n}{dtype}\PY{o}{=}\PY{n}{dtype}\PY{p}{,} \PY{n}{name}\PY{o}{=}\PY{n}{name}\PY{p}{)}
-             \PY{c+c1}{\PYZsh{} end function \PYZus{}weight\PYZus{}variable}
-             
-             \PY{k}{def} \PY{n+nf}{\PYZus{}bias\PYZus{}variable}\PY{p}{(}\PY{n+nb+bp}{self}\PY{p}{,} \PY{n}{shape}\PY{p}{,} \PY{n}{name}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{n}{dtype}\PY{o}{=}\PY{n}{tf}\PY{o}{.}\PY{n}{float32}\PY{p}{)}\PY{p}{:}
-                 \PY{l+s+sd}{\PYZdq{}\PYZdq{}\PYZdq{}create bias variable of given shape\PYZdq{}\PYZdq{}\PYZdq{}}
-                 \PY{n}{initial} \PY{o}{=} \PY{n}{tf}\PY{o}{.}\PY{n}{constant}\PY{p}{(}\PY{l+m+mi}{0}\PY{p}{,}\PY{l+m+mi}{1}\PY{p}{,} \PY{n}{shape}\PY{o}{=}\PY{n}{shape}\PY{p}{)}
-                 \PY{k}{return} \PY{n}{tf}\PY{o}{.}\PY{n}{Variable}\PY{p}{(}\PY{n}{initial}\PY{p}{,} \PY{n}{dtype}\PY{o}{=}\PY{n}{dtype}\PY{p}{,} \PY{n}{name}\PY{o}{=}\PY{n}{name}\PY{p}{)}
-             \PY{c+c1}{\PYZsh{} end function \PYZus{}bias\PYZus{}variable}
-             
-             \PY{k}{def} \PY{n+nf}{create\PYZus{}DNN}\PY{p}{(}\PY{n+nb+bp}{self}\PY{p}{)}\PY{p}{:}
-                 \PY{l+s+sd}{\PYZdq{}\PYZdq{}\PYZdq{}create layers\PYZdq{}\PYZdq{}\PYZdq{}}
-                 \PY{k}{with} \PY{n}{tf}\PY{o}{.}\PY{n}{name\PYZus{}scope}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{DNN}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}\PY{p}{:}
-                     \PY{n}{W\PYZus{}fc1} \PY{o}{=} \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{\PYZus{}weight\PYZus{}variable}\PY{p}{(}\PY{p}{[}\PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{n\PYZus{}feats}\PY{p}{,} \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{deep\PYZus{}layer\PYZus{}neurons}\PY{p}{]}\PY{p}{,} \PY{n}{name}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{fc1}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} 
-                                                   \PY{n}{dtype}\PY{o}{=}\PY{n}{tf}\PY{o}{.}\PY{n}{float32}\PY{p}{)}
-                     \PY{n}{b\PYZus{}fc1} \PY{o}{=} \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{\PYZus{}bias\PYZus{}variable}\PY{p}{(}\PY{p}{[}\PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{deep\PYZus{}layer\PYZus{}neurons}\PY{p}{]}\PY{p}{,} \PY{n}{name}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{fc1}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{n}{dtype}\PY{o}{=}\PY{n}{tf}\PY{o}{.}\PY{n}{float32}\PY{p}{)}
-                     
-                     \PY{n}{a\PYZus{}fc1} \PY{o}{=} \PY{n}{tf}\PY{o}{.}\PY{n}{nn}\PY{o}{.}\PY{n}{relu}\PY{p}{(}\PY{n}{tf}\PY{o}{.}\PY{n}{matmul}\PY{p}{(}\PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{X}\PY{p}{,} \PY{n}{W\PYZus{}fc1}\PY{p}{)} \PY{o}{+} \PY{n}{b\PYZus{}fc1}\PY{p}{)}
-                     
-                     \PY{n}{W\PYZus{}fc2} \PY{o}{=} \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{\PYZus{}weight\PYZus{}variable}\PY{p}{(}\PY{p}{[}\PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{deep\PYZus{}layer\PYZus{}neurons}\PY{p}{,} \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{n\PYZus{}categories}\PY{p}{]}\PY{p}{,} \PY{n}{name}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{fc2}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} 
-                                                   \PY{n}{dtype}\PY{o}{=}\PY{n}{tf}\PY{o}{.}\PY{n}{float32}\PY{p}{)}
-                     \PY{n}{b\PYZus{}fc2} \PY{o}{=} \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{\PYZus{}bias\PYZus{}variable}\PY{p}{(}\PY{p}{[}\PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{n\PYZus{}categories}\PY{p}{]}\PY{p}{,} \PY{n}{name}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{fc2}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{n}{dtype}\PY{o}{=}\PY{n}{tf}\PY{o}{.}\PY{n}{float32}\PY{p}{)}
-                     
-                     \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{Y\PYZus{}predicted} \PY{o}{=} \PY{n}{tf}\PY{o}{.}\PY{n}{matmul}\PY{p}{(}\PY{n}{a\PYZus{}fc1}\PY{p}{,} \PY{n}{W\PYZus{}fc2}\PY{p}{)} \PY{o}{+} \PY{n}{b\PYZus{}fc2}
-                 \PY{c+c1}{\PYZsh{} end with}
-             \PY{c+c1}{\PYZsh{} end function create\PYZus{}DNN}
-             
-             \PY{k}{def} \PY{n+nf}{create\PYZus{}loss}\PY{p}{(}\PY{n+nb+bp}{self}\PY{p}{)}\PY{p}{:}
-                 \PY{k}{with} \PY{n}{tf}\PY{o}{.}\PY{n}{name\PYZus{}scope}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{loss}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}\PY{p}{:}
-                     \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{loss} \PY{o}{=} \PY{n}{tf}\PY{o}{.}\PY{n}{reduce\PYZus{}mean}\PY{p}{(}\PY{n}{tf}\PY{o}{.}\PY{n}{nn}\PY{o}{.}\PY{n}{softmax\PYZus{}cross\PYZus{}entropy\PYZus{}with\PYZus{}logits\PYZus{}v2}\PY{p}{(}\PY{n}{labels}\PY{o}{=}\PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{Y}\PY{p}{,}
-                                                                                           \PY{n}{logits}\PY{o}{=}\PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{Y\PYZus{}predicted}\PY{p}{)}\PY{p}{)}
-                 \PY{c+c1}{\PYZsh{} end with}
-             \PY{c+c1}{\PYZsh{} end function create\PYZus{}loss}
-             
-             \PY{k}{def} \PY{n+nf}{create\PYZus{}optimiser}\PY{p}{(}\PY{n+nb+bp}{self}\PY{p}{,} \PY{n}{opt\PYZus{}kwarg}\PY{p}{)}\PY{p}{:}
-                 \PY{k}{with} \PY{n}{tf}\PY{o}{.}\PY{n}{name\PYZus{}scope}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{optimiser}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}\PY{p}{:}
-                     \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{optimizer} \PY{o}{=} \PY{n}{tf}\PY{o}{.}\PY{n}{train}\PY{o}{.}\PY{n}{GradientDescentOptimizer}\PY{p}{(}\PY{o}{*}\PY{o}{*}\PY{n}{opt\PYZus{}kwarg}\PY{p}{)}\PY{o}{.}\PY{n}{minimize}\PY{p}{(}\PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{loss}\PY{p}{,}
-                                                                                        \PY{n}{global\PYZus{}step}\PY{o}{=}\PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{global\PYZus{}step}\PY{p}{)}
-                 \PY{c+c1}{\PYZsh{} end with}
-             \PY{c+c1}{\PYZsh{} end function crate\PYZus{}optimiser}
-             
-             \PY{k}{def} \PY{n+nf}{create\PYZus{}accuracy}\PY{p}{(}\PY{n+nb+bp}{self}\PY{p}{)}\PY{p}{:}
-                 \PY{k}{with} \PY{n}{tf}\PY{o}{.}\PY{n}{name\PYZus{}scope}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{accuracy}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}\PY{p}{:}
-                     \PY{n}{correct\PYZus{}prediction} \PY{o}{=} \PY{n}{tf}\PY{o}{.}\PY{n}{equal}\PY{p}{(}\PY{n}{tf}\PY{o}{.}\PY{n}{argmax}\PY{p}{(}\PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{Y}\PY{p}{,} \PY{l+m+mi}{1}\PY{p}{)}\PY{p}{,} \PY{n}{tf}\PY{o}{.}\PY{n}{argmax}\PY{p}{(}\PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{Y\PYZus{}predicted}\PY{p}{,} \PY{l+m+mi}{1}\PY{p}{)}\PY{p}{)}
-                     \PY{n}{correct\PYZus{}prediction} \PY{o}{=} \PY{n}{tf}\PY{o}{.}\PY{n}{cast}\PY{p}{(}\PY{n}{correct\PYZus{}prediction}\PY{p}{,} \PY{n}{tf}\PY{o}{.}\PY{n}{float64}\PY{p}{)}
-                     \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{accuracy} \PY{o}{=} \PY{n}{tf}\PY{o}{.}\PY{n}{reduce\PYZus{}mean}\PY{p}{(}\PY{n}{correct\PYZus{}prediction}\PY{p}{)}
-                 \PY{c+c1}{\PYZsh{} end with}
-             \PY{c+c1}{\PYZsh{} end function create\PYZus{}accuracy}
-         \PY{c+c1}{\PYZsh{} end class model}
-\end{Verbatim}
-
-
-    The next part is to train the model and evaluate the performance.
-
-    \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}33}]:} \PY{k}{def} \PY{n+nf}{evaluate\PYZus{}model}\PY{p}{(}\PY{n}{neurons}\PY{p}{,} \PY{n}{lr}\PY{p}{,} \PY{n}{Ising\PYZus{}Data}\PY{p}{,} \PY{n}{verbose}\PY{p}{)}\PY{p}{:}
-             \PY{n}{training\PYZus{}epochs} \PY{o}{=} \PY{l+m+mi}{100}
-             \PY{n}{batch\PYZus{}size} \PY{o}{=} \PY{l+m+mi}{100}
-             
-             \PY{c+c1}{\PYZsh{} SGD parameters}
-             \PY{n}{opt\PYZus{}params} \PY{o}{=} \PY{n+nb}{dict}\PY{p}{(}\PY{n}{learning\PYZus{}rate}\PY{o}{=}\PY{n}{lr}\PY{p}{)}
-             
-             \PY{c+c1}{\PYZsh{} create DNN}
-             \PY{n}{DNN} \PY{o}{=} \PY{n}{model}\PY{p}{(}\PY{n}{neurons}\PY{p}{,} \PY{n}{opt\PYZus{}params}\PY{p}{)}
-             
-             \PY{k}{with} \PY{n}{tf}\PY{o}{.}\PY{n}{Session}\PY{p}{(}\PY{p}{)} \PY{k}{as} \PY{n}{sess}\PY{p}{:}
-                 \PY{n}{sess}\PY{o}{.}\PY{n}{run}\PY{p}{(}\PY{n}{tf}\PY{o}{.}\PY{n}{global\PYZus{}variables\PYZus{}initializer}\PY{p}{(}\PY{p}{)}\PY{p}{)}
-                 
-                 \PY{c+c1}{\PYZsh{} train DNN}
-                 \PY{k}{for} \PY{n}{epoch} \PY{o+ow}{in} \PY{n+nb}{range}\PY{p}{(}\PY{n}{training\PYZus{}epochs}\PY{p}{)}\PY{p}{:}
-                     \PY{n}{batch\PYZus{}X}\PY{p}{,} \PY{n}{batch\PYZus{}Y} \PY{o}{=} \PY{n}{Ising\PYZus{}Data}\PY{o}{.}\PY{n}{train}\PY{o}{.}\PY{n}{next\PYZus{}batch}\PY{p}{(}\PY{n}{batch\PYZus{}size}\PY{p}{)}
-                     
-                     \PY{n}{loss\PYZus{}batch}\PY{p}{,} \PY{n}{\PYZus{}} \PY{o}{=} \PY{n}{sess}\PY{o}{.}\PY{n}{run}\PY{p}{(}\PY{p}{[}\PY{n}{DNN}\PY{o}{.}\PY{n}{loss}\PY{p}{,} \PY{n}{DNN}\PY{o}{.}\PY{n}{optimizer}\PY{p}{]}\PY{p}{,}
-                                              \PY{n}{feed\PYZus{}dict}\PY{o}{=}\PY{p}{\PYZob{}}\PY{n}{DNN}\PY{o}{.}\PY{n}{X}\PY{p}{:} \PY{n}{batch\PYZus{}X}\PY{p}{,}
-                                                         \PY{n}{DNN}\PY{o}{.}\PY{n}{Y}\PY{p}{:} \PY{n}{batch\PYZus{}Y}\PY{p}{,}
-                                                         \PY{n}{DNN}\PY{o}{.}\PY{n}{dropout\PYZus{}keepprob}\PY{p}{:} \PY{l+m+mf}{0.5}\PY{p}{\PYZcb{}}\PY{p}{)}
-                     \PY{n}{accuracy} \PY{o}{=} \PY{n}{sess}\PY{o}{.}\PY{n}{run}\PY{p}{(}\PY{n}{DNN}\PY{o}{.}\PY{n}{accuracy}\PY{p}{,}
-                                         \PY{n}{feed\PYZus{}dict}\PY{o}{=}\PY{p}{\PYZob{}}\PY{n}{DNN}\PY{o}{.}\PY{n}{X}\PY{p}{:} \PY{n}{Ising\PYZus{}Data}\PY{o}{.}\PY{n}{train}\PY{o}{.}\PY{n}{data\PYZus{}X}\PY{p}{,}
-                                                    \PY{n}{DNN}\PY{o}{.}\PY{n}{Y}\PY{p}{:} \PY{n}{Ising\PYZus{}Data}\PY{o}{.}\PY{n}{train}\PY{o}{.}\PY{n}{data\PYZus{}Y}\PY{p}{,}
-                                                    \PY{n}{DNN}\PY{o}{.}\PY{n}{dropout\PYZus{}keepprob}\PY{p}{:} \PY{l+m+mf}{0.5}\PY{p}{\PYZcb{}}\PY{p}{)}
-                     \PY{n}{step} \PY{o}{=} \PY{n}{sess}\PY{o}{.}\PY{n}{run}\PY{p}{(}\PY{n}{DNN}\PY{o}{.}\PY{n}{global\PYZus{}step}\PY{p}{)}
-                 \PY{c+c1}{\PYZsh{} end for epoch}
-                 
-                 \PY{c+c1}{\PYZsh{} test DNN performance on entire train, test and critical data sets}
-                 \PY{n}{train\PYZus{}loss}\PY{p}{,} \PY{n}{train\PYZus{}accuracy} \PY{o}{=} \PY{n}{sess}\PY{o}{.}\PY{n}{run}\PY{p}{(}\PY{p}{[}\PY{n}{DNN}\PY{o}{.}\PY{n}{loss}\PY{p}{,} \PY{n}{DNN}\PY{o}{.}\PY{n}{accuracy}\PY{p}{]}\PY{p}{,}
-                                                       \PY{n}{feed\PYZus{}dict}\PY{o}{=}\PY{p}{\PYZob{}}\PY{n}{DNN}\PY{o}{.}\PY{n}{X}\PY{p}{:} \PY{n}{Ising\PYZus{}Data}\PY{o}{.}\PY{n}{train}\PY{o}{.}\PY{n}{data\PYZus{}X}\PY{p}{,}
-                                                                  \PY{n}{DNN}\PY{o}{.}\PY{n}{Y}\PY{p}{:} \PY{n}{Ising\PYZus{}Data}\PY{o}{.}\PY{n}{train}\PY{o}{.}\PY{n}{data\PYZus{}Y}\PY{p}{,}
-                                                                  \PY{n}{DNN}\PY{o}{.}\PY{n}{dropout\PYZus{}keepprob}\PY{p}{:} \PY{l+m+mf}{0.5}\PY{p}{\PYZcb{}}\PY{p}{)}
-                 
-                 \PY{n}{test\PYZus{}loss}\PY{p}{,} \PY{n}{test\PYZus{}accuracy} \PY{o}{=} \PY{n}{sess}\PY{o}{.}\PY{n}{run}\PY{p}{(}\PY{p}{[}\PY{n}{DNN}\PY{o}{.}\PY{n}{loss}\PY{p}{,} \PY{n}{DNN}\PY{o}{.}\PY{n}{accuracy}\PY{p}{]}\PY{p}{,}
-                                                     \PY{n}{feed\PYZus{}dict}\PY{o}{=}\PY{p}{\PYZob{}}\PY{n}{DNN}\PY{o}{.}\PY{n}{X}\PY{p}{:} \PY{n}{Ising\PYZus{}Data}\PY{o}{.}\PY{n}{test}\PY{o}{.}\PY{n}{data\PYZus{}X}\PY{p}{,}
-                                                                \PY{n}{DNN}\PY{o}{.}\PY{n}{Y}\PY{p}{:} \PY{n}{Ising\PYZus{}Data}\PY{o}{.}\PY{n}{test}\PY{o}{.}\PY{n}{data\PYZus{}Y}\PY{p}{,}
-                                                                \PY{n}{DNN}\PY{o}{.}\PY{n}{dropout\PYZus{}keepprob}\PY{p}{:} \PY{l+m+mf}{1.0}\PY{p}{\PYZcb{}}\PY{p}{)}
-                 
-                 \PY{n}{critical\PYZus{}loss}\PY{p}{,} \PY{n}{critical\PYZus{}accuracy} \PY{o}{=} \PY{n}{sess}\PY{o}{.}\PY{n}{run}\PY{p}{(}\PY{p}{[}\PY{n}{DNN}\PY{o}{.}\PY{n}{loss}\PY{p}{,} \PY{n}{DNN}\PY{o}{.}\PY{n}{accuracy}\PY{p}{]}\PY{p}{,} 
-                                                             \PY{n}{feed\PYZus{}dict}\PY{o}{=}\PY{p}{\PYZob{}}\PY{n}{DNN}\PY{o}{.}\PY{n}{X}\PY{p}{:} \PY{n}{Ising\PYZus{}Data}\PY{o}{.}\PY{n}{critical}\PY{o}{.}\PY{n}{data\PYZus{}X}\PY{p}{,}
-                                                                        \PY{n}{DNN}\PY{o}{.}\PY{n}{Y}\PY{p}{:} \PY{n}{Ising\PYZus{}Data}\PY{o}{.}\PY{n}{critical}\PY{o}{.}\PY{n}{data\PYZus{}Y}\PY{p}{,}
-                                                                        \PY{n}{DNN}\PY{o}{.}\PY{n}{dropout\PYZus{}keepprob}\PY{p}{:} \PY{l+m+mf}{1.0}\PY{p}{\PYZcb{}}\PY{p}{)}
-                 
-                 \PY{k}{return} \PY{n}{train\PYZus{}loss}\PY{p}{,} \PY{n}{train\PYZus{}accuracy}\PY{p}{,} \PY{n}{test\PYZus{}loss}\PY{p}{,} \PY{n}{test\PYZus{}accuracy}\PY{p}{,} \PY{n}{critical\PYZus{}loss}\PY{p}{,} \PY{n}{critical\PYZus{}accuracy}                                          
-             \PY{c+c1}{\PYZsh{} end with}
-         \PY{c+c1}{\PYZsh{} end function evaluate\PYZus{}model}
-                     
-\end{Verbatim}
-
-
-    Finally in order to study the DNN fully we need to account for the
-hyperparameters, these are the hidden layers and different SGD learning
-rates. This is done by a grid search over a grid with said
-hyperparameters.
-
-    \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}35}]:} \PY{k+kn}{import} \PY{n+nn}{matplotlib}\PY{n+nn}{.}\PY{n+nn}{pyplot} \PY{k}{as} \PY{n+nn}{plt}
-         \PY{k}{def} \PY{n+nf}{grid\PYZus{}search}\PY{p}{(}\PY{n}{verbose}\PY{p}{)}\PY{p}{:}
-             \PY{l+s+sd}{\PYZdq{}\PYZdq{}\PYZdq{}perform grid\PYZus{}search over different learning rates and number of hidden layer neurons\PYZdq{}\PYZdq{}\PYZdq{}}
-             
-             \PY{c+c1}{\PYZsh{} load data}
-             \PY{n}{Ising\PYZus{}Data} \PY{o}{=} \PY{n}{read\PYZus{}data\PYZus{}set}\PY{p}{(}\PY{p}{)}
-             
-             \PY{n}{N\PYZus{}neurons} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{logspace}\PY{p}{(}\PY{l+m+mi}{0}\PY{p}{,}\PY{l+m+mi}{3}\PY{p}{,}\PY{l+m+mi}{4}\PY{p}{)}\PY{o}{.}\PY{n}{astype}\PY{p}{(}\PY{n}{np}\PY{o}{.}\PY{n}{int32}\PY{p}{)}
-             \PY{n}{learning\PYZus{}rates} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{logspace}\PY{p}{(}\PY{o}{\PYZhy{}}\PY{l+m+mi}{6}\PY{p}{,}\PY{o}{\PYZhy{}}\PY{l+m+mi}{1}\PY{p}{,}\PY{l+m+mi}{6}\PY{p}{)}
-             
-             \PY{n}{train\PYZus{}loss}\PY{o}{=}\PY{n}{np}\PY{o}{.}\PY{n}{zeros}\PY{p}{(}\PY{p}{(}\PY{n+nb}{len}\PY{p}{(}\PY{n}{N\PYZus{}neurons}\PY{p}{)}\PY{p}{,}\PY{n+nb}{len}\PY{p}{(}\PY{n}{learning\PYZus{}rates}\PY{p}{)}\PY{p}{)}\PY{p}{,}\PY{n}{dtype}\PY{o}{=}\PY{n}{np}\PY{o}{.}\PY{n}{float64}\PY{p}{)}
-             \PY{n}{train\PYZus{}accuracy}\PY{o}{=}\PY{n}{np}\PY{o}{.}\PY{n}{zeros\PYZus{}like}\PY{p}{(}\PY{n}{train\PYZus{}loss}\PY{p}{)}
-             \PY{n}{test\PYZus{}loss}\PY{o}{=}\PY{n}{np}\PY{o}{.}\PY{n}{zeros\PYZus{}like}\PY{p}{(}\PY{n}{train\PYZus{}loss}\PY{p}{)}
-             \PY{n}{test\PYZus{}accuracy}\PY{o}{=}\PY{n}{np}\PY{o}{.}\PY{n}{zeros\PYZus{}like}\PY{p}{(}\PY{n}{train\PYZus{}loss}\PY{p}{)}
-             \PY{n}{critical\PYZus{}loss}\PY{o}{=}\PY{n}{np}\PY{o}{.}\PY{n}{zeros\PYZus{}like}\PY{p}{(}\PY{n}{train\PYZus{}loss}\PY{p}{)}
-             \PY{n}{critical\PYZus{}accuracy}\PY{o}{=}\PY{n}{np}\PY{o}{.}\PY{n}{zeros\PYZus{}like}\PY{p}{(}\PY{n}{train\PYZus{}loss}\PY{p}{)}
-             
-             \PY{c+c1}{\PYZsh{} do grid search}
-             \PY{k}{for} \PY{n}{i}\PY{p}{,} \PY{n}{neurons} \PY{o+ow}{in} \PY{n+nb}{enumerate}\PY{p}{(}\PY{n}{N\PYZus{}neurons}\PY{p}{)}\PY{p}{:}
-                 \PY{k}{for} \PY{n}{j}\PY{p}{,} \PY{n}{lr} \PY{o+ow}{in} \PY{n+nb}{enumerate}\PY{p}{(}\PY{n}{learning\PYZus{}rates}\PY{p}{)}\PY{p}{:}
-         
-                     \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{training DNN with }\PY{l+s+si}{\PYZpc{}4d}\PY{l+s+s2}{ neurons and SGD lr=}\PY{l+s+si}{\PYZpc{}0.6f}\PY{l+s+s2}{.}\PY{l+s+s2}{\PYZdq{}} \PY{o}{\PYZpc{}}\PY{p}{(}\PY{n}{neurons}\PY{p}{,}\PY{n}{lr}\PY{p}{)} \PY{p}{)}
-         
-                     \PY{n}{train\PYZus{}loss}\PY{p}{[}\PY{n}{i}\PY{p}{,}\PY{n}{j}\PY{p}{]}\PY{p}{,}\PY{n}{train\PYZus{}accuracy}\PY{p}{[}\PY{n}{i}\PY{p}{,}\PY{n}{j}\PY{p}{]}\PY{p}{,}\PYZbs{}
-                     \PY{n}{test\PYZus{}loss}\PY{p}{[}\PY{n}{i}\PY{p}{,}\PY{n}{j}\PY{p}{]}\PY{p}{,}\PY{n}{test\PYZus{}accuracy}\PY{p}{[}\PY{n}{i}\PY{p}{,}\PY{n}{j}\PY{p}{]}\PY{p}{,}\PYZbs{}
-                     \PY{n}{critical\PYZus{}loss}\PY{p}{[}\PY{n}{i}\PY{p}{,}\PY{n}{j}\PY{p}{]}\PY{p}{,}\PY{n}{critical\PYZus{}accuracy}\PY{p}{[}\PY{n}{i}\PY{p}{,}\PY{n}{j}\PY{p}{]} \PY{o}{=} \PY{n}{evaluate\PYZus{}model}\PY{p}{(}\PY{n}{neurons}\PY{p}{,}\PY{n}{lr}\PY{p}{,}\PY{n}{Ising\PYZus{}Data}\PY{p}{,}\PY{n}{verbose}\PY{p}{)}
-         
-         
-             \PY{n}{plot\PYZus{}DNNdata}\PY{p}{(}\PY{n}{learning\PYZus{}rates}\PY{p}{,}\PY{n}{N\PYZus{}neurons}\PY{p}{,}\PY{n}{train\PYZus{}accuracy}\PY{p}{)}
-             \PY{n}{plot\PYZus{}DNNdata}\PY{p}{(}\PY{n}{learning\PYZus{}rates}\PY{p}{,}\PY{n}{N\PYZus{}neurons}\PY{p}{,}\PY{n}{test\PYZus{}accuracy}\PY{p}{)}
-             \PY{n}{plot\PYZus{}DNNdata}\PY{p}{(}\PY{n}{learning\PYZus{}rates}\PY{p}{,}\PY{n}{N\PYZus{}neurons}\PY{p}{,}\PY{n}{critical\PYZus{}accuracy}\PY{p}{)}
-         \PY{c+c1}{\PYZsh{} end function grid\PYZus{}search}
-         
-         \PY{k}{def} \PY{n+nf}{plot\PYZus{}DNNdata}\PY{p}{(}\PY{n}{x}\PY{p}{,}\PY{n}{y}\PY{p}{,}\PY{n}{data}\PY{p}{)}\PY{p}{:}
-         
-             \PY{c+c1}{\PYZsh{} plot results}
-             \PY{n}{fontsize}\PY{o}{=}\PY{l+m+mi}{16}
-         
-             \PY{n}{fig} \PY{o}{=} \PY{n}{plt}\PY{o}{.}\PY{n}{figure}\PY{p}{(}\PY{p}{)}
-             \PY{n}{ax} \PY{o}{=} \PY{n}{fig}\PY{o}{.}\PY{n}{add\PYZus{}subplot}\PY{p}{(}\PY{l+m+mi}{111}\PY{p}{)}
-             \PY{n}{cax} \PY{o}{=} \PY{n}{ax}\PY{o}{.}\PY{n}{matshow}\PY{p}{(}\PY{n}{data}\PY{p}{,} \PY{n}{interpolation}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{nearest}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{n}{vmin}\PY{o}{=}\PY{l+m+mi}{0}\PY{p}{,} \PY{n}{vmax}\PY{o}{=}\PY{l+m+mi}{1}\PY{p}{)}
-             \PY{n}{fig}\PY{o}{.}\PY{n}{colorbar}\PY{p}{(}\PY{n}{cax}\PY{p}{)}
-         
-             \PY{c+c1}{\PYZsh{} put text on matrix elements}
-             \PY{k}{for} \PY{n}{i}\PY{p}{,} \PY{n}{x\PYZus{}val} \PY{o+ow}{in} \PY{n+nb}{enumerate}\PY{p}{(}\PY{n}{np}\PY{o}{.}\PY{n}{arange}\PY{p}{(}\PY{n+nb}{len}\PY{p}{(}\PY{n}{x}\PY{p}{)}\PY{p}{)}\PY{p}{)}\PY{p}{:}
-                 \PY{k}{for} \PY{n}{j}\PY{p}{,} \PY{n}{y\PYZus{}val} \PY{o+ow}{in} \PY{n+nb}{enumerate}\PY{p}{(}\PY{n}{np}\PY{o}{.}\PY{n}{arange}\PY{p}{(}\PY{n+nb}{len}\PY{p}{(}\PY{n}{y}\PY{p}{)}\PY{p}{)}\PY{p}{)}\PY{p}{:}
-                     \PY{n}{c} \PY{o}{=} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{\PYZdl{}}\PY{l+s+si}{\PYZob{}0:.1f\PYZcb{}}\PY{l+s+se}{\PYZbs{}\PYZbs{}}\PY{l+s+s2}{\PYZpc{}}\PY{l+s+s2}{\PYZdl{}}\PY{l+s+s2}{\PYZdq{}}\PY{o}{.}\PY{n}{format}\PY{p}{(} \PY{l+m+mi}{100}\PY{o}{*}\PY{n}{data}\PY{p}{[}\PY{n}{j}\PY{p}{,}\PY{n}{i}\PY{p}{]}\PY{p}{)}  
-                     \PY{n}{ax}\PY{o}{.}\PY{n}{text}\PY{p}{(}\PY{n}{x\PYZus{}val}\PY{p}{,} \PY{n}{y\PYZus{}val}\PY{p}{,} \PY{n}{c}\PY{p}{,} \PY{n}{va}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{center}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{n}{ha}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{center}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
-         
-             \PY{c+c1}{\PYZsh{} convert axis vaues to to string labels}
-             \PY{n}{x}\PY{o}{=}\PY{p}{[}\PY{n+nb}{str}\PY{p}{(}\PY{n}{i}\PY{p}{)} \PY{k}{for} \PY{n}{i} \PY{o+ow}{in} \PY{n}{x}\PY{p}{]}
-             \PY{n}{y}\PY{o}{=}\PY{p}{[}\PY{n+nb}{str}\PY{p}{(}\PY{n}{i}\PY{p}{)} \PY{k}{for} \PY{n}{i} \PY{o+ow}{in} \PY{n}{y}\PY{p}{]}
-         
-         
-             \PY{n}{ax}\PY{o}{.}\PY{n}{set\PYZus{}xticklabels}\PY{p}{(}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{o}{+}\PY{n}{x}\PY{p}{)}
-             \PY{n}{ax}\PY{o}{.}\PY{n}{set\PYZus{}yticklabels}\PY{p}{(}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{o}{+}\PY{n}{y}\PY{p}{)}
-         
-             \PY{n}{ax}\PY{o}{.}\PY{n}{set\PYZus{}xlabel}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{\PYZdl{}}\PY{l+s+se}{\PYZbs{}\PYZbs{}}\PY{l+s+s1}{mathrm}\PY{l+s+s1}{\PYZob{}}\PY{l+s+s1}{learning}\PY{l+s+se}{\PYZbs{}\PYZbs{}}\PY{l+s+s1}{ rate\PYZcb{}\PYZdl{}}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,}\PY{n}{fontsize}\PY{o}{=}\PY{n}{fontsize}\PY{p}{)}
-             \PY{n}{ax}\PY{o}{.}\PY{n}{set\PYZus{}ylabel}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{\PYZdl{}}\PY{l+s+se}{\PYZbs{}\PYZbs{}}\PY{l+s+s1}{mathrm}\PY{l+s+s1}{\PYZob{}}\PY{l+s+s1}{hidden}\PY{l+s+se}{\PYZbs{}\PYZbs{}}\PY{l+s+s1}{ neurons\PYZcb{}\PYZdl{}}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,}\PY{n}{fontsize}\PY{o}{=}\PY{n}{fontsize}\PY{p}{)}
-         
-             \PY{n}{plt}\PY{o}{.}\PY{n}{tight\PYZus{}layout}\PY{p}{(}\PY{p}{)}
-         
-             \PY{n}{plt}\PY{o}{.}\PY{n}{show}\PY{p}{(}\PY{p}{)}
-\end{Verbatim}
-
-
-    \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}36}]:} \PY{n}{grid\PYZus{}search}\PY{p}{(}\PY{k+kc}{False}\PY{p}{)}
-\end{Verbatim}
-
-
-    \begin{Verbatim}[commandchars=\\\{\}]
-/usr/local/lib/python3.6/dist-packages/sklearn/model\_selection/\_split.py:2026: FutureWarning: From version 0.21, test\_size will always complement train\_size unless both are specified.
-  FutureWarning)
-
-    \end{Verbatim}
-
-    \begin{Verbatim}[commandchars=\\\{\}]
-training DNN with    1 neurons and SGD lr=0.000001.
-training DNN with    1 neurons and SGD lr=0.000010.
-training DNN with    1 neurons and SGD lr=0.000100.
-training DNN with    1 neurons and SGD lr=0.001000.
-training DNN with    1 neurons and SGD lr=0.010000.
-training DNN with    1 neurons and SGD lr=0.100000.
-training DNN with   10 neurons and SGD lr=0.000001.
-training DNN with   10 neurons and SGD lr=0.000010.
-training DNN with   10 neurons and SGD lr=0.000100.
-training DNN with   10 neurons and SGD lr=0.001000.
-training DNN with   10 neurons and SGD lr=0.010000.
-training DNN with   10 neurons and SGD lr=0.100000.
-training DNN with  100 neurons and SGD lr=0.000001.
-training DNN with  100 neurons and SGD lr=0.000010.
-training DNN with  100 neurons and SGD lr=0.000100.
-training DNN with  100 neurons and SGD lr=0.001000.
-training DNN with  100 neurons and SGD lr=0.010000.
-training DNN with  100 neurons and SGD lr=0.100000.
-training DNN with 1000 neurons and SGD lr=0.000001.
-training DNN with 1000 neurons and SGD lr=0.000010.
-training DNN with 1000 neurons and SGD lr=0.000100.
-training DNN with 1000 neurons and SGD lr=0.001000.
-training DNN with 1000 neurons and SGD lr=0.010000.
-training DNN with 1000 neurons and SGD lr=0.100000.
-
-    \end{Verbatim}
-
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{output_37_2.png}
+    \adjustimage{max size={0.55\linewidth}{0.9\paperheight}}{output_37_2.png}
+    \end{center}
+    
+    \begin{center}
+    \adjustimage{max size={0.55\linewidth}{0.9\paperheight}}{output_37_3.png}
     \end{center}
     { \hspace*{\fill} \\}
     
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{output_37_3.png}
+    \adjustimage{max size={0.55\linewidth}{0.9\paperheight}}{output_37_4.png}
     \end{center}
     { \hspace*{\fill} \\}
     
-    \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{output_37_4.png}
-    \end{center}
-    { \hspace*{\fill} \\}
-    
-
-    % Add a bibliography block to the postdoc
-    
-    
-    
-    \end{document}
+\end{document}
