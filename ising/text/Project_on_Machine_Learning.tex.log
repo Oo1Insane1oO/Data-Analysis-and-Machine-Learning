@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2018.5.11)  27 JUN 2018 00:11
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2018.5.11)  27 JUN 2018 00:36
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
@@ -1046,121 +1046,121 @@ Underfull \hbox (badness 10000) in paragraph at lines 638--639
 
  []
 
-[25 <./output_8_0.png>]pdfTeX warning (ext4): destination with the same identif
-ier (name{estimating-the-coupling-constant-of-the-1d-ising-model}) has been alr
-eady used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.643 ...oupling-constant-of-the-1d-ising-model8}}
-                                                  
-File: output_8_0.png Graphic file (type png)
-<use output_8_0.png>
-Package pdftex.def Info: output_8_0.png  used on input line 645.
-(pdftex.def)             Requested size: 790.95308pt x 390.4578pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 647--648
-
- []
-
-[26]
-<output_11_2.png, id=206, 837.1275pt x 272.01625pt>
+[25 <./output_8_0.png>]
+<output_11_2.png, id=201, 837.1275pt x 272.01625pt>
 File: output_11_2.png Graphic file (type png)
 <use output_11_2.png>
-Package pdftex.def Info: output_11_2.png  used on input line 655.
+Package pdftex.def Info: output_11_2.png  used on input line 646.
 (pdftex.def)             Requested size: 837.12546pt x 272.01558pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 657--658
+Underfull \hbox (badness 10000) in paragraph at lines 648--649
 
  []
 
-[27 <./output_11_2.png>]pdfTeX warning (ext4): destination with the same identi
+[26 <./output_11_2.png>]pdfTeX warning (ext4): destination with the same identi
 fier (name{determine-the-phase-of-the-two-dimensional-ising-model}) has been al
 ready used, duplicate ignored
 <to be read again> 
                    \relax 
-l.662 ...ase-of-the-two-dimensional-ising-model2}}
+l.653 ...ase-of-the-two-dimensional-ising-model2}}
                                                   
 File: output_11_2.png Graphic file (type png)
 <use output_11_2.png>
-Package pdftex.def Info: output_11_2.png  used on input line 665.
+Package pdftex.def Info: output_11_2.png  used on input line 656.
 (pdftex.def)             Requested size: 837.12546pt x 272.01558pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 667--668
+Underfull \hbox (badness 10000) in paragraph at lines 658--659
 
  []
 
-<output_14_0.png, id=214, 557.08125pt x 276.03125pt>
+<output_14_0.png, id=209, 557.08125pt x 276.03125pt>
 File: output_14_0.png Graphic file (type png)
 <use output_14_0.png>
-Package pdftex.def Info: output_14_0.png  used on input line 670.
+Package pdftex.def Info: output_14_0.png  used on input line 661.
 (pdftex.def)             Requested size: 557.0799pt x 276.03056pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 672--673
+Underfull \hbox (badness 10000) in paragraph at lines 663--664
 
  []
 
-[28 <./output_14_0.png>]pdfTeX warning (ext4): destination with the same identi
+[27 <./output_14_0.png>]pdfTeX warning (ext4): destination with the same identi
 fier (name{determine-the-phase-of-the-two-dimensional-ising-model}) has been al
 ready used, duplicate ignored
 <to be read again> 
                    \relax 
-l.677 ...ase-of-the-two-dimensional-ising-model4}}
+l.668 ...ase-of-the-two-dimensional-ising-model4}}
                                                   
-<output_16_0.png, id=221, 952.55875pt x 453.695pt>
+<output_16_0.png, id=216, 952.55875pt x 453.695pt>
 File: output_16_0.png Graphic file (type png)
 <use output_16_0.png>
-Package pdftex.def Info: output_16_0.png  used on input line 680.
+Package pdftex.def Info: output_16_0.png  used on input line 671.
 (pdftex.def)             Requested size: 952.55643pt x 453.6939pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 682--683
+Underfull \hbox (badness 10000) in paragraph at lines 673--674
 
  []
 
-[29 <./output_16_0.png>]
-<output_21_0.png, id=228, 630.355pt x 273.02pt>
+[28 <./output_16_0.png>]
+<output_21_0.png, id=223, 630.355pt x 273.02pt>
 File: output_21_0.png Graphic file (type png)
 <use output_21_0.png>
-Package pdftex.def Info: output_21_0.png  used on input line 690.
+Package pdftex.def Info: output_21_0.png  used on input line 681.
 (pdftex.def)             Requested size: 630.35345pt x 273.01933pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 692--693
+Underfull \hbox (badness 10000) in paragraph at lines 683--684
 
  []
 
-[30 <./output_21_0.png>]pdfTeX warning (ext4): destination with the same identi
+[29 <./output_21_0.png>]pdfTeX warning (ext4): destination with the same identi
 fier (name{using-random-forest-to-classify-phases-in-the-ising-model}) has been
  already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.697 ...-to-classify-phases-in-the-ising-model2}}
+l.688 ...-to-classify-phases-in-the-ising-model2}}
                                                   
 File: output_21_0.png Graphic file (type png)
 <use output_21_0.png>
-Package pdftex.def Info: output_21_0.png  used on input line 700.
+Package pdftex.def Info: output_21_0.png  used on input line 691.
 (pdftex.def)             Requested size: 630.35345pt x 273.01933pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 702--703
+Underfull \hbox (badness 10000) in paragraph at lines 693--694
 
  []
 
-<output_23_0.png, id=235, 618.31pt x 325.215pt>
+<output_23_0.png, id=230, 618.31pt x 325.215pt>
 File: output_23_0.png Graphic file (type png)
 <use output_23_0.png>
-Package pdftex.def Info: output_23_0.png  used on input line 705.
+Package pdftex.def Info: output_23_0.png  used on input line 696.
 (pdftex.def)             Requested size: 618.30849pt x 325.2142pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 698--699
+
+ []
+
+[30 <./output_23_0.png>]pdfTeX warning (ext4): destination with the same identi
+fier (name{using-random-forest-to-classify-phases-in-the-ising-model}) has been
+ already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.703 ...-to-classify-phases-in-the-ising-model3}}
+                                                  
+<output_26_0.png, id=236, 630.355pt x 273.02pt>
+File: output_26_0.png Graphic file (type png)
+<use output_26_0.png>
+Package pdftex.def Info: output_26_0.png  used on input line 705.
+(pdftex.def)             Requested size: 630.35345pt x 273.01933pt.
 
 Underfull \hbox (badness 10000) in paragraph at lines 707--708
 
  []
 
-[31 <./output_23_0.png>]pdfTeX warning (ext4): destination with the same identi
+[31 <./output_26_0.png>]pdfTeX warning (ext4): destination with the same identi
 fier (name{using-random-forest-to-classify-phases-in-the-ising-model}) has been
  already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.712 ...-to-classify-phases-in-the-ising-model3}}
+l.712 ...-to-classify-phases-in-the-ising-model4}}
                                                   
-<output_26_0.png, id=242, 630.355pt x 273.02pt>
 File: output_26_0.png Graphic file (type png)
 <use output_26_0.png>
 Package pdftex.def Info: output_26_0.png  used on input line 714.
@@ -1170,65 +1170,49 @@ Underfull \hbox (badness 10000) in paragraph at lines 716--717
 
  []
 
-[32 <./output_26_0.png>]pdfTeX warning (ext4): destination with the same identi
-fier (name{using-random-forest-to-classify-phases-in-the-ising-model}) has been
- already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.721 ...-to-classify-phases-in-the-ising-model4}}
-                                                  
-File: output_26_0.png Graphic file (type png)
-<use output_26_0.png>
-Package pdftex.def Info: output_26_0.png  used on input line 723.
-(pdftex.def)             Requested size: 630.35345pt x 273.01933pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 725--726
-
- []
-
-<output_27_0.png, id=248, 618.31pt x 325.215pt>
+<output_27_0.png, id=243, 618.31pt x 325.215pt>
 File: output_27_0.png Graphic file (type png)
 <use output_27_0.png>
-Package pdftex.def Info: output_27_0.png  used on input line 728.
+Package pdftex.def Info: output_27_0.png  used on input line 719.
 (pdftex.def)             Requested size: 618.30849pt x 325.2142pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 730--731
+Underfull \hbox (badness 10000) in paragraph at lines 721--722
 
  []
 
-[33 <./output_27_0.png>]
-<output_37_2.png, id=254, 407.5225pt x 281.05pt>
+[32 <./output_27_0.png>]
+<output_37_2.png, id=249, 407.5225pt x 281.05pt>
 File: output_37_2.png Graphic file (type png)
 <use output_37_2.png>
-Package pdftex.def Info: output_37_2.png  used on input line 738.
+Package pdftex.def Info: output_37_2.png  used on input line 729.
 (pdftex.def)             Requested size: 407.5215pt x 281.0493pt.
-<output_37_3.png, id=255, 407.5225pt x 281.05pt>
+<output_37_3.png, id=250, 407.5225pt x 281.05pt>
 File: output_37_3.png Graphic file (type png)
 <use output_37_3.png>
-Package pdftex.def Info: output_37_3.png  used on input line 742.
+Package pdftex.def Info: output_37_3.png  used on input line 733.
 (pdftex.def)             Requested size: 407.5215pt x 281.0493pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 744--745
+Underfull \hbox (badness 10000) in paragraph at lines 735--736
 
  []
 
-<output_37_4.png, id=256, 407.5225pt x 281.05pt>
+<output_37_4.png, id=251, 407.5225pt x 281.05pt>
 File: output_37_4.png Graphic file (type png)
 <use output_37_4.png>
-Package pdftex.def Info: output_37_4.png  used on input line 747.
+Package pdftex.def Info: output_37_4.png  used on input line 738.
 (pdftex.def)             Requested size: 407.5215pt x 281.0493pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 749--750
+Underfull \hbox (badness 10000) in paragraph at lines 740--741
 
  []
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 751.
-[34 <./output_37_2.png> <./output_37_3.png> <./output_37_4.png>]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 751.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 742.
+[33 <./output_37_2.png> <./output_37_3.png> <./output_37_4.png>]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 742.
 
 (./Project_on_Machine_Learning.tex.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 751.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 751.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 742.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 742.
 Package rerunfilecheck Info: File `./Project_on_Machine_Learning.tex.out' has n
 ot changed.
 (rerunfilecheck)             Checksum: 55E68624E35C40315E01DAF6DC090C2D;508.
@@ -1236,13 +1220,13 @@ ot changed.
 
 LaTeX Warning: There were multiply-defined labels.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 751.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 742.
  ) 
 Here is how much of TeX's memory you used:
- 11075 strings out of 493724
- 166307 string characters out of 6151529
- 267977 words of memory out of 5000000
- 14269 multiletter control sequences out of 15000+600000
+ 11072 strings out of 493724
+ 166232 string characters out of 6151529
+ 267898 words of memory out of 5000000
+ 14268 multiletter control sequences out of 15000+600000
  48189 words of font info for 117 fonts, out of 8000000 for 9000
  667 hyphenation exceptions out of 8191
  36i,10n,38p,427b,318s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1256,11 +1240,11 @@ zo/fplmri.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/palatino/uplb8a.pf
 b></usr/share/texlive/texmf-dist/fonts/type1/urw/palatino/uplbi8a.pfb></usr/sha
 re/texlive/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb></usr/share/texlive/t
 exmf-dist/fonts/type1/urw/palatino/uplri8a.pfb>
-Output written on ./Project_on_Machine_Learning.tex.pdf (34 pages, 609029 bytes
+Output written on ./Project_on_Machine_Learning.tex.pdf (33 pages, 608679 bytes
 ).
 PDF statistics:
- 320 PDF objects out of 1000 (max. 8388607)
- 227 compressed objects within 3 object streams
- 81 named destinations out of 1000 (max. 500000)
+ 315 PDF objects out of 1000 (max. 8388607)
+ 223 compressed objects within 3 object streams
+ 79 named destinations out of 1000 (max. 500000)
  151 words of extra memory for PDF output out of 10000 (max. 10000000)
 

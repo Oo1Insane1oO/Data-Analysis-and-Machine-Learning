@@ -1,7 +1,7 @@
 # Fdb version 3
-["pdflatex"] 1530051092 "./Project_on_Machine_Learning.tex" "./Project_on_Machine_Learning.tex.pdf" "./Project_on_Machine_Learning.tex" 1530051093
-  "./Project_on_Machine_Learning.tex" 1530051091 33863 490f4305cf51f796614df6fc53c72156 ""
-  "./Project_on_Machine_Learning.tex.aux" 1530051093 5330 6fd8353e3c8b9cdd0f9baa8f75b88450 ""
+["pdflatex"] 1530052574 "./Project_on_Machine_Learning.tex" "./Project_on_Machine_Learning.tex.pdf" "./Project_on_Machine_Learning.tex" 1530052575
+  "./Project_on_Machine_Learning.tex" 1530052572 33514 1d51e8e1fba789c29dae9042a868080b ""
+  "./Project_on_Machine_Learning.tex.aux" 1530052575 5184 bec7f85ded660acf2e1eb28f994b3f56 ""
   "/etc/texmf/web2c/texmf.cnf" 1525995198 475 c0e671620eb5563b2130f56340a5fde8 ""
   "/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc" 1480098666 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1511824771 3332 103109f5612ad95229751940c61aada0 ""
@@ -140,9 +140,9 @@
   "/usr/share/texmf/web2c/texmf.cnf" 1520210507 32485 c64754543d8ac501bea6e75e209ea521 ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1525995315 2420561 3b777d76e83fe65d3b1394f95a4d4756 ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1525995320 2848776 5f6520c7490f8e84d610cf572beeb443 ""
-  "Project_on_Machine_Learning.tex" 1530051091 33863 490f4305cf51f796614df6fc53c72156 ""
-  "Project_on_Machine_Learning.tex.aux" 1530051093 5330 6fd8353e3c8b9cdd0f9baa8f75b88450 ""
-  "Project_on_Machine_Learning.tex.out" 1530051093 508 55e68624e35c40315e01daf6dc090c2d ""
+  "Project_on_Machine_Learning.tex" 1530052572 33514 1d51e8e1fba789c29dae9042a868080b ""
+  "Project_on_Machine_Learning.tex.aux" 1530052575 5184 bec7f85ded660acf2e1eb28f994b3f56 ""
+  "Project_on_Machine_Learning.tex.out" 1530052575 508 55e68624e35c40315e01daf6dc090c2d ""
   "output_11_2.png" 1530046474 8972 cc15a594c9bd886098769e1768d748b2 ""
   "output_14_0.png" 1530046474 42402 4025591c5f6cfa100f8b8fa6ed9e8d38 ""
   "output_16_0.png" 1530046474 120776 7b12e44db1fd628e584f6ac41ccccb82 ""
@@ -166,9 +166,9 @@
   "output_6_9.png" 1530046474 21211 977c3db14dddb9e73740cf71d12208d0 ""
   "output_8_0.png" 1530046474 41826 ac4593eca69134e45600a7d1d0716486 ""
   (generated)
-  "./Project_on_Machine_Learning.tex.pdf"
-  "Project_on_Machine_Learning.tex.aux"
   "./Project_on_Machine_Learning.tex.log"
+  "Project_on_Machine_Learning.tex.aux"
   "Project_on_Machine_Learning.tex.log"
   "Project_on_Machine_Learning.tex.out"
   "Project_on_Machine_Learning.tex.pdf"
+  "./Project_on_Machine_Learning.tex.pdf"
